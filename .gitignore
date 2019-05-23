@@ -1,0 +1,25 @@
+# common
+/target
+/build
+/bin
+.DS_Store
+
+# IntelliJ IDEA
+**/.idea/*
+!**/.idea/inspectionProfiles
+!**/.idea/codeStyles
+!**/.idea/codeStyleSettings.xml
+!**/.idea/misc.xml
+!**/.idea/saveactions_settings.xml
+**/*.iml
+/out
+
+# Gradle
+/.gradle
+
+# Tomcat
+/tomcat.*
+
+# DBFlute
+/dbflute-intro.*
+/mydbflute/intro_resources

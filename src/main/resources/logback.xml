@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE logback>
+<!-- _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/ -->
+<!-- Javatry logging settings for All Environments -->
+<!-- _/_/_/_/_/_/_/_/_/_/ -->
+<configuration>
+  <property resource="javatry_env.properties" />
+  <property resource="javatry_env_${lasta.env}.properties" />
+  <property name="domain.name" value="javatry"/>
+  <property name="log.level" value="${log.level:-debug}"/>
+  <property name="log.pattern" value="%d [%t] %-5p \\(%C{0}@%M\\(\\):%L\\) - %m%n"/>
+  <property name="log.file.basedir" value="${log.file.basedir:-/tmp/javatry}"/>
+  <property name="log.file.encoding" value="UTF-8"/>
+  <property name="backup.date.suffix" value="_%d{yyyyMMdd}"/>
+  <property name="backup.max.history" value="180"/>
+
+  <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder><charset>${log.file.encoding}</charset><pattern>${log.pattern}</pattern></encoder>
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter"><level>${log.console.level}</level></filter>
+  </appender>
+  <appender name="appfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <File>${log.file.basedir}/app_${domain.name}.log</File>
+    <Append>true</Append>
+    <encoder><charset>${log.file.encoding}</charset><pattern>${log.pattern}</pattern></encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${log.file.basedir}/backup/app_${domain.name}${backup.date.suffix}.log</fileNamePattern>
+      <maxHistory>${backup.max.history}</maxHistory>
+    </rollingPolicy>
+  </appender>
+  <appender name="errorfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <File>${log.file.basedir}/error_${domain.name}.log</File>
+    <Append>true</Append>
+    <encoder><charset>${log.file.encoding}</charset><pattern>${log.pattern}</pattern></encoder>
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter"><level>ERROR</level></filter>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${log.file.basedir}/backup/error_${domain.name}${backup.date.suffix}.log</fileNamePattern>
+      <maxHistory>${backup.max.history}</maxHistory>
+    </rollingPolicy>
+  </appender>
+
+  <logger name="org.docksidestage" additivity="false" level="${log.level}">
+    <appender-ref ref="console"/><appender-ref ref="appfile"/><appender-ref ref="errorfile"/>
+  </logger>
+  <root level="error">
+    <appender-ref ref="console"/><appender-ref ref="errorfile"/>
+  </root>
+</configuration>
