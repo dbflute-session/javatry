@@ -23,18 +23,50 @@
 	<!-- ================================================================================= -->
 	<!--                                                                           Servlet -->
 	<!--                                                                           ======= -->
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!--                                             maihama -->
+	<!--                                             ~~~~~~~ -->
+	<servlet>
+		<servlet-name>broadwayServlet</servlet-name>
+		<servlet-class>org.docksidestage.app.web.maihama.BroadwayServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
 	<servlet>
 		<servlet-name>docksideServlet</servlet-name>
-		<servlet-class>org.docksidestage.servlet.maihama.DocksideServlet</servlet-class>
+		<servlet-class>org.docksidestage.app.web.maihama.DocksideServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!--                                               yours -->
+	<!--                                               ~~~~~ -->
+	<servlet>
+		<servlet-name>yourServlet</servlet-name>
+		<servlet-class>org.docksidestage.app.web.yours.YourServlet</servlet-class>
 		<load-on-startup>2</load-on-startup>
 	</servlet>
 
 	<!-- ================================================================================= -->
 	<!--                                                                   Servlet Mapping -->
 	<!--                                                                   =============== -->
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!--                                             maihama -->
+	<!--                                             ~~~~~~~ -->
+	<servlet-mapping>
+		<servlet-name>broadwayServlet</servlet-name>
+		<url-pattern>/broadway</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>docksideServlet</servlet-name>
 		<url-pattern>/dockside</url-pattern>
+	</servlet-mapping>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!--                                               yours -->
+	<!--                                               ~~~~~ -->
+	<servlet-mapping>
+		<servlet-name>yourServlet</servlet-name>
+		<url-pattern>/your</url-pattern>
 	</servlet-mapping>
 
 	<!-- ================================================================================= -->

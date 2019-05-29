@@ -13,7 +13,7 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.javatry.colorbox.base;
+package org.docksidestage.bizfw.colorbox.yours;
 
 import java.io.File;
 import java.math.BigDecimal;
@@ -138,7 +138,7 @@ public class YourPrivateRoom {
 
     private StandardColorBox makeSixthColorBox() {
         StandardColorBox colorBox = new StandardColorBox(new BoxColor("pink"), new BoxSize(50, 40, 30));
-        colorBox.getUpperSpace().setContent(asDevil("high tower"));
+        colorBox.getUpperSpace().setContent(asDevil("high tower</body>"));
         colorBox.getMiddleSpace().setContent(asDevil(null));
         colorBox.getLowerSpace().setContent(asDevil("hotel"));
         return colorBox;

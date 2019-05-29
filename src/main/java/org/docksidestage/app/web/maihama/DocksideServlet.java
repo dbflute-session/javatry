@@ -13,7 +13,7 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.servlet.maihama;
+package org.docksidestage.app.web.maihama;
 
 import java.io.IOException;
 

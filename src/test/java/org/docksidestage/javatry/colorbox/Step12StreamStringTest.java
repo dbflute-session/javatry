@@ -18,7 +18,7 @@ package org.docksidestage.javatry.colorbox;
 import java.util.List;
 
 import org.docksidestage.bizfw.colorbox.ColorBox;
-import org.docksidestage.javatry.colorbox.base.YourPrivateRoom;
+import org.docksidestage.bizfw.colorbox.yours.YourPrivateRoom;
 import org.docksidestage.unit.PlainTestCase;
 
 /**
