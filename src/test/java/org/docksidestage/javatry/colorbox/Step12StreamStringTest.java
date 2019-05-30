@@ -94,9 +94,10 @@ public class Step12StreamStringTest extends PlainTestCase {
     public void test_length_findSecondMax() {
         List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
         String maxStr = stringStream(colorBoxList).max(Comparator.comparing(String::length)).orElse(null);
-        String secondMaxStr = stringStream(colorBoxList).reduce(maxStr, (String s1, String s2) -> {
-            return maxStr == null || maxStr.equals(s1) ? s2 : s1;
-        });
+        String secondMaxStr = stringStream(colorBoxList)
+                .filter(contentStr -> !contentStr.equals(maxStr))
+                .max(Comparator.comparing(String::length))
+                .orElse(null);
         log(secondMaxStr);
     }
 
