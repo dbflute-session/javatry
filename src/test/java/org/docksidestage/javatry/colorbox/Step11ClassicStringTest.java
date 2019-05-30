@@ -404,6 +404,7 @@ public class Step11ClassicStringTest extends PlainTestCase {
                     try {
                         totalLength += ((YourPrivateRoom.DevilBox) content).getText().length();
                     } catch (Exception e) {
+                        System.out.println("Exception??");
                         log("Exception found");
                     }
                 }
@@ -423,16 +424,16 @@ public class Step11ClassicStringTest extends PlainTestCase {
         List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
         for (ColorBox colorBox : colorBoxList) {
             List<BoxSpace> spaceList = colorBox.getSpaceList();
-            outerLoop:
             for (BoxSpace space : spaceList) {
                 Object content = space.getContent();
-                if (content instanceof java.util.Map) {
-                    for (Object value : ((Map) content).values()) {
-                        if(value instanceof java.util.Map) {
-                            continue outerLoop;
-                        }
-                    }
-                    log("map:"+content.toString().replace(",",";"));
+                if(content instanceof YourPrivateRoom.SecretBox) {
+                    String value = ((YourPrivateRoom.SecretBox) content).getText();
+                    if(value.split("map").length == 2)
+                        log(value);
+                } else if(content instanceof String) {
+                    String value = (String) content;
+                    if(value.split("map").length == 2)
+                        log(value);
                 }
             }
         }
@@ -448,8 +449,14 @@ public class Step11ClassicStringTest extends PlainTestCase {
             List<BoxSpace> spaceList = colorBox.getSpaceList();
             for (BoxSpace space : spaceList) {
                 Object content = space.getContent();
-                if (content instanceof java.util.Map) {
-                    log(content.toString());
+                if(content instanceof YourPrivateRoom.SecretBox) {
+                    String value = ((YourPrivateRoom.SecretBox) content).getText();
+                    if(value.split("map").length > 2)
+                        log(value);
+                } else if(content instanceof String) {
+                    String value = (String) content;
+                    if(value.split("map").length > 2)
+                        log(value);
                 }
             }
         }
