@@ -46,7 +46,7 @@ public class Step12StreamStringTest extends PlainTestCase {
                     log(colorName); // for visual check
                     return String.valueOf(colorName.length());
                 })
-                .orElse("not found"); // basically no way because of not-empty list and not-null returns
+                .orElse("NOT FOUND"); // basically no way because of not-empty list and not-null returns
         log(answer);
     }
 
@@ -55,6 +55,16 @@ public class Step12StreamStringTest extends PlainTestCase {
      * (カラーボックスに入ってる文字列の中で、一番長い文字列は？)
      */
     public void test_length_findMax() {
+        List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
+        String answer = colorBoxList.stream()
+                .flatMap(box -> box.getSpaceList().stream())
+                .map(space -> space.getContent())
+                .filter(content -> content instanceof String)
+                .map(content -> ((String) content))
+                .reduce("", (String s1, String s2) -> {
+                    return s1.length() > s2.length() ? s1 : s2;
+                });
+        log(answer);
     }
 
     /**
@@ -62,13 +72,17 @@ public class Step12StreamStringTest extends PlainTestCase {
      * (カラーボックスに入ってる文字列の中で、一番長いものと短いものの差は何文字？)
      */
     public void test_length_findMaxMinDiff() {
+        List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
+        colorBoxList.stream().flatMap(box -> box.getSpaceList().stream())
+                .map(space -> space.getContent())
+                .filter(content -> content instanceof String)
+                .map(content -> ((String) content).length());
+        //                .max(Comparator.comparing())
     }
 
-    // has small #adjustmemts from ClassicStringTest
-    //  o sort allowed in Stream
     /**
-     * Which value (toString() if non-string) has second-max legnth in color-boxes? (sort allowed in Stream)<br>
-     * (カラーボックスに入ってる値 (文字列以外はtoString()) の中で、二番目に長い文字列は？ (Streamでのソートありで))
+     * Which value (toString() if non-string) has second-max legnth in color-boxes? (without sort)<br>
+     * (カラーボックスに入ってる値 (文字列以外はtoString()) の中で、二番目に長い文字列は？ (ソートなしで))
      */
     public void test_length_findSecondMax() {
     }
@@ -108,15 +122,15 @@ public class Step12StreamStringTest extends PlainTestCase {
     //                                                            indexOf(), lastIndexOf()
     //                                                            ========================
     /**
-     * What number character is starting with first "front" of string ending with "front" in color-boxes? <br>
-     * (カラーボックスに入ってる "front" で終わる文字列で、最初の "front" は何文字目から始まる？)
+     * What number character is starting with "front" of string ending with "front" in color-boxes? <br>
+     * (あなたのカラーボックスに入ってる "front" で終わる文字列で、"front" は何文字目から始まる？)
      */
     public void test_indexOf_findIndex() {
     }
 
     /**
      * What number character is starting with the late "ど" of string containing plural "ど"s in color-boxes? (e.g. "どんどん" => 3) <br>
-     * (カラーボックスに入ってる「ど」を二つ以上含む文字列で、最後の「ど」は何文字目から始まる？ (e.g. "どんどん" => 3))
+     * (あなたのカラーボックスに入ってる「ど」を二つ以上含む文字列で、最後の「ど」は何文字目から始まる？ (e.g. "どんどん" => 3))
      */
     public void test_lastIndexOf_findIndex() {
     }
@@ -185,8 +199,7 @@ public class Step12StreamStringTest extends PlainTestCase {
     // ===================================================================================
     //                                                                           Good Luck
     //                                                                           =========
-    // has small #adjustmemts from ClassicStringTest
-    //  o comment out because of too difficult to be stream?
+    // too difficult to be stream?
     ///**
     // * What string of toString() is converted from text of SecretBox class in upper space on the "white" color-box to java.util.Map? <br>
     // * (whiteのカラーボックスのupperスペースに入っているSecretBoxクラスのtextをMapに変換してtoString()すると？)
