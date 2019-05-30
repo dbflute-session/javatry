@@ -415,7 +415,7 @@ public class Step11ClassicStringTest extends PlainTestCase {
     public void test_welcomeToDevil() {
         List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
         List<YourPrivateRoom.DevilBox> dbs = new ArrayList<>();
-        int length_allDevilBox = 0;
+        int lengthAllDevilBox = 0;
 
         for (ColorBox colorBox : colorBoxList) {
             List<BoxSpace> spaceList = colorBox.getSpaceList();
@@ -440,11 +440,11 @@ public class Step11ClassicStringTest extends PlainTestCase {
                 dbText = "";
             }
 
-            length_allDevilBox += dbText.length();
+            lengthAllDevilBox += dbText.length();
             log(dbText);
         }
 
-        log("合計の長さは{}", length_allDevilBox);
+        log("合計の長さは{}", lengthAllDevilBox);
 
     }
 
