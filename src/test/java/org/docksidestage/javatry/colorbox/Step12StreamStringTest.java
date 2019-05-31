@@ -15,7 +15,10 @@
  */
 package org.docksidestage.javatry.colorbox;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.docksidestage.bizfw.colorbox.ColorBox;
 import org.docksidestage.bizfw.colorbox.yours.YourPrivateRoom;
@@ -55,6 +58,29 @@ public class Step12StreamStringTest extends PlainTestCase {
      * (カラーボックスに入ってる文字列の中で、一番長い文字列は？)
      */
     public void test_length_findMax() {
+        List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
+        String answer = colorBoxList.stream()
+                .flatMap(box -> box.getSpaceList().stream())
+                .map(space -> space.getContent())
+                .filter(content -> content instanceof String)
+//                one of the method:
+                .map(content -> content.toString())
+                .max(Comparator.comparingInt(String::length))
+                .orElse(null);
+
+//        others method 1:
+//                .reduce("",(String s1, String s2) -> { return s1.length() > s2.length() ? s1 : s2; })
+//        others method 2:
+//                .max(Comparator.comparingInt(content -> ((String) content).length()))
+//                .get();
+
+        log(answer);
+
+//        List<ColorBox> whiteBoxList = colorBoxList.stream()
+//                .filter(colorBox -> colorBox.getColor().getColorName().equals("white"))
+//                .collect(Collectors.toList());
+//
+//        log(whiteBoxList);
     }
 
     /**
@@ -62,6 +88,26 @@ public class Step12StreamStringTest extends PlainTestCase {
      * (カラーボックスに入ってる文字列の中で、一番長いものと短いものの差は何文字？)
      */
     public void test_length_findMaxMinDiff() {
+        List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
+        int max = colorBoxList.stream()
+                .flatMap(box -> box.getSpaceList().stream())
+                .map(space -> space.getContent())
+                .filter(content -> content instanceof String)
+                .map(content -> content.toString())
+                .max(Comparator.comparingInt(String::length))
+                .orElse(null)
+                .length();
+
+        int min = colorBoxList.stream()
+                .flatMap(box -> box.getSpaceList().stream())
+                .map(space -> space.getContent())
+                .filter(content -> content instanceof String)
+                .map(content -> content.toString())
+                .min(Comparator.comparingInt(String::length))
+                .orElse(null)
+                .length();
+
+        log(max - min);
     }
 
     // has small #adjustmemts from ClassicStringTest
@@ -71,6 +117,34 @@ public class Step12StreamStringTest extends PlainTestCase {
      * (カラーボックスに入ってる値 (文字列以外はtoString()) の中で、二番目に長い文字列は？ (Streamでのソートありで))
      */
     public void test_length_findSecondMax() {
+        List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
+//        String maxString = colorBoxList.stream()
+//                .flatMap(box -> box.getSpaceList().stream())
+//                .map(space -> space.getContent())
+//                .filter(content -> content instanceof String)
+//                .map(content -> content.toString())
+//                .max(Comparator.comparingInt(String::length))
+//                .orElse(null);
+//
+//        int secondMaxLength = colorBoxList.stream()
+//                .flatMap(box -> box.getSpaceList().stream())
+//                .map(space -> space.getContent())
+//                .filter(content -> content instanceof String)
+//                .map(content -> content.toString())
+//                .filter(content -> !content.equals(maxString))
+//                .max(Comparator.comparingInt(String::length))
+//                .orElse(null)
+//                .length();
+
+        String secondMax = colorBoxList.stream()
+                .flatMap(box -> box.getSpaceList().stream())
+                .map(space -> space.getContent())
+                .filter(content -> content instanceof String)
+                .map(content -> content.toString())
+                .sorted((a, b) -> b.length() - a.length())
+                .collect(Collectors.toList()).get(1);
+
+        log(secondMax.length());
     }
 
     /**
@@ -78,6 +152,15 @@ public class Step12StreamStringTest extends PlainTestCase {
      * (カラーボックスに入ってる文字列の長さの合計は？)
      */
     public void test_length_calculateLengthSum() {
+        List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
+        int sum = colorBoxList.stream()
+                .flatMap(box -> box.getSpaceList().stream())
+                .map(space -> space.getContent())
+                .filter(content -> content instanceof String)
+                .mapToInt(content -> content.toString().length())
+                .sum();
+
+        log(sum);
     }
 
     /**
