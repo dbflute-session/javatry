@@ -17,9 +17,11 @@ package org.docksidestage.javatry.colorbox;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.docksidestage.bizfw.colorbox.ColorBox;
+import org.docksidestage.bizfw.colorbox.color.BoxColor;
 import org.docksidestage.bizfw.colorbox.yours.YourPrivateRoom;
 import org.docksidestage.unit.PlainTestCase;
 
@@ -106,6 +108,10 @@ public class Step12StreamStringTest extends PlainTestCase {
      * (カラーボックスに入ってる文字列の長さの合計は？)
      */
     public void test_length_calculateLengthSum() {
+        List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
+        String calcLenSum = stringStream(colorBoxList)
+                .reduce("", (String s1, String s2) -> s1+s2);
+        log(calcLenSum.length());
     }
 
     /**
@@ -113,7 +119,15 @@ public class Step12StreamStringTest extends PlainTestCase {
      * (カラーボックスの中で、色の名前が一番長いものは？)
      */
     public void test_length_findMaxColorSize() {
+        List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
+        String maxColorSize = colorBoxList.stream()
+                .map(box -> box.getColor().getColorName())
+                .max(Comparator.comparing(String::length))
+                .orElse(null);
+        log(maxColorSize);
+
     }
+
 
     // ===================================================================================
     //                                                            startsWith(), endsWith()
@@ -123,6 +137,21 @@ public class Step12StreamStringTest extends PlainTestCase {
      * ("Water" で始まる文字列をしまっているカラーボックスの色は？)
      */
     public void test_startsWith_findFirstWord() {
+        String target = "Water";
+        List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
+        stringStream(colorBoxList);
+        List<BoxColor> resultBoxColor = colorBoxList.stream()
+                .filter(box -> {
+                    List<String> matchList = box.getSpaceList().stream()
+                            .map(space -> space.getContent())
+                            .filter(content -> content instanceof String)
+                            .map(content -> ((String) content))
+                            .filter(s -> s.startsWith(target))
+                            .collect(Collectors.toList());
+                    return !matchList.isEmpty(); })
+                .map(box -> box.getColor())
+                .collect(Collectors.toList());
+        log(resultBoxColor);
     }
 
     /**
@@ -130,6 +159,21 @@ public class Step12StreamStringTest extends PlainTestCase {
      * ("front" で終わる文字列をしまっているカラーボックスの色は？)
      */
     public void test_endsWith_findLastWord() {
+        String target = "front";
+        List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
+        List<BoxColor> resultBoxColor = colorBoxList.stream()
+                .filter(box -> {
+                    List<String> matchList = box.getSpaceList().stream()
+                            .map(space -> space.getContent())
+                            .filter(content -> content instanceof String)
+                            .map(content -> ((String) content))
+                            .filter(s -> s.endsWith(target))
+                            .collect(Collectors.toList());
+                    log(matchList);
+                    return !matchList.isEmpty(); })
+                .map(box -> box.getColor())
+                .collect(Collectors.toList());
+        log(resultBoxColor);
     }
 
     // ===================================================================================
