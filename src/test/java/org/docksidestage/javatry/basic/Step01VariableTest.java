@@ -21,55 +21,119 @@ import org.docksidestage.unit.PlainTestCase;
 
 /**
  * The test of variable. <br>
- * Write your answer of the question of JavaDoc before test execution. <br>
- * (テストを実行する前にJavaDocの質問に対する答えをコメントとして書いてみましょう)
+ * Write your answer of the question on javadoc before test execution. <br>
+ * (テストを実行する前にJavaDocの質問に対する答えを書いてみましょう)
  * @author jflute
  * @author your_name_here
  */
 public class Step01VariableTest extends PlainTestCase {
 
+    // ===================================================================================
+    //                                                                      Local Variable
+    //                                                                      ==============
     /**
      * What string is sea variable at the method end? <br>
      * (メソッド終了時の変数 sea の中身は？)
      */
-    public void test_variable_basic() { // execute after answer
+    public void test_variable_basic() {
         String sea = "mystic";
-        log(sea); // your answer: mystic
+        log(sea); // your answer? => mystic
     }
 
-    /**
-     * What string is sea variable at the method end? <br>
-     * (メソッド終了時の変数 sea の中身は？)
-     */
-    public void test_variable_reassigned_basic() { // execute after answer
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_variable_reassigned_basic() {
         String sea = "mystic";
         String land = "oneman";
         sea = land;
-        log(sea); // your answer:
+        log(sea); // your answer? => 
     }
 
-    /**
-     * What string is sea variable at the method end? <br>
-     * (メソッド終了時の変数 sea の中身は？)
-     */
-    public void test_variable_reassigned_int() { // execute after answer
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_variable_reassigned_int() {
         int sea = 94;
         int land = 415;
         sea = land;
         land++;
-        log(sea); // your answer:
+        log(sea); // your answer? => 
     }
 
-    /**
-     * What string is sea variable at the method end? <br>
-     * (メソッド終了時の変数 sea の中身は？)
-     */
-    public void test_variable_reassigned_BigDecimal() { // execute after answer
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_variable_reassigned_BigDecimal() {
         BigDecimal sea = new BigDecimal(94);
         BigDecimal land = new BigDecimal(415);
         sea = land;
         sea = land.add(new BigDecimal(1));
         sea.add(new BigDecimal(1));
-        log(sea); // your answer:
+        log(sea); // your answer? => 
+    }
+
+    // ===================================================================================
+    //                                                                     Method Argument
+    //                                                                     ===============
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_variable_method_argument_immutable() {
+        String sea = "harbor";
+        int land = 415;
+        helpMethodArgument(sea, land);
+        log(sea); // your answer? => 
+    }
+
+    private void helpMethodArgument(String sea, int land) {
+        ++land;
+        sea = sea + land;
+    }
+
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_variable_method_argument_mutable() {
+        StringBuilder sea = new StringBuilder("harbor");
+        int land = 415;
+        helpMethodArgument(sea, land);
+        log(sea); // your answer? => 
+    }
+
+    private void helpMethodArgument(StringBuilder sea, int land) {
+        ++land;
+        sea.append(land);
+    }
+
+    // ===================================================================================
+    //                                                                   Instance Variable
+    //                                                                   =================
+    private String instanceBroadway;
+    private int instanceDockside;
+    private Integer instanceHangar;
+    private String instanceMagiclamp;
+
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_variable_instance_variable_default_String() {
+        String sea = instanceBroadway;
+        log(sea); // your answer? => 
+    }
+
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_variable_instance_variable_default_int() {
+        int sea = instanceDockside;
+        log(sea); // your answer? => 
+    }
+
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_variable_instance_variable_default_Integer() {
+        Integer sea = instanceHangar;
+        log(sea); // your answer? => 
+    }
+
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_variable_instance_variable_via_method() {
+        instanceBroadway = "bbb";
+        instanceMagiclamp = "magician";
+        helpInstanceVariableViaMethod(instanceMagiclamp);
+        String sea = instanceBroadway + "|" + instanceDockside + "|" + instanceHangar + "|" + instanceMagiclamp;
+        log(sea); // your answer? => 
+    }
+
+    private void helpInstanceVariableViaMethod(String instanceMagiclamp) {
+        instanceBroadway = "bigband";
+        ++instanceDockside;
+        instanceMagiclamp = "burn";
     }
 }
