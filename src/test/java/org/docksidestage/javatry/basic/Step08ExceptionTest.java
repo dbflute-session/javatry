@@ -82,6 +82,55 @@ public class Step08ExceptionTest extends PlainTestCase {
     }
 
     // ===================================================================================
+    //                                                                               Cause
+    //                                                                               =====
+    /**
+     * What string is sea variable in the catch block?
+     * And What is exception class name displayed at the last "Caused By:" of stack trace? <br>
+     * (catchブロックの変数 sea, land の中身は？また、スタックトレースの最後の "Caused By:" で表示されている例外クラス名は？)
+     */
+    public void test_exception_cause_basic() {
+        String sea = "mystic";
+        String land = "oneman";
+        try {
+            throwCauseFirstLevel();
+            fail("always exception but none");
+        } catch (IllegalStateException e) {
+            Throwable cause = e.getCause();
+            sea = cause.getMessage();
+            land = cause.getClass().getSimpleName();
+            log(sea); // your answer? => 
+            log(land); // your answer? => 
+            log(e); // your answer? => 
+        }
+    }
+
+    private void throwCauseFirstLevel() {
+        int count = -1;
+        try {
+            throwCauseSecondLevel(count);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalStateException("Failed to call the second help method: " + count, e);
+        }
+    }
+
+    private void throwCauseSecondLevel(int count) {
+        try {
+            if (count < 0) {
+                throwCauseThirdLevel(count);
+            }
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Failed to call the third help method: " + count, e);
+        }
+    }
+
+    private void throwCauseThirdLevel(int count) {
+        if (count < 0) {
+            Integer.valueOf("piari");
+        }
+    }
+
+    // ===================================================================================
     //                                                                         Translation
     //                                                                         ===========
     /**
@@ -104,8 +153,11 @@ public class Step08ExceptionTest extends PlainTestCase {
         }
     }
 
+    // Non-question style, refactoring exercise here. You can execute this test freely.
+    // (ここは質問ではなくリファクタリングのエクササイズ。テストも自由に実行してOK)
     /**
-     * Improve exception handling in supercar's classes to understand the situation by only exception information as far as possible. <br>
+     * Improve exception handling in supercar's classes to understand the situation
+     * by only exception information as far as possible. <br>
      * できるだけ例外情報だけでその状況が理解できるように、Supercarのクラスたちの例外ハンドリングを改善しましょう。
      */
     public void test_exception_translation_improveChallenge() {
