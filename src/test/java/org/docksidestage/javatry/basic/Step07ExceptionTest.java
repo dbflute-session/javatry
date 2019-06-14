@@ -153,8 +153,6 @@ public class Step07ExceptionTest extends PlainTestCase {
         }
     }
 
-    // Non-question style, refactoring exercise here. You can execute this test freely.
-    // (ここは質問ではなくリファクタリングのエクササイズ。テストも自由に実行してOK)
     /**
      * Improve exception handling in supercar's classes to understand the situation
      * by only exception information as far as possible. <br>
