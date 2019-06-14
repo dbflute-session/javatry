@@ -151,7 +151,7 @@ public class Step01VariableTest extends PlainTestCase {
     //                                                                            Challnge
     //                                                                            ========
     /**
-     * Define variable as followings:
+     * Define variables as followings:
      * <pre>
      * o local variable named sea typed String, initial value is "mystic"
      * o local variable named land typed Integer, initial value is null
@@ -167,6 +167,7 @@ public class Step01VariableTest extends PlainTestCase {
      * </pre>
      */
     public void test_variable_writing() {
+        // define variables here
     }
 
     // ===================================================================================
@@ -177,5 +178,6 @@ public class Step01VariableTest extends PlainTestCase {
      * 変数について自分のオリジナルの質問を作ってみましょう。
      */
     public void test_variable_yourself() {
+        // write your code here
     }
 }
