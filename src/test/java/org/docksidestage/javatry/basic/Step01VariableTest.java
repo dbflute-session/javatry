@@ -175,7 +175,13 @@ public class Step01VariableTest extends PlainTestCase {
     //                                                                           =========
     /**
      * Make your original question about variable. <br>
-     * 変数について自分のオリジナルの質問を作ってみましょう。
+     * 変数についてあなたのオリジナルの質問を作ってみましょう。
+     * <pre>
+     * _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+     * your question here (ここにあなたの質問を):
+     * 
+     * _/_/_/_/_/_/_/_/_/_/
+     * </pre>
      */
     public void test_variable_yourself() {
         // write your code here
