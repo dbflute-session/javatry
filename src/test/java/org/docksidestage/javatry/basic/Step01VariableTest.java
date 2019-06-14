@@ -158,7 +158,7 @@ public class Step01VariableTest extends PlainTestCase {
      * o instance variable named piari typed int, without initial value
      * o show all variables by log() as comma-separated
      * </pre>
-     * 変数を以下のように定義しましょう:
+     * (変数を以下のように定義しましょう):
      * <pre>
      * o ローカル変数、名前はsea, 型はString, 初期値は "mystic"
      * o ローカル変数、名前はland, 型はInteger, 初期値は null
@@ -175,7 +175,7 @@ public class Step01VariableTest extends PlainTestCase {
     //                                                                           =========
     /**
      * Make your original exercise as question style about variable. <br>
-     * 変数についてあなたのオリジナルの質問形式のエクササイズを作ってみましょう。
+     * (変数についてあなたのオリジナルの質問形式のエクササイズを作ってみましょう)
      * <pre>
      * _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
      * your question here (ここにあなたの質問を):

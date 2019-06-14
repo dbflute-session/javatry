@@ -157,7 +157,7 @@ public class Step02IfForTest extends PlainTestCase {
     //                                                                            ========
     /**
      * Make list containing "a" from list of prepareStageList() and show it as log by loop. (without Stream API) <br>
-     * prepareStageList()のリストから "a" が含まれているものだけのリストを作成して、それをループで回してログに表示しましょう。(Stream APIなしで)
+     * (prepareStageList()のリストから "a" が含まれているものだけのリストを作成して、それをループで回してログに表示しましょう。(Stream APIなしで))
      */
     public void test_iffor_writing() {
         // write if-for here
@@ -168,7 +168,7 @@ public class Step02IfForTest extends PlainTestCase {
     //                                                                           =========
     /**
      * Make your original exercise as question style about if-for statement. <br>
-     * if文for文についてあなたのオリジナルの質問形式のエクササイズを作ってみましょう。
+     * (if文for文についてあなたのオリジナルの質問形式のエクササイズを作ってみましょう)
      * <pre>
      * _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
      * your question here (ここにあなたの質問を):
