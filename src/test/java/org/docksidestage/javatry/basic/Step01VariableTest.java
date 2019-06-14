@@ -21,8 +21,8 @@ import org.docksidestage.unit.PlainTestCase;
 
 /**
  * The test of variable. <br>
- * Operate as javadoc. If it's question style, write your answer before test execution. <br>
- * (javadocの通りに実施。質問形式の場合はテストを実行する前に考えて答えを書いてみましょう)
+ * Operate exercise as javadoc. If it's question style, write your answer before test execution. <br>
+ * (javadocの通りにエクササイズを実施。質問形式の場合はテストを実行する前に考えて答えを書いてみましょう)
  * @author jflute
  * @author your_name_here
  */
@@ -174,8 +174,8 @@ public class Step01VariableTest extends PlainTestCase {
     //                                                                           Good Luck
     //                                                                           =========
     /**
-     * Make your original question about variable. <br>
-     * 変数についてあなたのオリジナルの質問を作ってみましょう。
+     * Make your original exercise as question style about variable. <br>
+     * 変数についてあなたのオリジナルの質問形式のエクササイズを作ってみましょう。
      * <pre>
      * _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
      * your question here (ここにあなたの質問を):

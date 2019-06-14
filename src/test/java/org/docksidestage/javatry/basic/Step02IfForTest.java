@@ -168,7 +168,13 @@ public class Step02IfForTest extends PlainTestCase {
     //                                                                           =========
     /**
      * Make your original exercise as question style about if-for statement. <br>
-     * if文for文について自分のオリジナルの質問形式のエクササイズを作ってみましょう。
+     * if文for文についてあなたのオリジナルの質問形式のエクササイズを作ってみましょう。
+     * <pre>
+     * _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+     * your question here (ここにあなたの質問を):
+     * 
+     * _/_/_/_/_/_/_/_/_/_/
+     * </pre>
      */
     public void test_iffor_yourself() {
         // write your code here
