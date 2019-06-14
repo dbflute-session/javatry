@@ -20,12 +20,12 @@ import org.docksidestage.unit.PlainTestCase;
 
 /**
  * The test of variable. <br>
- * Write your answer of the question on javadoc before test execution. <br>
- * (テストを実行する前にJavaDocの質問に対する答えを書いてみましょう)
+ * Operate as javadoc. If it's question style, write your answer before test execution. <br>
+ * (javadocの通りに実施。質問形式の場合はテストを実行する前に考えて答えを書いてみましょう)
  * @author jflute
  * @author your_name_here
  */
-public class Step08ExceptionTest extends PlainTestCase {
+public class Step07ExceptionTest extends PlainTestCase {
 
     // ===================================================================================
     //                                                                             Message
