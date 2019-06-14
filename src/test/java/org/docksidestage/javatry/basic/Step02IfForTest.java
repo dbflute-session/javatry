@@ -167,6 +167,25 @@ public class Step02IfForTest extends PlainTestCase {
     //                                                                           Good Luck
     //                                                                           =========
     /**
+     * Change foreach statement to List's forEach() (keep result after fix) <br>
+     * (foreach文をforEach()メソッドへの置き換えてみましょう (修正前と修正後で実行結果が同じになるように))
+     */
+    public void test_iffor_foreach_to_forEach() {
+        List<String> stageList = prepareStageList();
+        String sea = null;
+        for (String stage : stageList) {
+            if (stage.startsWith("br")) {
+                continue;
+            }
+            sea = stage;
+            if (stage.contains("ga")) {
+                break;
+            }
+        }
+        log(sea); // should be same as before-fix
+    }
+
+    /**
      * Make your original exercise as question style about if-for statement. <br>
      * (if文for文についてあなたのオリジナルの質問形式のエクササイズを作ってみましょう)
      * <pre>
