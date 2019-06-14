@@ -29,14 +29,17 @@ public class St5Ticket {
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public St5Ticket(int paidPrice) {
-        this.buyingPrice = paidPrice;
+    public St5Ticket(int buyingPrice) {
+        this.buyingPrice = buyingPrice;
     }
 
     // ===================================================================================
     //                                                                             In Park
     //                                                                             =======
     public void doInPark() {
+        if (alreadyIn) {
+            throw new IllegalStateException("Already in park by this ticket: buyingPrice=" + buyingPrice);
+        }
         alreadyIn = true;
     }
 

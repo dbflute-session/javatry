@@ -87,7 +87,7 @@ public class Step05ClassTest extends PlainTestCase {
     }
 
     /**
-     * (TwoDayPassportも買うメソッドを作りましょう (戻り値でお釣りをちゃんと返すように))
+     * (TwoDayPassport (金額は13200) も買うメソッドを作りましょう (戻り値でお釣りをちゃんと返すように))
      */
     public void test_class_ticket_makeMethod_twoday() {
         // comment out after making the method
@@ -101,8 +101,8 @@ public class Step05ClassTest extends PlainTestCase {
     }
 
     // ===================================================================================
-    //                                                                            Challnge
-    //                                                                            ========
+    //                                                                           Challenge
+    //                                                                           =========
     /**
      * (OneDayとTwoDayで冗長なロジックがあったら、クラス内のprivateメソッドなどで再利用しましょう (修正前と修正後の実行結果を確認))
      */
@@ -115,7 +115,7 @@ public class Step05ClassTest extends PlainTestCase {
     /**
      * (OneDayPassportを買ってもチケットをもらえませんでした。戻り値でSt5Ticketクラスを戻すようにしてインしましょう)
      */
-    public void test_class_ticket_refactor_return() {
+    public void test_class_ticket_refactor_return_ticket() {
         // comment out after modifying the method
         //St5TicketBooth booth = new St5TicketBooth();
         //St5Ticket oneDayPassport = booth.buyOneDayPassport(10000);
@@ -127,7 +127,7 @@ public class Step05ClassTest extends PlainTestCase {
     /**
      * (TwoDayPassportもチケットをもらえませんでした。チケットとお釣りを戻すクラスを作って戻すようにしましょう)
      */
-    public void test_class_ticket_refactor_whole() {
+    public void test_class_ticket_refactor_return_whole() {
         // comment out after modifying the method
         //St5TicketBooth booth = new St5TicketBooth();
         //int money = 20000;
@@ -140,6 +140,33 @@ public class Step05ClassTest extends PlainTestCase {
     // ===================================================================================
     //                                                                           Good Luck
     //                                                                           =========
+    /**
+     * (チケットをもらってもOneDayなのかTwoDayなのか区別が付きません。区別を付けられるメソッドを追加しましょう)
+     */
+    public void test_class_ticket_refactor_type() {
+        // your confirmation code here
+    }
+
+    /**
+     * (TwoDayのチケットが一回しか利用できません。OneDayとTwoDayのクラスを分けてインターフェースを使うようにしましょう)
+     * <pre>
+     * o St5Ticket をインターフェース(interface)にして、doInPark(), getBuyingPrice() を定義
+     * o OneDay用のクラスと複数日用のクラスを作成 (実装クラスと呼ぶ)
+     * o 実装クラスが St5Ticket を implements するように
+     * o 複数日用のクラスでは、決められた回数だけ doInPark() できるように
+     * </pre>
+     */
+    public void test_class_ticket_refactor_useInterface() {
+        // your confirmation code here
+    }
+
+    /**
+     * (FourDayPassport (金額は22400) のチケットも買えるようにしましょう)
+     */
+    public void test_class_ticket_refactor_wonder() {
+        // your confirmation code here
+    }
+
     /**
      * (その他、気になるところがあったらリファクタリングしてみましょう (バランスの良いメソッド名や変数名になっていますか？))
      */
