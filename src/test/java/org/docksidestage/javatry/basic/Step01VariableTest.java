@@ -21,8 +21,8 @@ import org.docksidestage.unit.PlainTestCase;
 
 /**
  * The test of variable. <br>
- * Write your answer of the question on javadoc before test execution. <br>
- * (テストを実行する前にJavaDocの質問に対する答えを書いてみましょう)
+ * Operate as javadoc. If it's question style, write your answer before test execution. <br>
+ * (javadocの通りに実施。質問形式の場合はテストを実行する前に考えて答えを書いてみましょう)
  * @author jflute
  * @author your_name_here
  */
@@ -38,6 +38,16 @@ public class Step01VariableTest extends PlainTestCase {
     public void test_variable_basic() {
         String sea = "mystic";
         log(sea); // your answer? => mystic
+    }
+
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_variable_initial() {
+        String sea = "mystic";
+        Integer land = 8;
+        String piari = null;
+        String dstore = "mai";
+        sea = sea + land + piari + ":" + dstore;
+        log(sea); // your answer? => 
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -65,35 +75,6 @@ public class Step01VariableTest extends PlainTestCase {
         sea = land.add(new BigDecimal(1));
         sea.add(new BigDecimal(1));
         log(sea); // your answer? => 
-    }
-
-    // ===================================================================================
-    //                                                                     Method Argument
-    //                                                                     ===============
-    /** Same as the previous method question. (前のメソッドの質問と同じ) */
-    public void test_variable_method_argument_immutable() {
-        String sea = "harbor";
-        int land = 415;
-        helpMethodArgument(sea, land);
-        log(sea); // your answer? => 
-    }
-
-    private void helpMethodArgument(String sea, int land) {
-        ++land;
-        sea = sea + land;
-    }
-
-    /** Same as the previous method question. (前のメソッドの質問と同じ) */
-    public void test_variable_method_argument_mutable() {
-        StringBuilder sea = new StringBuilder("harbor");
-        int land = 415;
-        helpMethodArgument(sea, land);
-        log(sea); // your answer? => 
-    }
-
-    private void helpMethodArgument(StringBuilder sea, int land) {
-        ++land;
-        sea.append(land);
     }
 
     // ===================================================================================
@@ -135,5 +116,66 @@ public class Step01VariableTest extends PlainTestCase {
         instanceBroadway = "bigband";
         ++instanceDockside;
         instanceMagiclamp = "burn";
+    }
+
+    // ===================================================================================
+    //                                                                     Method Argument
+    //                                                                     ===============
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_variable_method_argument_immutable() {
+        String sea = "harbor";
+        int land = 415;
+        helpMethodArgument(sea, land);
+        log(sea); // your answer? => 
+    }
+
+    private void helpMethodArgument(String sea, int land) {
+        ++land;
+        sea = sea + land;
+    }
+
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_variable_method_argument_mutable() {
+        StringBuilder sea = new StringBuilder("harbor");
+        int land = 415;
+        helpMethodArgument(sea, land);
+        log(sea); // your answer? => 
+    }
+
+    private void helpMethodArgument(StringBuilder sea, int land) {
+        ++land;
+        sea.append(land);
+    }
+
+    // ===================================================================================
+    //                                                                            Challnge
+    //                                                                            ========
+    /**
+     * Define variable as followings:
+     * <pre>
+     * o local variable named sea typed String, initial value is "mystic"
+     * o local variable named land typed Integer, initial value is null
+     * o instance variable named piari typed int, without initial value
+     * o show all variables by log() as comma-separated
+     * </pre>
+     * 変数を以下のように定義しましょう:
+     * <pre>
+     * o ローカル変数、名前はsea, 型はString, 初期値は "mystic"
+     * o ローカル変数、名前はland, 型はInteger, 初期値は null
+     * o インスタンス変数、名前はpiari, 型はint, 初期値なし
+     * o すべての変数をlog()でカンマ区切りの文字列で表示
+     * </pre>
+     */
+    public void test_variable_writing() {
+    }
+
+    // ===================================================================================
+    //                                                                           Good Luck
+    //                                                                           =========
+    /**
+     * Make your original question about variable. <br>
+     * 変数について自分のオリジナルの質問を作ってみましょう。
+     */
+    public void test_variable_yourself() {
     }
 }
