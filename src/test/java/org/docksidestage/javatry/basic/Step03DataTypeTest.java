@@ -90,16 +90,16 @@ public class Step03DataTypeTest extends PlainTestCase {
     //                                                                              ======
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_datatype_object() {
-        YourOriginalStage stage = new YourOriginalStage("hangar");
+        St3ImmutableStage stage = new St3ImmutableStage("hangar");
         String sea = stage.getStageName();
         log(sea); // your answer? => 
     }
 
-    private static class YourOriginalStage {
+    private static class St3ImmutableStage {
 
         private final String stageName;
 
-        public YourOriginalStage(String stageName) {
+        public St3ImmutableStage(String stageName) {
             this.stageName = stageName;
         }
 

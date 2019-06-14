@@ -69,7 +69,7 @@ public class Step04MethodTest extends PlainTestCase {
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_method_object() {
-        MutableStage mutable = new MutableStage();
+        St4MutableStage mutable = new St4MutableStage();
         int sea = 904;
         boolean land = false;
         helloMutable(sea - 4, land, mutable);
@@ -79,14 +79,14 @@ public class Step04MethodTest extends PlainTestCase {
         log(sea); // your answer? => 
     }
 
-    private int helloMutable(int sea, Boolean land, MutableStage piari) {
+    private int helloMutable(int sea, Boolean land, St4MutableStage piari) {
         sea++;
         land = true;
         piari.setStageName("mystic");
         return sea;
     }
 
-    private static class MutableStage {
+    private static class St4MutableStage {
 
         private String stageName;
 
