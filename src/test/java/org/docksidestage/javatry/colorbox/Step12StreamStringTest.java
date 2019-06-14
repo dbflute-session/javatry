@@ -42,11 +42,8 @@ public class Step12StreamStringTest extends PlainTestCase {
                 .findFirst()
                 .map(colorBox -> colorBox.getColor()) // consciously split as example
                 .map(boxColor -> boxColor.getColorName())
-                .map(colorName -> {
-                    log(colorName); // for visual check
-                    return String.valueOf(colorName.length());
-                })
-                .orElse("not found"); // basically no way because of not-empty list and not-null returns
+                .map(colorName -> String.valueOf(colorName.length()))
+                .orElse("*not found");
         log(answer);
     }
 

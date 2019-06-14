@@ -44,11 +44,15 @@ public class Step11ClassicStringTest extends PlainTestCase {
      */
     public void test_length_basic() {
         List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
-        ColorBox colorBox = colorBoxList.get(0);
-        BoxColor boxColor = colorBox.getColor();
-        String colorName = boxColor.getColorName();
-        int answer = colorName.length();
-        log(answer, colorName); // also show name for visual check
+        if (!colorBoxList.isEmpty()) {
+            ColorBox colorBox = colorBoxList.get(0);
+            BoxColor boxColor = colorBox.getColor();
+            String colorName = boxColor.getColorName();
+            int answer = colorName.length();
+            log(answer, colorName); // also show name for visual check
+        } else {
+            log("*not found");
+        }
     }
 
     /**
