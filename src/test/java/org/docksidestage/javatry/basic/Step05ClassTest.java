@@ -15,8 +15,8 @@
  */
 package org.docksidestage.javatry.basic;
 
-import org.docksidestage.javatry.basic.base.St5TicketBooth;
-import org.docksidestage.javatry.basic.base.St5TicketBooth.St5TicketShortMoneyException;
+import org.docksidestage.javatry.basic.base.st5.St5TicketBooth;
+import org.docksidestage.javatry.basic.base.st5.St5TicketBooth.St5TicketShortMoneyException;
 import org.docksidestage.unit.PlainTestCase;
 
 /**
