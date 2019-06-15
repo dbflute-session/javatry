@@ -13,24 +13,24 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.javatry.basic.base.st5;
+package org.docksidestage.bizfw.basic.buyticket;
 
 /**
  * @author jflute
  */
-public class St5Ticket {
+public class Ticket {
 
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    private final int buyingPrice;
+    private final int displayPrice;
     private boolean alreadyIn;
 
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public St5Ticket(int buyingPrice) {
-        this.buyingPrice = buyingPrice;
+    public Ticket(int displayPrice) {
+        this.displayPrice = displayPrice;
     }
 
     // ===================================================================================
@@ -38,7 +38,7 @@ public class St5Ticket {
     //                                                                             =======
     public void doInPark() {
         if (alreadyIn) {
-            throw new IllegalStateException("Already in park by this ticket: buyingPrice=" + buyingPrice);
+            throw new IllegalStateException("Already in park by this ticket: displayedPrice=" + displayPrice);
         }
         alreadyIn = true;
     }
@@ -46,8 +46,8 @@ public class St5Ticket {
     // ===================================================================================
     //                                                                            Accessor
     //                                                                            ========
-    public int getBuyingPrice() {
-        return buyingPrice;
+    public int getDisplayPrice() {
+        return displayPrice;
     }
 
     public boolean isAlreadyIn() {

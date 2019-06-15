@@ -13,12 +13,12 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.javatry.basic.base.st5;
+package org.docksidestage.bizfw.basic.buyticket;
 
 /**
  * @author jflute
  */
-public class St5TicketBooth {
+public class TicketBooth {
 
     // ===================================================================================
     //                                                                          Definition
@@ -35,41 +35,41 @@ public class St5TicketBooth {
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public St5TicketBooth() {
+    public TicketBooth() {
     }
 
     // ===================================================================================
     //                                                                          Buy Ticket
     //                                                                          ==========
-    public void buyOneDayPassport(int money) {
+    public void buyOneDayPassport(int handedMoney) {
         if (quantity <= 0) {
-            throw new St5TicketSoldOutException("Sold out");
+            throw new TicketSoldOutException("Sold out");
         }
         --quantity;
-        if (money < ONE_DAY_PRICE) {
-            throw new St5TicketShortMoneyException("Short money: " + money);
+        if (handedMoney < ONE_DAY_PRICE) {
+            throw new TicketShortMoneyException("Short money: " + handedMoney);
         }
         if (salesProceeds != null) {
-            salesProceeds = salesProceeds + money;
+            salesProceeds = salesProceeds + handedMoney;
         } else {
-            salesProceeds = money;
+            salesProceeds = handedMoney;
         }
     }
 
-    public static class St5TicketSoldOutException extends RuntimeException {
+    public static class TicketSoldOutException extends RuntimeException {
 
         private static final long serialVersionUID = 1L;
 
-        public St5TicketSoldOutException(String msg) {
+        public TicketSoldOutException(String msg) {
             super(msg);
         }
     }
 
-    public static class St5TicketShortMoneyException extends RuntimeException {
+    public static class TicketShortMoneyException extends RuntimeException {
 
         private static final long serialVersionUID = 1L;
 
-        public St5TicketShortMoneyException(String msg) {
+        public TicketShortMoneyException(String msg) {
             super(msg);
         }
     }

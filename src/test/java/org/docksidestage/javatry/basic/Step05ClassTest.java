@@ -15,8 +15,8 @@
  */
 package org.docksidestage.javatry.basic;
 
-import org.docksidestage.javatry.basic.base.st5.St5TicketBooth;
-import org.docksidestage.javatry.basic.base.st5.St5TicketBooth.St5TicketShortMoneyException;
+import org.docksidestage.bizfw.basic.buyticket.TicketBooth;
+import org.docksidestage.bizfw.basic.buyticket.TicketBooth.TicketShortMoneyException;
 import org.docksidestage.unit.PlainTestCase;
 
 /**
@@ -36,7 +36,7 @@ public class Step05ClassTest extends PlainTestCase {
      * (メソッド終了時の変数 sea の中身は？)
      */
     public void test_class_howToUse_basic() {
-        St5TicketBooth booth = new St5TicketBooth();
+        TicketBooth booth = new TicketBooth();
         booth.buyOneDayPassport(7400);
         int sea = booth.getQuantity();
         log(sea); // your answer? => 
@@ -44,7 +44,7 @@ public class Step05ClassTest extends PlainTestCase {
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_class_howToUse_overpay() {
-        St5TicketBooth booth = new St5TicketBooth();
+        TicketBooth booth = new TicketBooth();
         booth.buyOneDayPassport(10000);
         Integer sea = booth.getSalesProceeds();
         log(sea); // your answer? => 
@@ -52,7 +52,7 @@ public class Step05ClassTest extends PlainTestCase {
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_class_howToUse_nosales() {
-        St5TicketBooth booth = new St5TicketBooth();
+        TicketBooth booth = new TicketBooth();
         Integer sea = booth.getSalesProceeds();
         log(sea); // your answer? => 
     }
@@ -64,13 +64,13 @@ public class Step05ClassTest extends PlainTestCase {
     }
 
     private Integer doTest_class_ticket_wrongQuantity() {
-        St5TicketBooth booth = new St5TicketBooth();
-        int money = 7399;
+        TicketBooth booth = new TicketBooth();
+        int handedMoney = 7399;
         try {
-            booth.buyOneDayPassport(money);
+            booth.buyOneDayPassport(handedMoney);
             fail("always exception but none");
-        } catch (St5TicketShortMoneyException continued) {
-            log("Failed to buy one-day passport: money=" + money, continued);
+        } catch (TicketShortMoneyException continued) {
+            log("Failed to buy one-day passport: money=" + handedMoney, continued);
         }
         return booth.getQuantity();
     }
@@ -91,7 +91,7 @@ public class Step05ClassTest extends PlainTestCase {
      */
     public void test_class_letsFix_makeMethod_twoday() {
         // comment out after making the method
-        //St5TicketBooth booth = new St5TicketBooth();
+        //TicketBooth booth = new TicketBooth();
         //int money = 14000;
         //int change = booth.buyTwoDayPassport(money);
         //Integer sea = booth.getSalesProceeds() + change;
@@ -104,7 +104,7 @@ public class Step05ClassTest extends PlainTestCase {
      * (OneDayとTwoDayで冗長なロジックがあったら、クラス内のprivateメソッドなどで再利用しましょう (修正前と修正後の実行結果を確認))
      */
     public void test_class_letsFix_refactor_recycle() {
-        St5TicketBooth booth = new St5TicketBooth();
+        TicketBooth booth = new TicketBooth();
         booth.buyOneDayPassport(10000);
         log(booth.getQuantity(), booth.getSalesProceeds()); // should be same as before-fix
     }
@@ -113,12 +113,13 @@ public class Step05ClassTest extends PlainTestCase {
     //                                                                           Challenge
     //                                                                           =========
     /**
-     * (OneDayPassportを買ってもチケットをもらえませんでした。戻り値でSt5Ticketクラスを戻すようにしてインしましょう)
+     * (OneDayPassportを買ってもチケットをもらえませんでした。戻り値でTicketクラスを戻すようにしてインしましょう)
      */
     public void test_class_moreFix_return_ticket() {
         // comment out after modifying the method
-        //St5TicketBooth booth = new St5TicketBooth();
-        //St5Ticket oneDayPassport = booth.buyOneDayPassport(10000);
+        //TicketBooth booth = new TicketBooth();
+        //Ticket oneDayPassport = booth.buyOneDayPassport(10000);
+        //log(oneDayPassport.getDisplayPrice()); // should be same as one-day price
         //log(oneDayPassport.isAlreadyIn()); // should be false
         //oneDayPassport.doInPark();
         //log(oneDayPassport.isAlreadyIn()); // should be true
@@ -129,12 +130,12 @@ public class Step05ClassTest extends PlainTestCase {
      */
     public void test_class_moreFix_return_whole() {
         // comment out after modifying the method
-        //St5TicketBooth booth = new St5TicketBooth();
-        //int money = 20000;
-        //St5TicketBuyResult twoDayPassportResult = booth.buyTwoDayPassport(money);
-        //St5Ticket twoDayPassport = twoDayPassportResult.getTicket();
+        //TicketBooth booth = new TicketBooth();
+        //int handedMoney = 20000;
+        //TicketBuyResult twoDayPassportResult = booth.buyTwoDayPassport(handedMoney);
+        //Ticket twoDayPassport = twoDayPassportResult.getTicket();
         //int change = twoDayPassportResult.getChange();
-        //log(twoDayPassport.getBuyingPrice() + change); // should be same as money
+        //log(twoDayPassport.getDisplayPrice() + change); // should be same as money
     }
 
     /**
@@ -150,9 +151,9 @@ public class Step05ClassTest extends PlainTestCase {
     /**
      * (TwoDayのチケットが一回しか利用できません。OneDayとTwoDayのクラスを分けてインターフェースを使うようにしましょう)
      * <pre>
-     * o St5Ticket をインターフェース(interface)にして、doInPark(), getBuyingPrice() を定義
+     * o Ticket をインターフェース(interface)にして、doInPark(), getDisplayPrice() を定義
      * o OneDay用のクラスと複数日用のクラスを作成 (実装クラスと呼ぶ)
-     * o 実装クラスが St5Ticket を implements するように
+     * o 実装クラスが Ticket を implements するように
      * o 複数日用のクラスでは、決められた回数だけ doInPark() できるように
      * </pre>
      */
