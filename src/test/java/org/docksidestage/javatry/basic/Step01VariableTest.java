@@ -183,7 +183,7 @@ public class Step01VariableTest extends PlainTestCase {
      * _/_/_/_/_/_/_/_/_/_/
      * </pre>
      */
-    public void test_variable_yourself() {
+    public void test_variable_yourExercise() {
         // write your code here
     }
 }

@@ -159,7 +159,7 @@ public class Step02IfForTest extends PlainTestCase {
      * Make list containing "a" from list of prepareStageList() and show it as log by loop. (without Stream API) <br>
      * (prepareStageList()のリストから "a" が含まれているものだけのリストを作成して、それをループで回してログに表示しましょう。(Stream APIなしで))
      */
-    public void test_iffor_writing() {
+    public void test_iffor_making() {
         // write if-for here
     }
 
@@ -170,7 +170,7 @@ public class Step02IfForTest extends PlainTestCase {
      * Change foreach statement to List's forEach() (keep result after fix) <br>
      * (foreach文をforEach()メソッドへの置き換えてみましょう (修正前と修正後で実行結果が同じになるように))
      */
-    public void test_iffor_foreach_to_forEach() {
+    public void test_iffor_refactor_foreach_to_forEach() {
         List<String> stageList = prepareStageList();
         String sea = null;
         for (String stage : stageList) {
@@ -195,7 +195,7 @@ public class Step02IfForTest extends PlainTestCase {
      * _/_/_/_/_/_/_/_/_/_/
      * </pre>
      */
-    public void test_iffor_yourself() {
+    public void test_iffor_yourExercise() {
         // write your code here
     }
 

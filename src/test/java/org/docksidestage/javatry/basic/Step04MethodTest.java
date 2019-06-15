@@ -27,19 +27,19 @@ import org.docksidestage.unit.PlainTestCase;
 public class Step04MethodTest extends PlainTestCase {
 
     // ===================================================================================
-    //                                                                               Basic
-    //                                                                               =====
+    //                                                                         Method Call
+    //                                                                         ===========
     /**
      * What string is sea variable at the method end? <br>
      * (メソッド終了時の変数 sea の中身は？)
      */
-    public void test_method_basic() {
+    public void test_method_call_basic() {
         String sea = supplySomething();
         log(sea); // your answer? =>
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
-    public void test_method_call() {
+    public void test_method_call_many() {
         String sea = functionSomething("mystic");
         consumeSomething(supplySomething());
         runnableSomething();
@@ -100,8 +100,8 @@ public class Step04MethodTest extends PlainTestCase {
     }
 
     // ===================================================================================
-    //                                                                            Instance
-    //                                                                            ========
+    //                                                                   Instance Variable
+    //                                                                   =================
     private int inParkCount;
     private boolean hasAnnualPassport;
 
@@ -150,7 +150,7 @@ public class Step04MethodTest extends PlainTestCase {
      * o showSea(): 一つのString引数、戻り値なし、引数をlog()で表示する
      * </pre>
      */
-    public void test_method_writing() {
+    public void test_method_making() {
         // comment out after making these methods
         //String replaced = replaceCtoB(replaceAtoB("ABC"));
         //String sea = addPrefix("broadway", replaced);

@@ -31,13 +31,13 @@ import org.docksidestage.unit.PlainTestCase;
 public class Step03DataTypeTest extends PlainTestCase {
 
     // ===================================================================================
-    //                                                                               Basic
-    //                                                                               =====
+    //                                                                          Basic Type
+    //                                                                          ==========
     /**
      * What string is sea variable at the method end? <br>
      * (メソッド終了時の変数 sea の中身は？)
      */
-    public void test_datatype_basic() {
+    public void test_datatype_basicType() {
         String sea = "mystic";
         Integer land = 416;
         LocalDate piari = LocalDate.of(2001, 9, 4);
