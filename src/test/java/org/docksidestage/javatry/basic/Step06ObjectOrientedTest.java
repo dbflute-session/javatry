@@ -19,7 +19,12 @@ import org.docksidestage.bizfw.basic.buyticket.Ticket;
 import org.docksidestage.bizfw.basic.buyticket.TicketBooth;
 import org.docksidestage.bizfw.basic.objanimal.Animal;
 import org.docksidestage.bizfw.basic.objanimal.BarkedSound;
+import org.docksidestage.bizfw.basic.objanimal.Cat;
 import org.docksidestage.bizfw.basic.objanimal.Dog;
+import org.docksidestage.bizfw.basic.objanimal.Zombie;
+import org.docksidestage.bizfw.basic.objanimal.loud.AlarmClock;
+import org.docksidestage.bizfw.basic.objanimal.loud.Loudable;
+import org.docksidestage.bizfw.basic.objanimal.runner.FastRunner;
 import org.docksidestage.unit.PlainTestCase;
 
 /**
@@ -182,36 +187,153 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
     }
 
     // ===================================================================================
-    //                                                                        Polymorphism
-    //                                                                        ============
+    //                                                              Polymorphism Beginning
+    //                                                              ======================
     /**
-     * What string is sea variable at the method end? <br>
-     * (メソッド終了時の変数 sea の中身は？)
+     * What string is sea and land variable at the method end? <br>
+     * (メソッド終了時の変数 sea, land の中身は？)
      */
-    public void test_objectOriented_polymorphism_beginning() {
+    public void test_objectOriented_polymorphism_1st_concreteOnly() {
         Dog dog = new Dog();
         BarkedSound sound = dog.bark();
         String sea = sound.getBarkWord();
         log(sea); // your answer? => 
+        int land = dog.getHitPoint();
+        log(land); // your answer? => 
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
-    public void test_objectOriented_polymorphism() {
+    public void test_objectOriented_polymorphism_2nd_asAbstract() {
         Animal animal = new Dog();
         BarkedSound sound = animal.bark();
         String sea = sound.getBarkWord();
         log(sea); // your answer? => 
+        int land = animal.getHitPoint();
+        log(land); // your answer? => 
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
-    public void test_objectOriented_polymorphism_xxx() {
+    public void test_objectOriented_polymorphism_3th_fromMethod() {
         Animal animal = createAnyAnimal();
         BarkedSound sound = animal.bark();
         String sea = sound.getBarkWord();
         log(sea); // your answer? => 
+        int land = animal.getHitPoint();
+        log(land); // your answer? => 
     }
 
     private Animal createAnyAnimal() {
         return new Dog();
+    }
+
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_objectOriented_polymorphism_4th_toMethod() {
+        Dog dog = new Dog();
+        doAnimalSeaLand_for_4th(dog);
+    }
+
+    private void doAnimalSeaLand_for_4th(Animal animal) {
+        BarkedSound sound = animal.bark();
+        String sea = sound.getBarkWord();
+        log(sea); // your answer? => 
+        int land = animal.getHitPoint();
+        log(land); // your answer? => 
+    }
+
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_objectOriented_polymorphism_5rd_overrideWithSuper() {
+        Animal animal = new Cat();
+        BarkedSound sound = animal.bark();
+        String sea = sound.getBarkWord();
+        log(sea); // your answer? => 
+        int land = animal.getHitPoint();
+        log(land); // your answer? => 
+    }
+
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_objectOriented_polymorphism_6th_overriddenWithoutSuper() {
+        Animal animal = new Zombie();
+        BarkedSound sound = animal.bark();
+        String sea = sound.getBarkWord();
+        log(sea); // your answer? => 
+        int land = animal.getHitPoint();
+        log(land); // your answer? => 
+    }
+
+    // ===================================================================================
+    //                                                              Polymorphism Interface
+    //                                                              ======================
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_objectOriented_polymorphism_interface_dispatch() {
+        Loudable loudable = new Zombie();
+        String sea = loudable.soundLoudly();
+        log(sea); // your answer? => 
+        String land = ((Zombie) loudable).bark().getBarkWord();
+        log(land); // your answer? => 
+    }
+
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_objectOriented_polymorphism_interface_hierarchy() {
+        Loudable loudable = new AlarmClock();
+        String sea = loudable.soundLoudly();
+        log(sea); // your answer? => 
+        boolean land = loudable instanceof Animal;
+        log(land); // your answer? => 
+    }
+
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_objectOriented_polymorphism_interface_partImpl() {
+        Animal seaAnimal = new Cat();
+        Animal landAnimal = new Zombie();
+        boolean sea = seaAnimal instanceof FastRunner;
+        log(sea); // your answer? => 
+        boolean land = landAnimal instanceof FastRunner;
+        log(land); // your answer? => 
+    }
+
+    /**
+     * Make Dog class implement FastRunner interface. (the implementation is same as Cat class) <br>
+     * (DogもFastRunnerインターフェースをimplementsしてみましょう (実装はCatと同じで))
+     */
+    public void test_objectOriented_polymorphism_interface_runnerImpl() {
+        // your confirmation code here
+    }
+
+    // ===================================================================================
+    //                                                                 Polymorphism Making
+    //                                                                 ===================
+    /**
+     * Make concrete class of Animal, which is not FastRunner, in "objanimal" package. (implementation is as you like) <br>
+     * (FastRunnerではないAnimalクラスのコンクリートクラスをobjanimalパッケージに作成しましょう (実装はお好きなように))
+     */
+    public void test_objectOriented_polymorphism_makeConcrete() {
+        // your confirmation code here
+    }
+
+    /**
+     * Make interface implemented by part of Animal concrete class in new package under "objanimal" package. (implementation is as you like) <br>
+     * (Animalクラスの一部のコンクリートクラスだけがimplementsするインターフェースをobjanimal配下の新しいパッケージに作成しましょう (実装はお好きなように))
+     */
+    public void test_objectOriented_polymorphism_makeInterface() {
+        // your confirmation code here
+    }
+
+    // ===================================================================================
+    //                                                                           Challenge
+    //                                                                           =========
+    // TODO jflute 抽象クラスを作らせるエクササイズ (2019/06/17)
+    /**
+     * 
+     */
+    public void test_objectOriented_writing_generalization_extractToAbstract() {
+        // your confirmation code here
+    }
+
+    // TODO jflute 具象クラスを作らせるエクササイズ (2019/06/17)
+    /**
+     * 
+     */
+    public void test_objectOriented_writing_specialization_extractToConcrete() {
+        // your confirmation code here
     }
 }

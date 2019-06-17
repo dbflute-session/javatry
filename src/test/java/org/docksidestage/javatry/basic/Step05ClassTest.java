@@ -79,6 +79,7 @@ public class Step05ClassTest extends PlainTestCase {
     //                                                                           Let's fix
     //                                                                           =========
     /**
+     * Fix the problem of ticket quantity reduction when short money. (Don't forget to fix also previous exercise answers) <br>
      * (お金不足でもチケットが減る問題をクラスを修正して解決しましょう (以前のエクササイズのanswerの修正を忘れずに))
      */
     public void test_class_letsFix_fixBug() {
@@ -87,6 +88,7 @@ public class Step05ClassTest extends PlainTestCase {
     }
 
     /**
+     * Make method for buying two-day passport (price is 13200). (which can return change as method return value)
      * (TwoDayPassport (金額は13200) も買うメソッドを作りましょう (戻り値でお釣りをちゃんと返すように))
      */
     public void test_class_letsFix_makeMethod_twoday() {
@@ -101,6 +103,7 @@ public class Step05ClassTest extends PlainTestCase {
     }
 
     /**
+     * Recycle duplicate logics between one-day and two-day by e.g. private method in class. (And confirm result of both before and after) <br>
      * (OneDayとTwoDayで冗長なロジックがあったら、クラス内のprivateメソッドなどで再利用しましょう (修正前と修正後の実行結果を確認))
      */
     public void test_class_letsFix_refactor_recycle() {
@@ -113,6 +116,7 @@ public class Step05ClassTest extends PlainTestCase {
     //                                                                           Challenge
     //                                                                           =========
     /**
+     * Now you cannot get ticket if you buy one-day passport, so return Ticket class and do in-park. <br>
      * (OneDayPassportを買ってもチケットをもらえませんでした。戻り値でTicketクラスを戻すようにしてインしましょう)
      */
     public void test_class_moreFix_return_ticket() {
@@ -126,6 +130,7 @@ public class Step05ClassTest extends PlainTestCase {
     }
 
     /**
+     * Now also you cannot get ticket if two-day passport, so return class that has ticket and change. <br>
      * (TwoDayPassportもチケットをもらえませんでした。チケットとお釣りを戻すクラスを作って戻すようにしましょう)
      */
     public void test_class_moreFix_return_whole() {
@@ -139,6 +144,7 @@ public class Step05ClassTest extends PlainTestCase {
     }
 
     /**
+     * Now you cannot judge ticket type "one-day or two-day?", so add method to judge it. <br>
      * (チケットをもらってもOneDayなのかTwoDayなのか区別が付きません。区別を付けられるメソッドを追加しましょう)
      */
     public void test_class_moreFix_type() {
@@ -149,6 +155,13 @@ public class Step05ClassTest extends PlainTestCase {
     //                                                                           Good Luck
     //                                                                           =========
     /**
+     * Now only one use with two-day passport, so split ticket in one-day and two-day class and use interface. <br>
+     * <pre>
+     * o change Ticket class to interface, define doInPark(), getDisplayPrice() in it
+     * o make class for one-day and class for plural days (called implementation class)
+     * o make implementation classes implement Ticket interface
+     * o doInPark() of plural days can execute defined times
+     * </pre>
      * (TwoDayのチケットが一回しか利用できません。OneDayとTwoDayのクラスを分けてインターフェースを使うようにしましょう)
      * <pre>
      * o Ticket をインターフェース(interface)にして、doInPark(), getDisplayPrice() を定義
@@ -162,6 +175,7 @@ public class Step05ClassTest extends PlainTestCase {
     }
 
     /**
+     * Fix it to be able to buy four-day passport (price is 22400). <br>
      * (FourDayPassport (金額は22400) のチケットも買えるようにしましょう)
      */
     public void test_class_moreFix_wonder() {
@@ -169,7 +183,8 @@ public class Step05ClassTest extends PlainTestCase {
     }
 
     /**
-     * (その他、気になるところがあったらリファクタリングしてみましょう (バランスの良いメソッド名や変数名になっていますか？))
+     * Refactor if you want to fix (e.g. is it well-balanced name of method and variable?). <br>
+     * (その他、気になるところがあったらリファクタリングしてみましょう (例えば、バランスの良いメソッド名や変数名になっていますか？))
      */
     public void test_class_moreFix_yourRefactoring() {
         // write confirmation code here

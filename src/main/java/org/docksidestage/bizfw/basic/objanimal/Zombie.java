@@ -16,21 +16,40 @@
 package org.docksidestage.bizfw.basic.objanimal;
 
 /**
- * The object for dog(犬).
+ * The object for zombie(ゾンビ).
  * @author jflute
  */
-public class Dog extends Animal {
+public class Zombie extends Animal {
 
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public Dog() {
+    public Zombie() {
+    }
+
+    @Override
+    protected int getInitialHitPoint() {
+        return -1; // infinity hit point
     }
 
     // ===================================================================================
     //                                                                               Bark
     //                                                                              ======
+    @Override
+    public BarkedSound bark() { // can do it directly
+        return new BarkedSound(getBarkWord());
+    }
+
+    @Override
     protected String getBarkWord() {
-        return "wan"; // bow? in English
+        return "uooo"; // what in English?
+    }
+
+    // ===================================================================================
+    //                                                                           Hit Point
+    //                                                                           =========
+    @Override
+    protected void downHitPoint() {
+        // do nothing, infinity hit point
     }
 }

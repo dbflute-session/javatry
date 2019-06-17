@@ -15,10 +15,13 @@
  */
 package org.docksidestage.bizfw.basic.objanimal;
 
+import org.docksidestage.bizfw.basic.objanimal.loud.Loudable;
+
 /**
+ * The object for animal(動物).
  * @author jflute
  */
-public abstract class Animal {
+public abstract class Animal implements Loudable {
 
     // ===================================================================================
     //                                                                           Attribute
@@ -44,25 +47,46 @@ public abstract class Animal {
         breatheIn();
         String barkWord = getBarkWord();
         BarkedSound barkedSound = doBark(barkWord);
-        downHitPoint();
         return barkedSound;
     }
 
     protected void prepareAbdominalMuscle() {
-        // dummy
+        downHitPoint();
     }
 
     protected void breatheIn() {
-        // dummy
+        downHitPoint();
     }
 
     protected abstract String getBarkWord();
 
     protected BarkedSound doBark(String barkWord) {
+        downHitPoint();
         return new BarkedSound(barkWord);
     }
 
+    // ===================================================================================
+    //                                                                           Hit Point
+    //                                                                           =========
     protected void downHitPoint() {
         --hitPoint;
+        if (hitPoint == 0) {
+            throw new IllegalStateException("I'm very tired, so I want to sleep" + getBarkWord());
+        }
+    }
+
+    // ===================================================================================
+    //                                                                               Loud
+    //                                                                              ======
+    @Override
+    public String soundLoudly() {
+        return bark().getBarkWord();
+    }
+
+    // ===================================================================================
+    //                                                                            Accessor
+    //                                                                            ========
+    public int getHitPoint() {
+        return hitPoint;
     }
 }
