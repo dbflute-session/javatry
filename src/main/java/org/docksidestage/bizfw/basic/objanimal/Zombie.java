@@ -22,22 +22,40 @@ package org.docksidestage.bizfw.basic.objanimal;
 public class Zombie extends Animal {
 
     // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
+    protected boolean zombieMagicPowerSuppressed;
+
+    // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
     public Zombie() {
     }
 
+    public Zombie suppressZombieMagicPower() { // e.g. new Zombie().suppressZombieMagicPower()
+        zombieMagicPowerSuppressed = true;
+        return this;
+    }
+
     @Override
     protected int getInitialHitPoint() {
-        return -1; // infinity hit point
+        return -1; // magic number for infinity hit point
     }
 
     // ===================================================================================
     //                                                                               Bark
     //                                                                              ======
     @Override
-    public BarkedSound bark() { // can do it directly
-        return new BarkedSound(getBarkWord());
+    protected void breatheIn() {
+        if (isZombieMagicPowerEnabled()) { // zombie needs magic power to breathe in
+            super.breatheIn();
+        } else {
+            throw new IllegalStateException("Cannot breathe in because of magic power suppressed.");
+        }
+    }
+
+    protected boolean isZombieMagicPowerEnabled() {
+        return !zombieMagicPowerSuppressed;
     }
 
     @Override

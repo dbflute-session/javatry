@@ -321,19 +321,30 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
     // ===================================================================================
     //                                                                           Challenge
     //                                                                           =========
-    // TODO jflute 抽象クラスを作らせるエクササイズ (2019/06/17)
     /**
-     * 
+     * Extract St6MySql, St6PostgreSql (basic.st6.dbms)'s process to abstract class (as super class and sub-class) <br>
+     * (St6MySql, St6PostgreSql (basic.st6.dbms) から抽象クラスを抽出してみましょう (スーパークラスとサブクラスの関係に))
      */
     public void test_objectOriented_writing_generalization_extractToAbstract() {
         // your confirmation code here
     }
 
-    // TODO jflute 具象クラスを作らせるエクササイズ (2019/06/17)
     /**
-     * 
+     * Extract St6OperationSystem (basic.st6.os)'s process to concrete classes (as super class and sub-class) <br>
+     * (St6OperationSystem (basic.st6.os) からコンクリートクラスを抽出してみましょう (スーパークラスとサブクラスの関係に))
      */
     public void test_objectOriented_writing_specialization_extractToConcrete() {
+        // your confirmation code here
+    }
+
+    // ===================================================================================
+    //                                                                           Good Luck
+    //                                                                           =========
+    /**
+     * Extract Animal's bark() process as BarkingProcess class to also avoid large abstract class. (as delegation model) <br>
+     * (抽象クラス肥大化を抑制するためにも、Animalのbark()のプロセス(処理)をBarkingProcessクラスとして切り出しましょう (委譲モデルに))
+     */
+    public void test_objectOriented_writing_withDelegation() {
         // your confirmation code here
     }
 }

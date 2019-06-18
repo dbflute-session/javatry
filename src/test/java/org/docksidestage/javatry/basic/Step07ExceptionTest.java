@@ -16,6 +16,7 @@
 package org.docksidestage.javatry.basic;
 
 import org.docksidestage.bizfw.basic.supercar.SupercarClient;
+import org.docksidestage.javatry.basic.st7.St7ConstructorChallengeException;
 import org.docksidestage.unit.PlainTestCase;
 
 /**
@@ -165,5 +166,32 @@ public class Step07ExceptionTest extends PlainTestCase {
         } catch (RuntimeException e) {
             log("*No hint here for training.", e);
         }
+    }
+
+    // ===================================================================================
+    //                                                                           Challenge
+    //                                                                           =========
+    /**
+     * Fix terrible (YABAI in Japanese) exception handling. (you can modify exception class) <br>
+     * (やばい例外ハンドリングがあるので修正しましょう (例外クラスを修正してOK))
+     */
+    public void test_exception_writing_constructorChallenge() {
+        try {
+            helpSurprisedYabaiCatch();
+        } catch (St7ConstructorChallengeException e) {
+            log("Thrown by help method", e); // should show also "Caused-by" information
+        }
+    }
+
+    private void helpSurprisedYabaiCatch() {
+        try {
+            helpThrowIllegalState();
+        } catch (IllegalStateException e) {
+            throw new St7ConstructorChallengeException("Failed to do something.");
+        }
+    }
+
+    private void helpThrowIllegalState() { // simple implementation here
+        throw new IllegalStateException("something illegal");
     }
 }
