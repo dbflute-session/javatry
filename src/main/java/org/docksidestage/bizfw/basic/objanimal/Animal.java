@@ -50,8 +50,8 @@ public abstract class Animal implements Loudable {
     //                                                                               Bark
     //                                                                              ======
     public BarkedSound bark() {
-        prepareAbdominalMuscle();
         breatheIn();
+        prepareAbdominalMuscle();
         String barkWord = getBarkWord();
         BarkedSound barkedSound = doBark(barkWord);
         return barkedSound;
