@@ -48,10 +48,18 @@ TODO jflute comming soon...
  o If Eclipse, "Preferences" and "Java - Editor - Templates", select all templates and remove them all and "Import..." and select "etc/tools/eclipse/java-editor-templates.xml" and apply  
  o If IntelliJ, sea: http://dbflute.seasar.org/ja/manual/topic/friends/intellij/index.html#dbflutelivetemplate
 
-## hands-on
+## do hands-on
 
 1. open Step01VariableTest.java of org.docksidestage.javatry in src/test/java
+
 2. read JavaDoc and operate hands-on exercises
+
+```
+    /**
+     * What string is sea variable at the method end? <br>
+     * (メソッド終了時の変数 sea の中身は？)
+     */
+```
 
 ※use todo comment not to forget your pendings if you skip exercise  
 (you can complement by _todo if special completion templates)
@@ -79,9 +87,17 @@ TODO jflute comming soon...
  o Eclipseなら、Preferences の Java - Editor - Templates にて、一度すべてを選択して Remove して空っぽにしてから、Import... で etc/tools/eclipse/java-editor-templates.xml を選択して適用  
  o IntelliJなら、こちらを参考に: http://dbflute.seasar.org/ja/manual/topic/friends/intellij/index.html#dbflutelivetemplate
 
-## ハンズオン
+## ハンズオン実施
 1. src/test/java の org.docksidestage.javatry の Step01VariableTest.java を開く
+
 2. それぞれの Step ごとに、JavaDoc を読んで実施していく
+
+```
+    /**
+     * What string is sea variable at the method end? <br>
+     * (メソッド終了時の変数 sea の中身は？)
+     */
+```
 
 ※飛ばして先に進む場合は、後で忘れてしまわないようにtodoコメントを入れましょう  
 (補完テンプレートが入っていれば、_todo で補完できます)
