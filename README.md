@@ -10,7 +10,7 @@ This is the hands-on for Java beginners who only red Java books or wrote a littl
 Not instructional text so enhance your Java skill voluntarily by hands-on style.  
 
 o Java basic syntax  
-o basic programming skill  
+o basic programming skill, code reading skill  
 o Java8 essence: Stream API, Optional  
 o Framework essence: DI Container, Web Framework, O/R Mapper  
 o also the ability to think
