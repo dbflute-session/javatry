@@ -12,26 +12,69 @@ o Java8 essence: Stream API, Optional
 o basic programming skill  
 o Framework essence: DI Container, Web Framework, O/R Mapper
 
+```
+/**
+ * What is color name length of first color-box? <br>
+ * (最初のカラーボックスの色の名前の文字数は？)
+ */
+public void test_length_basic() {
+    List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
+    String answer = colorBoxList.stream()
+            .findFirst()
+            .map(colorBox -> colorBox.getColor().getColorName())
+            .map(colorName -> colorName.length() + " (" + colorName + ")")
+            .orElse("*not found");
+    log(answer);
+}
+```
 
 # How-to
 ## set up enrivonment
 
 TODO jflute comming soon...
+1. fork this javatry project to your account
+
+2. git clone your forked javatry project
+
+3. open by IDE  
+ o If Eclipse, menu's "File - Import..." and "Existing Projects into Workspace"  
+ o If IntelliJ, menu's "Open" (to keep existing ".idea" directory, so use "Open" instead of "Import")  
+
+4. confirm that compile works  
+ o run Step01VariableTest.java's test_variable_basic() as trial    
+  -> If Eclipse with Quick JUnit, put cursor in test method and control+0
+
+5. set up special completion templates (not required)  
+ o If Eclipse, "Preferences" and "Java - Editor - Templates", select all templates and remove them all and "Import..." and select "etc/tools/eclipse/java-editor-templates.xml" and apply  
+ o If IntelliJ, sea: http://dbflute.seasar.org/ja/manual/topic/friends/intellij/index.html#dbflutelivetemplate
 
 ## hands-on
 
+1. open Step01VariableTest.java of org.docksidestage.javatry in src/test/java
+2. read JavaDoc and operate hands-on exercises
+
+※use todo comment not to forget your pendings if you skip exercise  
+(you can complement by _todo if special completion templates)
+    
+```
+// TODO jflute pending because I don't know how to ... (2019/06/14)
+```
 
 # やり方 (Japanese here)
 
 ## 環境構築
-1. javatryプロジェクトを自分のアカウントにフォーク(fork) 
+1. javatryプロジェクトを自分のアカウントにフォーク(fork)
+
 2. フォークしたjavatryプロジェクトをgit clone (clone方法は任意)
-3. IDEで開く (EclipseならImport, IntelliJならOpen)  
+
+3. IDEで開く  
  o Eclipseなら、メニューの File - Import... で Existing Projects into Workspace  
  o IntelliJなら、Open (.ideaをキープするために Import ではなく Open を使うこと推奨)  
+
 4. コンパイルされていることを確認  
  o 試しに Step01VariableTest.java の test_variable_basic() のテストを実行    
   -> Eclipse で Quick JUnit があれば、テストメソッド内にカーソルを置いて control+0
+
 5. 特製の補完テンプレートを設定 (任意)  
  o Eclipseなら、Preferences の Java - Editor - Templates にて、一度すべてを選択して Remove して空っぽにしてから、Import... で etc/tools/eclipse/java-editor-templates.xml を選択して適用  
  o IntelliJなら、こちらを参考に: http://dbflute.seasar.org/ja/manual/topic/friends/intellij/index.html#dbflutelivetemplate

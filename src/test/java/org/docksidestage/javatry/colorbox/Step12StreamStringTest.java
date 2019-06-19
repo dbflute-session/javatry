@@ -40,9 +40,8 @@ public class Step12StreamStringTest extends PlainTestCase {
         List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
         String answer = colorBoxList.stream()
                 .findFirst()
-                .map(colorBox -> colorBox.getColor()) // consciously split as example
-                .map(boxColor -> boxColor.getColorName())
-                .map(colorName -> String.valueOf(colorName.length()))
+                .map(colorBox -> colorBox.getColor().getColorName())
+                .map(colorName -> colorName.length() + " (" + colorName + ")")
                 .orElse("*not found");
         log(answer);
     }
