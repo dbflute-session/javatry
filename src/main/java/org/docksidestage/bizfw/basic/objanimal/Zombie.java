@@ -24,7 +24,7 @@ public class Zombie extends Animal {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected boolean zombieMagicPowerSuppressed;
+    protected final ZombieDiary zombieDiary = new ZombieDiary();
 
     // ===================================================================================
     //                                                                         Constructor
@@ -32,14 +32,22 @@ public class Zombie extends Animal {
     public Zombie() {
     }
 
-    public Zombie suppressZombieMagicPower() { // e.g. new Zombie().suppressZombieMagicPower()
-        zombieMagicPowerSuppressed = true;
-        return this;
-    }
-
     @Override
     protected int getInitialHitPoint() {
         return -1; // magic number for infinity hit point
+    }
+
+    public static class ZombieDiary {
+
+        private int breatheInCount;
+
+        public void countBreatheIn() {
+            ++breatheInCount;
+        }
+
+        public int getBreatheInCount() {
+            return breatheInCount;
+        }
     }
 
     // ===================================================================================
@@ -47,15 +55,8 @@ public class Zombie extends Animal {
     //                                                                              ======
     @Override
     protected void breatheIn() {
-        if (isZombieMagicPowerEnabled()) { // zombie needs magic power to breathe in
-            super.breatheIn();
-        } else {
-            throw new IllegalStateException("Cannot breathe in because of magic power suppressed.");
-        }
-    }
-
-    protected boolean isZombieMagicPowerEnabled() {
-        return !zombieMagicPowerSuppressed;
+        super.breatheIn();
+        zombieDiary.countBreatheIn();
     }
 
     @Override
@@ -69,5 +70,12 @@ public class Zombie extends Animal {
     @Override
     protected void downHitPoint() {
         // do nothing, infinity hit point
+    }
+
+    // ===================================================================================
+    //                                                                            Accessor
+    //                                                                            ========
+    public ZombieDiary getZombieDiary() {
+        return zombieDiary;
     }
 }
