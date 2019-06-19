@@ -55,6 +55,7 @@ public class Step01VariableTest extends PlainTestCase {
         String sea = "mystic";
         String land = "oneman";
         sea = land;
+        land = land + "'s dreams";
         log(sea); // your answer? => 
     }
 

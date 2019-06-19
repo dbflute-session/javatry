@@ -4,15 +4,33 @@ trial project of Java programming for education (with H2)
 
 
 # Overview
-This is the hands-on for Java beginners.  
-You can try Java learning by hands-on.  
+
+This is the hands-on for Java beginners who only red Java books or wrote a little Java in business.  
+
+Not instructional text so enhance your Java skill voluntarily by hands-on style.  
 
 o Java basic syntax  
-o Java8 essence: Stream API, Optional    
 o basic programming skill  
-o Framework essence: DI Container, Web Framework, O/R Mapper
+o Java8 essence: Stream API, Optional  
+o Framework essence: DI Container, Web Framework, O/R Mapper  
+o also the ability to think
 
 ```
+/**
+ * What string is sea variable at the method end? <br>
+ * (メソッド終了時の変数 sea の中身は？)
+ */
+public void test_variable_reassigned_basic() {
+    String sea = "mystic";
+    String land = "oneman";
+    sea = land;
+    land = land + "'s dreams";
+    log(sea); // your answer? => 
+}
+```
+
+```
+
 /**
  * What is color name length of first color-box? <br>
  * (最初のカラーボックスの色の名前の文字数は？)
@@ -28,10 +46,10 @@ public void test_length_basic() {
 }
 ```
 
+
 # How-to
 ## set up enrivonment
 
-TODO jflute comming soon...
 1. fork this javatry project to your account
 
 2. git clone your forked javatry project
@@ -67,6 +85,7 @@ TODO jflute comming soon...
 ```
 // TODO jflute pending because I don't know how to ... (2019/06/14)
 ```
+
 
 # やり方 (Japanese here)
 
@@ -105,6 +124,7 @@ TODO jflute comming soon...
 ```
 // TODO jflute 何々のやり方がわからなくて時間がかかりそうなのでひとまず先に進む (2019/06/14)
 ```
+
 
 # License
 Apache License 2.0
