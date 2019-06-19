@@ -49,7 +49,7 @@ public class Step11ClassicStringTest extends PlainTestCase {
             BoxColor boxColor = colorBox.getColor();
             String colorName = boxColor.getColorName();
             int answer = colorName.length();
-            log(answer, colorName); // also show name for visual check
+            log(answer + " (" + colorName + ")"); // also show name for visual check
         } else {
             log("*not found");
         }
