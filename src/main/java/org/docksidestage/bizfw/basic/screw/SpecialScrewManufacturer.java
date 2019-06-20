@@ -21,13 +21,13 @@ package org.docksidestage.bizfw.basic.screw;
  */
 public class SpecialScrewManufacturer {
 
-    public ScrewScrew makeSpecialScrew(ScrewSpec screwSpec) {
+    public SpecialScrew makeSpecialScrew(ScrewSpec screwSpec) {
         String specText = screwSpec.getSpecText();
         if (specText.equals("\\(^_^)/")) { // too pinpoint!?
             String msg = "The kawaii face is not useful to make screw: " + screwSpec;
             throw new SpecialScrewCannotMakeBySpecException(msg);
         }
-        return new ScrewScrew(specText);
+        return new SpecialScrew(specText);
     }
 
     public static class ScrewSpec {
@@ -48,9 +48,9 @@ public class SpecialScrewManufacturer {
         }
     }
 
-    public static class ScrewScrew {
+    public static class SpecialScrew {
 
-        public ScrewScrew(String specText) {
+        public SpecialScrew(String specText) {
             // dummy
         }
     }

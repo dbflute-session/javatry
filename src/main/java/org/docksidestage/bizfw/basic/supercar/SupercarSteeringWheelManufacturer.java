@@ -16,7 +16,7 @@
 package org.docksidestage.bizfw.basic.supercar;
 
 import org.docksidestage.bizfw.basic.screw.SpecialScrewManufacturer;
-import org.docksidestage.bizfw.basic.screw.SpecialScrewManufacturer.ScrewScrew;
+import org.docksidestage.bizfw.basic.screw.SpecialScrewManufacturer.SpecialScrew;
 import org.docksidestage.bizfw.basic.screw.SpecialScrewManufacturer.ScrewSpec;
 
 /**
@@ -36,7 +36,7 @@ public class SupercarSteeringWheelManufacturer {
         ScrewSpec screwSpec = new ScrewSpec(specText);
 
         SpecialScrewManufacturer manufacturer = createSpecialScrewManufacturer();
-        ScrewScrew screw = manufacturer.makeSpecialScrew(screwSpec);
+        SpecialScrew screw = manufacturer.makeSpecialScrew(screwSpec);
 
         return new SteeringWheel(screw);
     }
@@ -47,7 +47,7 @@ public class SupercarSteeringWheelManufacturer {
 
     public static class SteeringWheel {
 
-        public SteeringWheel(ScrewScrew screw) {
+        public SteeringWheel(SpecialScrew screw) {
             // dummy
         }
     }
