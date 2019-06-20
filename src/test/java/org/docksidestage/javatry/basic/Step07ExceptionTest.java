@@ -83,6 +83,16 @@ public class Step07ExceptionTest extends PlainTestCase {
     }
 
     // ===================================================================================
+    //                                                                   Checked Exception
+    //                                                                   =================
+    /**
+     * Show cannonical path of new java.io.File(".") by log(), and if I/O error, show message and stack-trace instead <br>
+     * (new java.io.File(".") の cannonical path を取得してログに表示、I/Oエラーはメッセージとスタックトレースを代わりに)
+     */
+    public void test_exception_checkedException_basic() {
+    }
+
+    // ===================================================================================
     //                                                                               Cause
     //                                                                               =====
     /**
