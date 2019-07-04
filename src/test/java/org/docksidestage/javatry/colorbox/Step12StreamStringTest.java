@@ -32,7 +32,7 @@ import org.docksidestage.unit.PlainTestCase;
  * The test of String with color-box, using Stream API you can. <br>
  * Show answer by log() for question of javadoc.
  * @author jflute
- * @author your_name_here
+ * @author warren
  */
 public class Step12StreamStringTest extends PlainTestCase {
 
@@ -198,6 +198,15 @@ public class Step12StreamStringTest extends PlainTestCase {
                 .map(colorBox -> colorBox.getColor().getColorName()) // consciously split as example
                 .collect(Collectors.toList()).get(0);
 
+        Optional<String> target2 = colorBoxList.stream().filter(colorBox -> {
+            return colorBox.getSpaceList().stream()
+                    .map(space -> space.getContent())
+                    .filter(content -> content instanceof String)
+                    .map(content -> (String) content)
+                    .anyMatch(strContent -> strContent.startsWith("Water"));
+        }).map(colorBox -> colorBox.getColor().getColorName()).findFirst();
+
+        log(target2.orElse("*Not Found"));
         log(target);
     }
 
@@ -355,6 +364,15 @@ public class Step12StreamStringTest extends PlainTestCase {
      * (カラーボックスの中に入っている java.util.Map を "map:{ key = value ; key = value ; ... }" という形式で表示すると？)
      */
     public void test_showMap_flat() {
+        List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
+        Stream<String> target = colorBoxList.stream()
+                .flatMap(box -> box.getSpaceList().stream())
+                .map(space -> space.getContent())
+                .filter(content -> content instanceof YourPrivateRoom.SecretBox)
+                .map(content -> ((YourPrivateRoom.SecretBox) content).getText())
+                .filter(value -> value.split("map").length == 2);
+
+        target.forEach(value -> log(value));
     }
 
     /**
@@ -362,6 +380,15 @@ public class Step12StreamStringTest extends PlainTestCase {
      * (カラーボックスの中に入っている java.util.Map を "map:{ key = value ; key = map:{ key = value ; ... } ; ... }" という形式で表示すると？)
      */
     public void test_showMap_nested() {
+        List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
+        Stream<String> target = colorBoxList.stream()
+                .flatMap(box -> box.getSpaceList().stream())
+                .map(space -> space.getContent())
+                .filter(content -> content instanceof YourPrivateRoom.SecretBox)
+                .map(content -> ((YourPrivateRoom.SecretBox) content).getText())
+                .filter(value -> value.split("map").length > 2);
+
+        target.forEach(value -> log(value));
     }
 
     // ===================================================================================
