@@ -149,8 +149,8 @@ public class Step01VariableTest extends PlainTestCase {
     }
 
     // ===================================================================================
-    //                                                                            Challnge
-    //                                                                            ========
+    //                                                                           Challenge
+    //                                                                           =========
     /**
      * Define variables as followings:
      * <pre>
