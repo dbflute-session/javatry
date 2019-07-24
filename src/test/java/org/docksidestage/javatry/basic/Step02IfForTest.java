@@ -153,8 +153,8 @@ public class Step02IfForTest extends PlainTestCase {
     }
 
     // ===================================================================================
-    //                                                                            Challnge
-    //                                                                            ========
+    //                                                                           Challenge
+    //                                                                           =========
     /**
      * Make list containing "a" from list of prepareStageList() and show it as log by loop. (without Stream API) <br>
      * (prepareStageList()のリストから "a" が含まれているものだけのリストを作成して、それをループで回してログに表示しましょう。(Stream APIなしで))

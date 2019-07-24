@@ -129,8 +129,8 @@ public class Step04MethodTest extends PlainTestCase {
     }
 
     // ===================================================================================
-    //                                                                            Challnge
-    //                                                                            ========
+    //                                                                           Challenge
+    //                                                                           =========
     // write instance variables here
     /**
      * Make private methods as followings, and comment out caller program in test method:
@@ -138,7 +138,7 @@ public class Step04MethodTest extends PlainTestCase {
      * o replaceAtoB(): has one argument as String, returns argument replaced "A" with "B" as String 
      * o replaceCtoB(): has one argument as String, returns argument replaced "C" with "B" as String 
      * o addPrefix(): has two arguments as String, returns conbined first argument with ":" with second argument 
-     * o isAvaiableLogging(): no argument, returns private instance variable "availableLogging" initialized as true (also make it)  
+     * o isAvailableLogging(): no argument, returns private instance variable "availableLogging" initialized as true (also make it)  
      * o showSea(): has one argument as String argument, no return, show argument by log()
      * </pre>
      * (メソッドを以下のように定義して、テストメソッド内の呼び出しプログラムをコメントアウトしましょう):
@@ -146,7 +146,7 @@ public class Step04MethodTest extends PlainTestCase {
      * o replaceAtoB(): 一つのString引数、引数を "A" を "B" に置き換えらたStringを戻す 
      * o replaceCtoB(): 一つのString引数、引数を "C" を "B" に置き換えらたStringを戻す 
      * o addPrefix(): 二つのString引数、第一引数と ":" と第二引数を連結したものを戻す 
-     * o isAvaiableLogging(): 引数なし、privateのインスタンス変数 "availableLogging" (初期値:true) を戻す (それも作る)  
+     * o isAvailableLogging(): 引数なし、privateのインスタンス変数 "availableLogging" (初期値:true) を戻す (それも作る)  
      * o showSea(): 一つのString引数、戻り値なし、引数をlog()で表示する
      * </pre>
      */
@@ -154,7 +154,7 @@ public class Step04MethodTest extends PlainTestCase {
         // comment out after making these methods
         //String replaced = replaceCtoB(replaceAtoB("ABC"));
         //String sea = addPrefix("broadway", replaced);
-        //if (isAvaiableLogging()) {
+        //if (isAvailableLogging()) {
         //    showSea(sea);
         //}
     }
