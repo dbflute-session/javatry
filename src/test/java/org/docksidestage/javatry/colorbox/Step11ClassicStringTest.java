@@ -70,7 +70,7 @@ public class Step11ClassicStringTest extends PlainTestCase {
     }
 
     /**
-     * Which value (toString() if non-string) has second-max legnth in color-boxes? (without sort) <br>
+     * Which value (toString() if non-string) has second-max length in color-boxes? (without sort) <br>
      * (カラーボックスに入ってる値 (文字列以外はtoString()) の中で、二番目に長い文字列は？ (ソートなしで))
      */
     public void test_length_findSecondMax() {

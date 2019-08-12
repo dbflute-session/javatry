@@ -137,7 +137,7 @@ public class Step04MethodTest extends PlainTestCase {
      * <pre>
      * o replaceAtoB(): has one argument as String, returns argument replaced "A" with "B" as String 
      * o replaceCtoB(): has one argument as String, returns argument replaced "C" with "B" as String 
-     * o addPrefix(): has two arguments as String, returns conbined first argument with ":" with second argument 
+     * o addPrefix(): has two arguments as String, returns combined first argument with ":" with second argument 
      * o isAvailableLogging(): no argument, returns private instance variable "availableLogging" initialized as true (also make it)  
      * o showSea(): has one argument as String argument, no return, show argument by log()
      * </pre>

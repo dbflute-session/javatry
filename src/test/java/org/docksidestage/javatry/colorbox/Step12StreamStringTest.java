@@ -63,7 +63,7 @@ public class Step12StreamStringTest extends PlainTestCase {
     // has small #adjustmemts from ClassicStringTest
     //  o sort allowed in Stream
     /**
-     * Which value (toString() if non-string) has second-max legnth in color-boxes? (sort allowed in Stream)<br>
+     * Which value (toString() if non-string) has second-max length in color-boxes? (sort allowed in Stream)<br>
      * (カラーボックスに入ってる値 (文字列以外はtoString()) の中で、二番目に長い文字列は？ (Streamでのソートありで))
      */
     public void test_length_findSecondMax() {
