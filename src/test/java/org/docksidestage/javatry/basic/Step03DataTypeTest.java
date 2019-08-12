@@ -66,8 +66,8 @@ public class Step03DataTypeTest extends PlainTestCase {
         short land = 32767; // max
         int piari = 2147483647; // max
         long bonvo = 9223372036854775807L; // max
-        float dstore = 2147483647.1f; // max
-        double amba = 2.3d; // max
+        float dstore = 2147483647.1f;
+        double amba = 2.3d;
         char miraco = 'a';
         boolean dohotel = miraco == 'a';
         if (dohotel && dstore >= piari) {
