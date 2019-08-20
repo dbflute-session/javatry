@@ -122,30 +122,54 @@ public class Step01VariableTest extends PlainTestCase {
     // ===================================================================================
     //                                                                     Method Argument
     //                                                                     ===============
+    // -----------------------------------------------------
+    //                                 Immutable Method-call
+    //                                 ---------------------
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
-    public void test_variable_method_argument_immutable() {
+    public void test_variable_method_argument_immutable_methodcall() {
         String sea = "harbor";
         int land = 415;
-        helpMethodArgument(sea, land);
-        log(sea); // your answer? => 
+        helpMethodArgumentImmutableMethodcall(sea, land);
+        log(sea); // your answer? =>
     }
 
-    private void helpMethodArgument(String sea, int land) {
+    private void helpMethodArgumentImmutableMethodcall(String sea, int land) {
         ++land;
-        sea = sea + land;
+        String landStr = String.valueOf(land); // is "416"
+        sea.concat(landStr);
     }
 
+    // -----------------------------------------------------
+    //                                   Mutable Method-call
+    //                                   -------------------
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
-    public void test_variable_method_argument_mutable() {
+    public void test_variable_method_argument_mutable_methodcall() {
         StringBuilder sea = new StringBuilder("harbor");
         int land = 415;
-        helpMethodArgument(sea, land);
+        helpMethodArgumentMethodcall(sea, land);
         log(sea); // your answer? => 
     }
 
-    private void helpMethodArgument(StringBuilder sea, int land) {
+    private void helpMethodArgumentMethodcall(StringBuilder sea, int land) {
         ++land;
         sea.append(land);
+    }
+
+    // -----------------------------------------------------
+    //                                   Variable Assignment
+    //                                   -------------------
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_variable_method_argument_variable_assignment() {
+        StringBuilder sea = new StringBuilder("harbor");
+        int land = 415;
+        helpMethodArgumentVariable(sea, land);
+        log(sea); // your answer? => 
+    }
+
+    private void helpMethodArgumentVariable(StringBuilder sea, int land) {
+        ++land;
+        String seaStr = sea.toString(); // is "harbor"
+        sea = new StringBuilder(seaStr).append(land);
     }
 
     // ===================================================================================
