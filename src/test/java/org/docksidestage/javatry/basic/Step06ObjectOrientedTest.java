@@ -341,8 +341,8 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
     //                                                                           Good Luck
     //                                                                           =========
     /**
-     * Extract Animal's bark() process as BarkingProcess class to also avoid large abstract class. (as delegation model) <br>
-     * (抽象クラス肥大化を抑制するためにも、Animalのbark()のプロセス(処理)をBarkingProcessクラスとして切り出しましょう (委譲モデルに))
+     * Extract Animal's bark() process as BarkingProcess class to also avoid large abstract class. <br>
+     * (抽象クラス肥大化を抑制するためにも、Animalのbark()のプロセス(処理)をBarkingProcessクラスとして切り出しましょう)
      */
     public void test_objectOriented_writing_withDelegation() {
         // your confirmation code here
