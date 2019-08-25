@@ -141,7 +141,7 @@ public class Step04MethodTest extends PlainTestCase {
      * o isAvailableLogging(): no argument, returns private instance variable "availableLogging" initialized as true (also make it)  
      * o showSea(): has one argument as String argument, no return, show argument by log()
      * </pre>
-     * (メソッドを以下のように定義して、テストメソッド内の呼び出しプログラムをコメントアウトしましょう):
+     * (privateメソッドを以下のように定義して、テストメソッド内の呼び出しプログラムをコメントアウトしましょう):
      * <pre>
      * o replaceAtoB(): 一つのString引数、引数を "A" を "B" に置き換えらたStringを戻す 
      * o replaceCtoB(): 一つのString引数、引数を "C" を "B" に置き換えらたStringを戻す 
