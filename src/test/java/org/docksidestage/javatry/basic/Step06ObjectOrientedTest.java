@@ -352,7 +352,7 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
      * Is Zombie correct as sub-class of Animal? Analyze it in thirty seconds. (thinking only) <br>
      * (ゾンビは動物クラスのサブクラスとして適切でしょうか？30秒だけ考えてみましょう (考えるだけでOK))
      */
-    public void test_objectOriented_writing_() {
+    public void test_objectOriented_zoo() {
         // do nothing here
     }
 }
