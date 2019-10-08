@@ -54,7 +54,7 @@ public class Step03DataTypeTest extends PlainTestCase {
             BigDecimal addedDecimal = amba.add(new BigDecimal(land));
             sea = String.valueOf(addedDecimal);
         }
-        log(sea); // your answer? => 
+        log(sea); // your answer? => 18.4
     }
 
     // ===================================================================================
@@ -70,19 +70,24 @@ public class Step03DataTypeTest extends PlainTestCase {
         double amba = 2.3d;
         char miraco = 'a';
         boolean dohotel = miraco == 'a';
-        if (dohotel && dstore >= piari) {
+        if (dohotel && dstore == piari) {
+            System.out.println(dstore);
+            System.out.println((float) piari);
+            System.out.println();
+            System.out.println(Integer.MAX_VALUE);
+            System.out.println(piari);
             bonvo = sea;
-            land = (short) bonvo;
-            bonvo = piari;
-            sea = (byte) land;
+            land = (short) bonvo; //127
+            bonvo = piari; //bonvo=2147483647
+            sea = (byte) land; //sea=127
             if (amba == 2.3D) {
-                sea = (byte) amba;
+                sea = (byte) amba; //2?
             }
         }
         if (dstore > piari) {
             sea = 0;
         }
-        log(sea); // your answer? => 
+        log(sea); // your answer? => 2
     }
 
     // ===================================================================================
