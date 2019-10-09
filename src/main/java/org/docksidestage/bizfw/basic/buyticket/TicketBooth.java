@@ -47,7 +47,7 @@ public class TicketBooth {
     // ===================================================================================
     //                                                                          Buy Ticket
     //                                                                          ==========
-    private TicketBuyResult buyPassport(int choice, int handedMoney){
+    public TicketBuyResult buyPassport(int choice, int handedMoney){
         confirmPrice(choice);
         if (quantity <= 0) {
             throw new TicketSoldOutException("Sold out");
@@ -64,18 +64,18 @@ public class TicketBooth {
         TicketBuyResult PassportResult = new TicketBuyResult(handedMoney,price);
         return PassportResult;
     }
-//    public Ticket buyOneDayPassport(int handedMoney) {
-//        buyPassport(1,handedMoney);
-//        Ticket x=new Ticket(ONE_DAY_PRICE);
-//        return x;
-//    }
-//
-//
-//    public TicketBuyResult buyTwoDayPassport(int handedMoney){
-//        buyPassport(2,handedMoney);
-//        TicketBuyResult x=new TicketBuyResult(handedMoney,TWO_DAY_PRICE);
-//        return x;
-//    }
+    public Ticket buyOneDayPassport(int handedMoney) {
+        buyPassport(1,handedMoney);
+        Ticket x=new Ticket(ONE_DAY_PRICE);
+        return x;
+    }
+
+
+    public TicketBuyResult buyTwoDayPassport(int handedMoney){
+        buyPassport(2,handedMoney);
+        TicketBuyResult x=new TicketBuyResult(handedMoney,TWO_DAY_PRICE);
+        return x;
+    }
     public static class TicketSoldOutException extends RuntimeException {
 
         private static final long serialVersionUID = 1L;

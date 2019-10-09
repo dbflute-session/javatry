@@ -164,8 +164,9 @@ public class Step05ClassTest extends PlainTestCase {
         // your confirmation code here
         TicketBooth booth =new TicketBooth();
         int handedMoney=20000;
+        int choice=2;
         TicketBuyResult PassportResult = booth.buyPassport(choice,handedMoney);
-        Ticket Passport=PassportResult.getChange();
+        Ticket Passport=PassportResult.getTicket();
         int change=PassportResult.getChange();
         log(Passport.getDisplayPrice()+change);
     }
