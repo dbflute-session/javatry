@@ -48,7 +48,7 @@ public interface ColorBox {
     BoxSize getSize();
 
     /**
-     * @return The list of space, which has content of color-box. (NotNull, NotEmpty)
+     * @return The list of space, which has content of color-box, and ordered from upper. (NotNull, NotEmpty)
      */
     List<BoxSpace> getSpaceList();
 }
