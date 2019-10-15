@@ -82,9 +82,20 @@ public class Step05ClassTest extends PlainTestCase {
      * Fix the problem of ticket quantity reduction when short money. (Don't forget to fix also previous exercise answers) <br>
      * (お金不足でもチケットが減る問題をクラスを修正して解決しましょう (以前のエクササイズのanswerの修正を忘れずに))
      */
-    public void test_class_letsFix_fixBug() {
+    public void test_class_letsFix_ticketQuantityReduction() {
         Integer sea = doTest_class_ticket_wrongQuantity();
         log(sea); // should be max quantity, visual check here
+    }
+
+    /**
+     * Fix the problem of sales proceeds increased by handed money. (Don't forget to fix also previous exercise answers) <br>
+     * (受け取ったお金の分だけ売上が増えていく問題をクラスを修正して解決しましょう (以前のエクササイズのanswerの修正を忘れずに))
+     */
+    public void test_class_letsFix_salesProceedsIncrease() {
+        TicketBooth booth = new TicketBooth();
+        booth.buyOneDayPassport(10000);
+        Integer sea = booth.getSalesProceeds();
+        log(sea); // should be same as one-day price, visual check here
     }
 
     /**
