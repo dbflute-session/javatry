@@ -15,7 +15,6 @@
  */
 package org.docksidestage.bizfw.di.usingdi.settings;
 
-import java.lang.reflect.Field;
 import java.util.Map;
 
 import org.docksidestage.bizfw.basic.objanimal.Animal;
@@ -24,7 +23,6 @@ import org.docksidestage.bizfw.basic.supercar.SupercarDealer;
 import org.docksidestage.bizfw.basic.supercar.SupercarManufacturer;
 import org.docksidestage.bizfw.di.cast.TooLazyDog;
 import org.docksidestage.bizfw.di.container.component.DiContainerModule;
-import org.docksidestage.bizfw.di.container.component.SimpleInject;
 import org.docksidestage.bizfw.di.usingdi.UsingDiAccessorAction;
 import org.docksidestage.bizfw.di.usingdi.UsingDiAnnotationAction;
 import org.docksidestage.bizfw.di.usingdi.UsingDiDelegatingAction;
@@ -49,10 +47,10 @@ public class UsingDiModule implements DiContainerModule {
         doBindSupercarDealer(componentMap);
 
         // action
-        doBindAccessorAction(componentMap);
+        doBindAccessorAction(componentMap); // should be after basic cast
         doBindAnnotationAction(componentMap);
-        doBindDelegatingLogic(componentMap); // should be before caller 
-        doBindDelegatingAction(componentMap); // needs already-initialized logic
+        doBindDelegatingLogic(componentMap);
+        doBindDelegatingAction(componentMap);
     }
 
     // ===================================================================================
@@ -83,6 +81,11 @@ public class UsingDiModule implements DiContainerModule {
     // ===================================================================================
     //                                                                              Action
     //                                                                              ======
+    // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    // auto injection by accessor is unsupported in simple DI container of javatry
+    // so you need to inject them manually at your DI settings
+    // (generally it depends on DI container specification)
+    // _/_/_/_/_/_/_/_/_/_/
     private void doBindAccessorAction(Map<Class<?>, Object> componentMap) {
         UsingDiAccessorAction action = new UsingDiAccessorAction();
         action.setAnimal((Animal) componentMap.get(Animal.class));
@@ -90,44 +93,20 @@ public class UsingDiModule implements DiContainerModule {
         componentMap.put(UsingDiAccessorAction.class, action);
     }
 
+    // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    // auto injection by annotation is supported in simple DI container of javatry
+    // so you don't need to inject them here
+    // (generally it depends on DI container specification)
+    // _/_/_/_/_/_/_/_/_/_/
     private void doBindAnnotationAction(Map<Class<?>, Object> componentMap) {
-        UsingDiAnnotationAction action = new UsingDiAnnotationAction();
-        injectDependency(componentMap, action);
-        componentMap.put(UsingDiAnnotationAction.class, action);
+        componentMap.put(UsingDiAnnotationAction.class, new UsingDiAnnotationAction());
     }
 
     private void doBindDelegatingAction(Map<Class<?>, Object> componentMap) {
-        UsingDiDelegatingAction action = new UsingDiDelegatingAction();
-        injectDependency(componentMap, action);
-        componentMap.put(UsingDiDelegatingAction.class, action);
+        componentMap.put(UsingDiDelegatingAction.class, new UsingDiDelegatingAction());
     }
 
     private void doBindDelegatingLogic(Map<Class<?>, Object> componentMap) {
-        UsingDiDelegatingLogic logic = new UsingDiDelegatingLogic();
-        injectDependency(componentMap, logic);
-        componentMap.put(UsingDiDelegatingLogic.class, logic);
-    }
-
-    // ===================================================================================
-    //                                                                        Assist Logic
-    //                                                                        ============
-    private void injectDependency(Map<Class<?>, Object> componentMap, Object baseObj) {
-        Field[] declaredFields = baseObj.getClass().getDeclaredFields();
-        for (Field field : declaredFields) {
-            SimpleInject inject = field.getAnnotation(SimpleInject.class);
-            if (inject == null) { // no annotation
-                continue;
-            }
-            // has annotation hereo
-            Class<?> fieldType = field.getType(); // e.g. Animal.class
-            Object component = componentMap.get(fieldType);
-            field.setAccessible(true); // ignore private scope
-            try {
-                field.set(baseObj, component); // e.g. action.animal = component;
-            } catch (IllegalArgumentException | IllegalAccessException e) {
-                String msg = "Failed to inject the component to the field: " + field + ", " + component;
-                throw new IllegalStateException(msg, e);
-            }
-        }
+        componentMap.put(UsingDiDelegatingLogic.class, new UsingDiDelegatingLogic());
     }
 }

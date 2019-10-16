@@ -19,7 +19,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.docksidestage.unit.flute.exception.ExceptionMessageBuilder;
+import org.docksidestage.bizfw.exception.ExceptionMessageBuilder;
 
 import junit.framework.AssertionFailedError;
 

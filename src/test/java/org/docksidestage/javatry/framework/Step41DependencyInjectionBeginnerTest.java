@@ -18,12 +18,12 @@ package org.docksidestage.javatry.framework;
 import org.docksidestage.unit.PlainTestCase;
 
 /**
- * The test of Dependency Injection (DI) as basic level. <br>
+ * The test of Dependency Injection (DI) as beginner level. <br>
  * Show answer by log() or write answer on comment for question of javadoc.
  * @author jflute
  * @author your_name_here
  */
-public class Step41DependencyInjectionBasicTest extends PlainTestCase {
+public class Step41DependencyInjectionBeginnerTest extends PlainTestCase {
 
     // ===================================================================================
     //                                                                        Precondition
@@ -97,16 +97,15 @@ public class Step41DependencyInjectionBasicTest extends PlainTestCase {
     //                                                           Execute like WebFramework
     //                                                           =========================
     /**
-     * Execute accessor and annotation and delegating actions by UsingDiWebFrameworkProcess and why not NullPointerException? <br>
-     * (accessor, annotation, delegating の Action を UsingDiWebFrameworkProcess 経由で実行してみましょう。そして、なぜ NullPointerException にならないのか？)
+     * Execute accessor and annotation and delegating actions by UsingDiWebFrameworkProcess. <br>
+     * (accessor, annotation, delegating の Action を UsingDiWebFrameworkProcess 経由で実行してみましょう)
      */
     public void test_usingdi_UsingDiWebFrameworkProcess() {
-        // your answer? => 
-        // and execution code here
+        // execution code here
     }
 
     /**
-     * What is concrete class of instance variable "animal" of UsingDiAnnotationAction? (when you execute by UsingDiWebFrameworkProcess) <br>
+     * What is concrete class of instance variable "animal" of UsingDiAnnotationAction? (when executing by UsingDiWebFrameworkProcess) <br>
      * (UsingDiAnnotationAction のインスタンス変数 "animal" の実体クラスは？ (UsingDiWebFrameworkProcessで実行した時))
      */
     public void test_usingdi_whatis_animal() {
