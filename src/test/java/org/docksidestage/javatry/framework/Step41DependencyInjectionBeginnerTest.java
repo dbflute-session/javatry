@@ -97,12 +97,20 @@ public class Step41DependencyInjectionBeginnerTest extends PlainTestCase {
     //                                                           Execute like WebFramework
     //                                                           =========================
     /**
-     * Execute callFriend() of accessor and annotation and delegating actions by UsingDiWebFrameworkProcess.
+     * Execute callFriend() of accessor action by UsingDiWebFrameworkProcess. <br>
+     * (accessor の Action の callFriend() を UsingDiWebFrameworkProcess 経由で実行してみましょう)
+     */
+    public void test_usingdi_UsingDiWebFrameworkProcess_callfriend_accessor() {
+        // execution code here
+    }
+
+    /**
+     * Execute callFriend() of annotation and delegating actions by UsingDiWebFrameworkProcess.
      * (And you can increase hit-points of sleepy cat in this method) <br>
-     * (accessor, annotation, delegating の Action の callFriend() を UsingDiWebFrameworkProcess 経由で実行してみましょう。
+     * (annotation, delegating の Action の callFriend() を UsingDiWebFrameworkProcess 経由で実行してみましょう。
      * (眠い猫のヒットポイントをこのメソッド内で増やしてもOK))
      */
-    public void test_usingdi_UsingDiWebFrameworkProcess() {
+    public void test_usingdi_UsingDiWebFrameworkProcess_callfriend_annotation_delegating() {
         // execution code here
     }
 
