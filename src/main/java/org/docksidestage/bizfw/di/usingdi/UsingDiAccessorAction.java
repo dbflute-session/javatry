@@ -49,12 +49,12 @@ public class UsingDiAccessorAction {
     //                                                                    Supercar Process
     //                                                                    ================
     public void goToOffice() {
-        Supercar supercar = supercarDealer.orderSupercar("I think...steering wheel is like sea");
+        Supercar supercar = supercarDealer.orderSupercar("I think...steering wheel is useful on land");
         logger.debug("Go to office by {}", supercar);
     }
 
     public void sendGift() {
-        Supercar supercar = supercarDealer.orderSupercar("I think...steering wheel is like sea");
+        Supercar supercar = supercarDealer.orderSupercar("I think...steering wheel is useful on land");
         logger.debug("Send {} to my friend", supercar);
     }
 
