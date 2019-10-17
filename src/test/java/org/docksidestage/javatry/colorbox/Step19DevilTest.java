@@ -53,8 +53,8 @@ public class Step19DevilTest extends PlainTestCase {
     //                                                                        Meta Journey
     //                                                                        ============
     /**
-     * What value is returned from functional method of interface that has FunctionalInterface annotation in color-boxes? <br> 
-     * (カラーボックスに入っているFunctionalInterfaceアノテーションが付与されているインターフェースのFunctionalメソッドの戻り値は？)
+     * What value is returned from no-parameter functional method of interface that has FunctionalInterface annotation in color-boxes? <br> 
+     * (カラーボックスに入っているFunctionalInterfaceアノテーションが付与されているインターフェースの引数なしのFunctionalメソッドの戻り値は？)
      */
     public void test_be_frameworker() {
     }
