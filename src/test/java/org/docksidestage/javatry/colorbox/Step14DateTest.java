@@ -29,8 +29,8 @@ public class Step14DateTest extends PlainTestCase {
     //                                                                               Basic
     //                                                                               =====
     /**
-     * What string is date in color-boxes formatted as slash-separated (e.g. 2019/04/24)? <br>
-     * (カラーボックスに入っている日付をスラッシュ区切り (e.g. 2019/04/24) のフォーマットしたら？)
+     * What string is date in color-boxes formatted as plus-separated (e.g. 2019+04+24)? <br>
+     * (カラーボックスに入っている日付をプラス記号区切り (e.g. 2019+04+24) のフォーマットしたら？)
      */
     public void test_formatDate() {
     }
