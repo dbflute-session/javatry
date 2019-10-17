@@ -97,16 +97,18 @@ public class Step41DependencyInjectionBeginnerTest extends PlainTestCase {
     //                                                           Execute like WebFramework
     //                                                           =========================
     /**
-     * Execute accessor and annotation and delegating actions by UsingDiWebFrameworkProcess. <br>
-     * (accessor, annotation, delegating の Action を UsingDiWebFrameworkProcess 経由で実行してみましょう)
+     * Execute callFriend() of accessor and annotation and delegating actions by UsingDiWebFrameworkProcess.
+     * (And you can increase hit-points of sleepy cat in this method) <br>
+     * (accessor, annotation, delegating の Action の callFriend() を UsingDiWebFrameworkProcess 経由で実行してみましょう。
+     * (眠い猫のヒットポイントをこのメソッド内で増やしてもOK))
      */
     public void test_usingdi_UsingDiWebFrameworkProcess() {
         // execution code here
     }
 
     /**
-     * What is concrete class of instance variable "animal" of UsingDiAnnotationAction? (when executing by UsingDiWebFrameworkProcess) <br>
-     * (UsingDiAnnotationAction のインスタンス変数 "animal" の実体クラスは？ (UsingDiWebFrameworkProcessで実行した時))
+     * What is concrete class of instance variable "animal" of UsingDiAnnotationAction? (when registering UsingDiModule) <br>
+     * (UsingDiAnnotationAction のインスタンス変数 "animal" の実体クラスは？ (UsingDiModuleを登録した時))
      */
     public void test_usingdi_whatis_animal() {
         // your answer? => 

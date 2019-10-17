@@ -59,8 +59,12 @@ public class UsingDiModule implements DiContainerModule {
     private void doBindAnimal(Map<Class<?>, Object> componentMap) {
         TooLazyDog dog = new TooLazyDog("tofu");
         dog.petMe();
-        dog.playWith(new Cat());
+        dog.playWith(createPlayingCat());
         componentMap.put(Animal.class, dog);
+    }
+
+    protected Cat createPlayingCat() {
+        return new Cat();
     }
 
     private void doBindSupercarDealer(Map<Class<?>, Object> componentMap) {
