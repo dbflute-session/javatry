@@ -34,7 +34,14 @@ public class Step19DevilTest extends PlainTestCase {
      * that the second decimal place is same as tens place of depth of the color-box
      * of which color name ends with third character of color-box that contains null as content? <br>
      * (nullを含んでいるカラーボックスの色の名前の3文字目の文字で色の名前が終わっているカラーボックスの深さの十の位の数字が小数点第二桁目になっている
-     * スペースの中のリストの中で最初に見つかるBigDecimalの一の位の数字と同じ色の長さのカラーボックスの一番下のスペースに入っているものは？)
+     * スペースの中のリストの中で最初に見つかるBigDecimalの一の位の数字と同じ色の長さのカラーボックスの一番下のスペースに入っているものは？) <br>
+     * 
+     * addition: (same meaning)
+     *  Find a colorbox(lets call it A) that contains null, 
+     *  Next find a colorbox(B) that name ends with third character of colorbox A,
+     *  Next find a colorbox(C) that the list in the space contains a number that 2nd decimal place is same as tens place of depth of color-box B,
+     *  Next find a colorbox(D) that length of name is same as 1st place number of BigDecimal value found in the colorbox C,
+     *  At last, the question is what is in the lowest space of colorbox D?
      */
     public void test_too_long() {
     }
