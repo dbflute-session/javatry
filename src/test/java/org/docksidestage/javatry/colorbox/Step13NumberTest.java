@@ -29,7 +29,7 @@ public class Step13NumberTest extends PlainTestCase {
     //                                                                               Basic
     //                                                                               =====
     /**
-     * How many integer-type values in color-boxes are between 0 and 54? <br>
+     * How many integer-type values in color-boxes are between 0 and 54 (includes)? <br>
      * (カラーボックの中に入っているInteger型で、0から54までの値は何個ある？)
      */
     public void test_countZeroToFiftyFour_IntegerOnly() {
