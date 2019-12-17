@@ -65,6 +65,6 @@ public class NonDiIndividualFactoryAction {
     }
 
     private SupercarDealer createSupercarDealer() {
-        return new NonDiSupercarFactory().createSupercarDealer(); // has exntesion in nested class
+        return new NonDiSupercarFactory().createSupercarDealer(); // has extension in nested class
     }
 }

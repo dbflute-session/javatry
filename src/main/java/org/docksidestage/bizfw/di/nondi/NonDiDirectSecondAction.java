@@ -55,7 +55,7 @@ public class NonDiDirectSecondAction {
     //                                                                    Supercar Process
     //                                                                    ================
     public void goToOffice() {
-        // has exntesion in nested class
+        // has extension in nested class
         SupercarDealer dealer = new SupercarDealer() {
             @Override
             protected SupercarManufacturer createSupercarManufacturer() {
