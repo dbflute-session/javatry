@@ -37,7 +37,7 @@ public class SupercarSteeringWheelComponentDB {
         return clincherSpecMap.get(clincherSpecId);
     }
 
-    public Map<Integer, String> getSlincherSpecMap() { // read-only
+    public Map<Integer, String> getClincherSpecMap() { // read-only
         return Collections.unmodifiableMap(clincherSpecMap);
     }
 }
