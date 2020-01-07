@@ -71,7 +71,7 @@ public class Step08Java8FunctionTest extends PlainTestCase {
         // your answer? => 
 
         // cannot reassign because it is used at callback process
-        //name = "wave";
+        //title = "wave";
     }
 
     /**
