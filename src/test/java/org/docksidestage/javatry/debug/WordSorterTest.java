@@ -1,0 +1,29 @@
+package org.docksidestage.javatry.debug;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.docksidestage.bizfw.debug.Language;
+import org.docksidestage.bizfw.debug.LanguagePool;
+import org.docksidestage.bizfw.debug.Word;
+import org.docksidestage.bizfw.debug.WordSorter;
+import org.junit.Assert;
+import org.junit.Test;
+
+/**
+ * @author zaya
+ */
+public class WordSorterTest {
+
+    @Test
+    public void testSort() {
+        Language language = new LanguagePool().getLanguage("English");
+        List<Word> input = Arrays.asList(new Word(language, "Candy"), new Word(language, "Bee"), new Word(language, "Apple"));
+        List<Word> expected = Arrays.asList(new Word(language, "Apple"), new Word(language, "Bee"), new Word(language, "Candy"));
+        List<Word> result = new WordSorter().sort(input);
+        for (int i = 0; i < result.size(); i++) {
+            Assert.assertEquals(expected.get(i).getLanguage().name, result.get(i).getLanguage().name);
+            Assert.assertEquals(expected.get(i).getWord(), result.get(i).getWord());
+        }
+    }
+}
