@@ -19,7 +19,7 @@ public class WordSearcher implements Searcher {
             if (words.get(mid).getWord().equals(searchingFor)) {
                 searchingForIndex = mid;
                 break;
-            } else if (words.get(mid).getWord().compareTo(searchingFor) < 0) {
+            } else if (words.get(mid).getWord().compareTo(searchingFor) > 0) {
                 low = mid + 1;
             } else {
                 up = mid - 1;

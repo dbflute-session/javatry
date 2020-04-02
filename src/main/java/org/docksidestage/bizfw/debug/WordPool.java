@@ -1,29 +1,72 @@
 package org.docksidestage.bizfw.debug;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 public class WordPool {
-    private List<Word> words;
+    private Map<Long, Word> wordMap;
 
     public WordPool() {
         LanguagePool languagePool = new LanguagePool();
-        words = new ArrayList<>();
-        words.add(new Word(languagePool.getLanguage("日本語"), "私"));
-        words.add(new Word(languagePool.getLanguage("日本語"), "こんにちは"));
-        words.add(new Word(languagePool.getLanguage("日本語"), "食べる"));
+        wordMap = new HashMap<>();
+        wordMap.put(1L, new Word(languagePool.getLanguage("日本語"), "私"));
+        wordMap.put(2L, new Word(languagePool.getLanguage("日本語"), "こんにちは"));
+        wordMap.put(3L, new Word(languagePool.getLanguage("日本語"), "食べる"));
+    }
+
+    public Word create(Language language, String word) {
+        Long id = incrementId();
+        wordMap.put(id, new Word(language, word));
+        return wordMap.get(id);
+    }
+
+    public Word find(Long id) {
+        return wordMap.get(id);
+    }
+
+    public Word find(String word) {
+        return wordMap.values().stream().filter(v -> v.getWord().equals(word)).findFirst().orElseThrow(NoSuchElementException::new);
+    }
+
+    public Long findId(String word) {
+        return wordMap.entrySet()
+                .stream()
+                .filter(entry -> entry.getValue().getWord().equals(word))
+                .map(Map.Entry::getKey)
+                .findFirst()
+                .orElseThrow(NoSuchElementException::new);
+    }
+
+    public Word update(Long id, Word word) {
+        wordMap.remove(id);
+        wordMap.put(id, word);
+        return wordMap.get(id);
+    }
+
+    public void delete(Long id) {
+        wordMap.remove(id);
     }
 
     public List<Word> getWords() {
-        return words;
+        return wordMap.values().stream().collect(Collectors.toList());
     }
 
     public List<String> getWordsOnly() {
-        return words.stream().map(word -> word.getWord()).collect(Collectors.toList());
+        return wordMap.values().stream().map(Word::getWord).collect(Collectors.toList());
     }
 
     public List<Language> getLanguages() {
-        return words.stream().map(word -> word.getLanguage()).collect(Collectors.toList());
+        return wordMap.values().stream().map(Word::getLanguage).collect(Collectors.toList());
+    }
+
+    private Long incrementId() {
+        return findMaxId() + 1;
+    }
+
+    private Long findMaxId() {
+        return wordMap.keySet().stream().mapToLong(k -> k).max().orElseThrow(NoSuchElementException::new);
     }
 }
