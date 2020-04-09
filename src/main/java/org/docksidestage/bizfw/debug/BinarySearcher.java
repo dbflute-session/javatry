@@ -2,13 +2,18 @@ package org.docksidestage.bizfw.debug;
 
 import java.util.List;
 
-public class WordSearcher implements Searcher {
+public class BinarySearcher implements Searcher {
     public List<Word> words;
 
-    public WordSearcher() {
+    public BinarySearcher() {
         words = new WordPool().getWords();
     }
 
+    /**
+     * todo up lowをupper underにする by zaya
+     * @param searchingFor
+     * @return
+     */
     @Override
     public Word search(String searchingFor) {
         int searchingForIndex = -1;

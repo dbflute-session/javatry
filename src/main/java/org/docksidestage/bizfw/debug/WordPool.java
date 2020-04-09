@@ -1,10 +1,9 @@
 package org.docksidestage.bizfw.debug;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.NoSuchElementException;
+import java.util.*;
 import java.util.stream.Collectors;
+
+import javafx.util.Pair;
 
 public class WordPool {
     private Map<Long, Word> wordMap;
@@ -17,10 +16,10 @@ public class WordPool {
         wordMap.put(3L, new Word(languagePool.getLanguage("日本語"), "食べる"));
     }
 
-    public Word create(Language language, String word) {
+    public Pair<Long, Word> create(Language language, String word) {
         Long id = incrementId();
         wordMap.put(id, new Word(language, word));
-        return wordMap.get(id);
+        return new Pair<>(id, wordMap.get(id));
     }
 
     public Word find(Long id) {
@@ -46,12 +45,33 @@ public class WordPool {
         return wordMap.get(id);
     }
 
+    public Word update(String language, String current, String update) {
+        Long id = findId(current);
+        wordMap.remove(id);
+        wordMap.put(id, new Word(new Language(language), update));
+        return wordMap.get(id);
+    }
+
+    public Word update(String current, String update) {
+        Long id = findId(current);
+        Word word = wordMap.get(id);
+        wordMap.remove(id);
+        wordMap.put(id, new Word(word.getLanguage(), update));
+        return wordMap.get(id);
+    }
+
+    public Word replace(Long id, String beReplaced, String toBe) {
+        String replace = wordMap.get(id).getWord().replace(beReplaced, toBe);
+        update(wordMap.get(id).getWord(), replace);
+        return wordMap.get(id);
+    }
+
     public void delete(Long id) {
         wordMap.remove(id);
     }
 
     public List<Word> getWords() {
-        return wordMap.values().stream().collect(Collectors.toList());
+        return new ArrayList<>(wordMap.values());
     }
 
     public List<String> getWordsOnly() {
