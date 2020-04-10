@@ -24,4 +24,7 @@ public class LanguagePool {
     public Language getLanguage(String languageName) {
         return languages.get(languageName);
     }
+
+    // todo name, description, rankなどでsortできるようにする　by zaya
+    // todo 引数が多い関数をここで作って、引数間違える問題を作る by zaya
 }
