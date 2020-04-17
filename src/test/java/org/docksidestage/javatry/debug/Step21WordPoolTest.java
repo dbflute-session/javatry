@@ -1,8 +1,8 @@
 package org.docksidestage.javatry.debug;
 
 import java.util.List;
+import java.util.Map;
 
-import javafx.util.Pair;
 import org.docksidestage.bizfw.debug.Language;
 import org.docksidestage.bizfw.debug.Word;
 import org.docksidestage.bizfw.debug.WordPool;
@@ -35,7 +35,7 @@ public class Step21WordPoolTest extends PlainTestCase {
         WordPool pool = new WordPool();
 
         // act
-        Pair<Long, Word> actual = pool.create(new Language("日本語"), "財布");
+        Map.Entry<Long, Word> actual = pool.create(new Language("日本語"), "財布");
 
         // assert
         assertTrue(pool.getWords().contains(actual.getValue()));
@@ -95,7 +95,7 @@ public class Step21WordPoolTest extends PlainTestCase {
     public void test_updateByWord() {
         // arrange
         WordPool pool = new WordPool();
-        Pair<Long, Word> created = pool.create(new Language("日本語"), "つくえ");
+        Map.Entry<Long, Word> created = pool.create(new Language("日本語"), "つくえ");
 
         // act
         Word result = pool.update("つくえ", "ぼうし");
@@ -112,7 +112,7 @@ public class Step21WordPoolTest extends PlainTestCase {
     public void test_replace() {
         // arrange
         WordPool pool = new WordPool();
-        Pair<Long, Word> created = pool.create(new Language("日本語"), "つくえ");
+        Map.Entry<Long, Word> created = pool.create(new Language("日本語"), "つくえ");
 
         // act
         Word result = pool.replace(created.getKey(), "くえ", "ばき");
@@ -129,7 +129,7 @@ public class Step21WordPoolTest extends PlainTestCase {
     public void test_update_withLanguage() {
         // arrange
         WordPool pool = new WordPool();
-        Pair<Long, Word> created = pool.create(new Language("日本語"), "つくえ");
+        Map.Entry<Long, Word> created = pool.create(new Language("日本語"), "つくえ");
 
         // act
         Word result = pool.update("日本語", "つくえ", "ぼうし");
@@ -143,7 +143,7 @@ public class Step21WordPoolTest extends PlainTestCase {
     public void test_delete() {
         // arrange
         WordPool pool = new WordPool();
-        Pair<Long, Word> created = pool.create(new Language("日本語"), "削除");
+        Map.Entry<Long, Word> created = pool.create(new Language("日本語"), "削除");
 
         // act
         pool.delete(created.getKey());

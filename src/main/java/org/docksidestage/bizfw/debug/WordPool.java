@@ -3,8 +3,6 @@ package org.docksidestage.bizfw.debug;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import javafx.util.Pair;
-
 /**
  * @author zaya
  */
@@ -19,10 +17,10 @@ public class WordPool {
         wordMap.put(3L, new Word(languagePool.getLanguage("日本語"), "食べる"));
     }
 
-    public Pair<Long, Word> create(Language language, String word) {
+    public Map.Entry<Long, Word> create(Language language, String word) {
         Long id = incrementId();
         wordMap.put(id, new Word(language, word));
-        return new Pair<>(id, wordMap.get(id));
+        return new AbstractMap.SimpleEntry<>(id, wordMap.get(id));
     }
 
     public Word find(Long id) {
