@@ -1,7 +1,13 @@
-package org.docksidestage.bizfw.debug;
+package org.docksidestage.bizfw.debug.searcher;
 
 import java.util.List;
 
+import org.docksidestage.bizfw.debug.Word;
+import org.docksidestage.bizfw.debug.WordPool;
+
+/**
+ * @author zaya
+ */
 public class LinearSearcher implements Searcher {
     public List<Word> words;
 

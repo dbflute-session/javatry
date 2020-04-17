@@ -1,6 +1,9 @@
-package org.docksidestage.bizfw.debug;
+package org.docksidestage.bizfw.debug.sorter;
 
 import java.util.List;
+
+import org.docksidestage.bizfw.debug.Word;
+import org.docksidestage.bizfw.debug.WordPool;
 
 /**
  * @author zaya

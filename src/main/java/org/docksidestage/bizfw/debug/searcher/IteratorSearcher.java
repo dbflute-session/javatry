@@ -1,8 +1,14 @@
-package org.docksidestage.bizfw.debug;
+package org.docksidestage.bizfw.debug.searcher;
 
 import java.util.Iterator;
 import java.util.List;
 
+import org.docksidestage.bizfw.debug.Word;
+import org.docksidestage.bizfw.debug.WordPool;
+
+/**
+ * @author zaya
+ */
 public class IteratorSearcher implements Searcher {
     public List<Word> words;
 

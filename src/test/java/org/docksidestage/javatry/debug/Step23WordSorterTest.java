@@ -7,18 +7,17 @@ import org.docksidestage.bizfw.debug.Language;
 import org.docksidestage.bizfw.debug.LanguagePool;
 import org.docksidestage.bizfw.debug.Word;
 import org.docksidestage.bizfw.debug.WordSorter;
+import org.docksidestage.unit.PlainTestCase;
 import org.junit.Assert;
-import org.junit.Test;
 
 /**
  * @author zaya
  */
-public class WordSorterTest {
+public class Step23WordSorterTest extends PlainTestCase {
 
     /**
      * todo 1/3が落ちるようにする（３種類のsorterの中で1つだけバグを埋め込んで）by zaya
      */
-    @Test
     public void testSort() {
         // arrange
         Language language = new LanguagePool().getLanguage("English");

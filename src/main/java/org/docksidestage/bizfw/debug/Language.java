@@ -3,6 +3,9 @@ package org.docksidestage.bizfw.debug;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author zaya
+ */
 public class Language {
     public String name;
     public String description = "";

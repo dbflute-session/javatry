@@ -5,6 +5,9 @@ import java.util.stream.Collectors;
 
 import javafx.util.Pair;
 
+/**
+ * @author zaya
+ */
 public class WordPool {
     private Map<Long, Word> wordMap;
 

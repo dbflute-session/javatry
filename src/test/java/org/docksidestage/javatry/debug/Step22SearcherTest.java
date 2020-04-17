@@ -1,17 +1,16 @@
 package org.docksidestage.javatry.debug;
 
-import org.docksidestage.bizfw.debug.BinarySearcher;
-import org.docksidestage.bizfw.debug.IteratorSearcher;
 import org.docksidestage.bizfw.debug.Word;
+import org.docksidestage.bizfw.debug.searcher.BinarySearcher;
+import org.docksidestage.bizfw.debug.searcher.IteratorSearcher;
+import org.docksidestage.unit.PlainTestCase;
 import org.junit.Assert;
-import org.junit.Test;
 
 /**
  * @author zaya
  */
-public class SearcherTest {
+public class Step22SearcherTest extends PlainTestCase {
 
-    @Test
     public void test_binarySearch_found() {
         // act
         Word found = new BinarySearcher().search("私");
@@ -21,15 +20,13 @@ public class SearcherTest {
         Assert.assertEquals("私", found.getWord());
     }
 
-    @Test(expected = IllegalArgumentException.class)
     public void test_binarySearch_notFound() {
-        new BinarySearcher().search("君");
+        assertException(IllegalArgumentException.class, () -> new BinarySearcher().search("君"));
     }
 
     /**
      * todo iterator.nextを変数化しないで、返す時も呼ぶようにする by zaya
      */
-    @Test
     public void test_iteratorSearch_found() {
         // act
         Word found = new IteratorSearcher().search("私");
@@ -39,8 +36,7 @@ public class SearcherTest {
         Assert.assertEquals("私", found.getWord());
     }
 
-    @Test(expected = IllegalArgumentException.class)
     public void test_iteratorSearch_notFound() {
-        new IteratorSearcher().search("君");
+        assertException(IllegalArgumentException.class, () -> new IteratorSearcher().search("君"));
     }
 }

@@ -1,21 +1,18 @@
 package org.docksidestage.javatry.debug;
 
-import static org.junit.Assert.*;
-
 import java.util.List;
 
 import javafx.util.Pair;
 import org.docksidestage.bizfw.debug.Language;
 import org.docksidestage.bizfw.debug.Word;
 import org.docksidestage.bizfw.debug.WordPool;
-import org.junit.Test;
+import org.docksidestage.unit.PlainTestCase;
 
 /**
  * @author zaya
  */
-public class WordPoolTest {
+public class Step21WordPoolTest extends PlainTestCase {
 
-    @Test
     public void test_getWords() {
         // arrange
         WordPool pool = new WordPool();
@@ -32,7 +29,7 @@ public class WordPoolTest {
         assertEquals("こんにちは", result.get(1).getWord());
         assertEquals("食べる", result.get(2).getWord());
     }
-    @Test
+
     public void test_create() {
         // arrange
         WordPool pool = new WordPool();
@@ -44,7 +41,6 @@ public class WordPoolTest {
         assertTrue(pool.getWords().contains(actual.getValue()));
     }
 
-    @Test
     public void test_findById() {
         // arrange
         WordPool pool = new WordPool();
@@ -57,7 +53,6 @@ public class WordPoolTest {
         assertEquals("こんにちは", found.getWord());
     }
 
-    @Test
     public void test_findByWord() {
         // arrange
         WordPool pool = new WordPool();
@@ -70,7 +65,6 @@ public class WordPoolTest {
         assertEquals("食べる", found.getWord());
     }
 
-    @Test
     public void test_findId() {
         // arrange
         WordPool pool = new WordPool();
@@ -82,7 +76,6 @@ public class WordPoolTest {
         assertEquals(new Long(3), found);
     }
 
-    @Test
     public void test_update() {
         // arrange
         WordPool pool = new WordPool();
@@ -99,7 +92,6 @@ public class WordPoolTest {
     /**
      * todo 更新前のwordを返すようにする by zaya
      */
-    @Test
     public void test_updateByWord() {
         // arrange
         WordPool pool = new WordPool();
@@ -117,7 +109,6 @@ public class WordPoolTest {
     /**
      * todo replaceのみ書いて、返り値使わないようにする by zaya
      */
-    @Test
     public void test_replace() {
         // arrange
         WordPool pool = new WordPool();
@@ -135,7 +126,6 @@ public class WordPoolTest {
     /**
      * todo 引数間違っている問題にする(もうちょっと引数欲しいかも) by zaya
      */
-    @Test
     public void test_update_withLanguage() {
         // arrange
         WordPool pool = new WordPool();
@@ -150,7 +140,6 @@ public class WordPoolTest {
         assertEquals(created.getKey(), pool.findId("ぼうし"));
     }
 
-    @Test
     public void test_delete() {
         // arrange
         WordPool pool = new WordPool();

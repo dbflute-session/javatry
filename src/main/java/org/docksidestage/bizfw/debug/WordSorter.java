@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import org.docksidestage.bizfw.debug.sorter.BubbleSorter;
+import org.docksidestage.bizfw.debug.sorter.SelectionSorter;
+import org.docksidestage.bizfw.debug.sorter.Sorter;
+
 /**
  * @author zaya
  */
