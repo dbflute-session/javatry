@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.docksidestage.bizfw.debug.sorter.BubbleSorter;
+import org.docksidestage.bizfw.debug.sorter.QuickSorter;
 import org.docksidestage.bizfw.debug.sorter.SelectionSorter;
 import org.docksidestage.bizfw.debug.sorter.Sorter;
 
@@ -20,15 +21,15 @@ public class WordSorter implements Sorter<Word> {
 
     @Override
     public List<Word> sort() {
-        List<Sorter> sorters = Arrays.asList(new BubbleSorter(), new SelectionSorter());
-        int i = new Random().nextInt(sorters.size() - 1);
+        List<Sorter> sorters = Arrays.asList(new BubbleSorter(), new SelectionSorter(), new QuickSorter());
+        int i = new Random().nextInt(sorters.size());
         return sorters.get(i).sort();
     }
 
     @Override
     public List<Word> sort(List<Word> list) {
-        List<Sorter> sorters = Arrays.asList(new BubbleSorter(), new SelectionSorter());
-        int i = new Random().nextInt(sorters.size() - 1);
+        List<Sorter> sorters = Arrays.asList(new BubbleSorter(), new SelectionSorter(), new QuickSorter());
+        int i = new Random().nextInt(sorters.size());
         return sorters.get(i).sort(list);
     }
 }
