@@ -12,9 +12,9 @@ public class WordPool {
     public WordPool() {
         LanguagePool languagePool = new LanguagePool();
         wordMap = new HashMap<>();
-        wordMap.put(1L, new Word(languagePool.getLanguage("日本語"), "私"));
-        wordMap.put(2L, new Word(languagePool.getLanguage("日本語"), "こんにちは"));
-        wordMap.put(3L, new Word(languagePool.getLanguage("日本語"), "食べる"));
+        wordMap.put(1L, new Word(languagePool.getLanguage("Japanese"), "私"));
+        wordMap.put(2L, new Word(languagePool.getLanguage("Japanese"), "こんにちは"));
+        wordMap.put(3L, new Word(languagePool.getLanguage("Japanese"), "食べる"));
     }
 
     public Map.Entry<Long, Word> create(Language language, String word) {

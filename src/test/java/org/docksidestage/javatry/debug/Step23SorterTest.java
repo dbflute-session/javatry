@@ -13,12 +13,27 @@ import org.junit.Assert;
 /**
  * @author zaya
  */
-public class Step23WordSorterTest extends PlainTestCase {
+public class Step23SorterTest extends PlainTestCase {
+
+    /**
+     * todo rank初期化していないものを入れる by zaya
+     */
+    public void test_languageSort() {
+        // act
+        List<Language> languages = new LanguagePool().sort();
+
+        // assert
+        int rank = 0;
+        for (Language language : languages) {
+            assertTrue(rank < language.rank);
+            rank = language.rank;
+        }
+    }
 
     /**
      * todo 1/3が落ちるようにする（３種類のsorterの中で1つだけバグを埋め込んで）by zaya
      */
-    public void testSort() {
+    public void test_wordSorter() {
         // arrange
         Language language = new LanguagePool().getLanguage("English");
         List<Word> input = Arrays.asList(new Word(language, "Candy"), new Word(language, "Table"), new Word(language, "Bee"),
