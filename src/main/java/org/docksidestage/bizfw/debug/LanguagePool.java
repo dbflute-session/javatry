@@ -16,7 +16,7 @@ public class LanguagePool {
     public LanguagePool() {
         languages = new HashMap<>();
         languages.put("Japanese", new Language("日本語", 1, 13));
-        languages.put("English", new Language("English", "", 58, 1));
+        languages.put("English", new Language("English", "", 58));
         languages.put("Spanish", new Language("Español", 20, 4));
         languages.put("Hindi", new Language("हिन्दी", "", 3, 3));
         languages.put("Polish", new Language("Polskie", "", 1, 38));

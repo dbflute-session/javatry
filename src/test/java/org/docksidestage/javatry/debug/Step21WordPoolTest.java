@@ -24,13 +24,24 @@ public class Step21WordPoolTest extends PlainTestCase {
         List<Word> result = pool.getWords();
 
         // assert
-        assertEquals(3, result.size());
         assertEquals("日本語", result.get(0).getLanguage().name);
-        assertEquals("日本語", result.get(1).getLanguage().name);
-        assertEquals("日本語", result.get(2).getLanguage().name);
         assertEquals("私", result.get(0).getWord());
+        assertEquals("日本語", result.get(1).getLanguage().name);
         assertEquals("こんにちは", result.get(1).getWord());
+        assertEquals("日本語", result.get(2).getLanguage().name);
         assertEquals("食べる", result.get(2).getWord());
+    }
+
+    public void test_find() {
+        // arrange
+        WordPool pool = new WordPool();
+
+        // act
+        Word found = pool.find(2L);
+
+        // assert
+        assertEquals("日本語", found.getLanguage().name);
+        assertEquals("こんにちは", found.getWord());
     }
 
     public void test_create() {
@@ -44,83 +55,7 @@ public class Step21WordPoolTest extends PlainTestCase {
         assertTrue(pool.getWords().contains(actual.getValue()));
     }
 
-    public void test_findById() {
-        // arrange
-        WordPool pool = new WordPool();
-
-        // act
-        Word found = pool.find(2L);
-
-        // assert
-        assertEquals("日本語", found.getLanguage().name);
-        assertEquals("こんにちは", found.getWord());
-    }
-
-    public void test_findByWord() {
-        // arrange
-        WordPool pool = new WordPool();
-
-        // act
-        Word found = pool.find("食べる");
-
-        // assert
-        assertEquals("日本語", found.getLanguage().name);
-        assertEquals("食べる", found.getWord());
-    }
-
-    public void test_findId() {
-        // arrange
-        WordPool pool = new WordPool();
-
-        // act
-        Long found = pool.findId("食べる");
-
-        // assert
-        assertEquals(new Long(3), found);
-    }
-
     public void test_update() {
-        // arrange
-        WordPool pool = new WordPool();
-
-        // act
-        Word result = pool.update(1L, new Word(new Language("日本語"), "さようなら"));
-
-        // assert
-        assertEquals("さようなら", result.getWord());
-        assertEquals("日本語", result.getLanguage().name);
-        assertEquals(new Long(1), pool.findId("さようなら"));
-    }
-
-    public void test_updateByWord() {
-        // arrange
-        WordPool pool = new WordPool();
-        Map.Entry<Long, Word> created = pool.create(new Language("日本語"), "つくえ");
-
-        // act
-        Word result = pool.update("つくえ", "ぼうし");
-
-        // assert
-        assertEquals("ぼうし", result.getWord());
-        assertEquals("日本語", result.getLanguage().name);
-        assertEquals(created.getKey(), pool.findId("ぼうし"));
-    }
-
-    public void test_replace() {
-        // arrange
-        WordPool pool = new WordPool();
-        Map.Entry<Long, Word> created = pool.create(new Language("日本語"), "つくえ");
-
-        // act
-        Word result = pool.replace(created.getKey(), "くえ", "ばき");
-
-        // assert
-        assertEquals("つばき", result.getWord());
-        assertEquals("日本語", result.getLanguage().name);
-        assertEquals(created.getKey(), pool.findId("つばき"));
-    }
-
-    public void test_update_withLanguage() {
         // arrange
         WordPool pool = new WordPool();
         Map.Entry<Long, Word> created = pool.create(new Language("日本語"), "つくえ");
@@ -134,16 +69,18 @@ public class Step21WordPoolTest extends PlainTestCase {
         assertEquals(created.getKey(), pool.findId("ぼうし"));
     }
 
-    public void test_delete() {
+    public void test_replace() {
         // arrange
         WordPool pool = new WordPool();
-        Map.Entry<Long, Word> created = pool.create(new Language("日本語"), "削除");
+        Map.Entry<Long, Word> created = pool.create(new Language("日本語"), "つくえ");
 
         // act
-        pool.delete(created.getKey());
+        String result = pool.replace(created.getKey(), "くえ", "ばき");
 
         // assert
-        assertFalse(pool.getWordsOnly().contains("削除"));
-        assertNull(pool.find(created.getKey()));
+        Word actual = pool.find(result);
+        assertEquals("つばき", actual.getWord());
+        assertEquals("日本語", actual.getLanguage().name);
+        assertEquals(created.getKey(), pool.findId("つばき"));
     }
 }
