@@ -24,15 +24,15 @@ public class SelectionSorter implements Sorter<Word> {
     public List<Word> sort(List<Word> wordList) {
         int n = wordList.size();
         for (int i = 0; i < n - 1; i++) {
-            int min = i;
+            int m = i;
             for (int j = i + 1; j < n; j++) {
-                if (wordList.get(j).getWord().compareTo(wordList.get(min).getWord()) < 0) {
-                    min = j;
+                if (wordList.get(j).getWord().compareTo(wordList.get(m).getWord()) < 0) {
+                    m = j;
                 }
             }
-            Word temp = wordList.get(min);
-            wordList.set(min, wordList.get(i));
-            wordList.set(i, temp);
+            Word t = wordList.get(m);
+            wordList.set(m, wordList.get(i));
+            wordList.set(i, t);
         }
         return wordList;
     }

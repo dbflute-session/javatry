@@ -8,11 +8,13 @@ import org.docksidestage.unit.PlainTestCase;
 import org.junit.Assert;
 
 /**
+ * Some of the tests are failing as a consequence of some bug.
+ * Debug, fix the bug, make it green and save the world!
+ * (テストの一部がバグ原因で落ちています。デバグして、バグを直して、テストを通るようにしてください。)
  * @author zaya
  */
 public class Step22SearcherTest extends PlainTestCase {
 
-    // todo languageのkeyを日本語にして検索するようにする by zaya
     public void test_binarySearch_found() {
         // act
         Word found = new BinarySearcher().search("私");
@@ -26,9 +28,6 @@ public class Step22SearcherTest extends PlainTestCase {
         assertException(IllegalArgumentException.class, () -> new BinarySearcher().search("君"));
     }
 
-    /**
-     * todo iterator.nextを変数化しないで、返す時も呼ぶようにする by zaya
-     */
     public void test_iteratorSearch_found() {
         // act
         Word found = new IteratorSearcher().search("私");

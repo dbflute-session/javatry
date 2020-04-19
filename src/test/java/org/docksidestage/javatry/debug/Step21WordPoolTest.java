@@ -9,6 +9,9 @@ import org.docksidestage.bizfw.debug.WordPool;
 import org.docksidestage.unit.PlainTestCase;
 
 /**
+ * Some of the tests are failing as a consequence of some bug.
+ * Debug, fix the bug, make it green and save the world!
+ * (テストの一部がバグ原因で落ちています。デバグして、バグを直して、テストを通るようにしてください。)
  * @author zaya
  */
 public class Step21WordPoolTest extends PlainTestCase {
@@ -89,9 +92,6 @@ public class Step21WordPoolTest extends PlainTestCase {
         assertEquals(new Long(1), pool.findId("さようなら"));
     }
 
-    /**
-     * todo 更新前のwordを返すようにする by zaya
-     */
     public void test_updateByWord() {
         // arrange
         WordPool pool = new WordPool();
@@ -106,9 +106,6 @@ public class Step21WordPoolTest extends PlainTestCase {
         assertEquals(created.getKey(), pool.findId("ぼうし"));
     }
 
-    /**
-     * todo replaceのみ書いて、返り値使わないようにする by zaya
-     */
     public void test_replace() {
         // arrange
         WordPool pool = new WordPool();
@@ -123,9 +120,6 @@ public class Step21WordPoolTest extends PlainTestCase {
         assertEquals(created.getKey(), pool.findId("つばき"));
     }
 
-    /**
-     * todo 引数間違っている問題にする(もうちょっと引数欲しいかも) by zaya
-     */
     public void test_update_withLanguage() {
         // arrange
         WordPool pool = new WordPool();

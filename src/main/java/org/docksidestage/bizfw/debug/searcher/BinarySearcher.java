@@ -15,25 +15,20 @@ public class BinarySearcher implements Searcher {
         words = new WordPool().getWords();
     }
 
-    /**
-     * todo up lowをupper underにする by zaya
-     * @param searchingFor
-     * @return
-     */
     @Override
     public Word search(String searchingFor) {
         int searchingForIndex = -1;
-        int low = 0;
-        int up = words.size() - 1;
-        while (low <= up) {
-            int mid = (low + up) / 2;
+        int under = 0;
+        int upper = words.size() - 1;
+        while (under <= upper) {
+            int mid = (under + upper) / 2;
             if (words.get(mid).getWord().equals(searchingFor)) {
                 searchingForIndex = mid;
                 break;
             } else if (words.get(mid).getWord().compareTo(searchingFor) > 0) {
-                low = mid + 1;
+                under = mid + 1;
             } else {
-                up = mid - 1;
+                upper = mid - 1;
             }
         }
         if (searchingForIndex < 0) {

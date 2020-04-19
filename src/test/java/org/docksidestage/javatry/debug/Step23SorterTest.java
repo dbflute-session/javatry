@@ -11,13 +11,13 @@ import org.docksidestage.unit.PlainTestCase;
 import org.junit.Assert;
 
 /**
+ * Some of the tests are failing as a consequence of some bug.
+ * Debug, fix the bug, make it green and save the world!
+ * (テストの一部がバグ原因で落ちています。デバグして、バグを直して、テストを通るようにしてください。)
  * @author zaya
  */
 public class Step23SorterTest extends PlainTestCase {
 
-    /**
-     * todo rank初期化していないものを入れる by zaya
-     */
     public void test_languageSort() {
         // act
         List<Language> languages = new LanguagePool().sort();
@@ -30,9 +30,6 @@ public class Step23SorterTest extends PlainTestCase {
         }
     }
 
-    /**
-     * todo 1/3が落ちるようにする（３種類のsorterの中で1つだけバグを埋め込んで）by zaya
-     */
     public void test_wordSorter() {
         // arrange
         Language language = new LanguagePool().getLanguage("English");
