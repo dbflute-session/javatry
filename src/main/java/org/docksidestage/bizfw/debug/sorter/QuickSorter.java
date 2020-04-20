@@ -3,16 +3,18 @@ package org.docksidestage.bizfw.debug.sorter;
 import java.util.List;
 
 import org.docksidestage.bizfw.debug.Word;
-import org.docksidestage.bizfw.debug.WordPool;
 
 /**
  * @author zaya
  */
 public class QuickSorter implements Sorter<Word> {
-    public List<Word> words;
+    private List<Word> words;
 
     public QuickSorter() {
-        words = new WordPool().getWords();
+    }
+
+    public QuickSorter(List<Word> words) {
+        this.words = words;
     }
 
     @Override

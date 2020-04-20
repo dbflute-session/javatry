@@ -6,7 +6,8 @@ import java.util.List;
 import org.docksidestage.bizfw.debug.Language;
 import org.docksidestage.bizfw.debug.LanguagePool;
 import org.docksidestage.bizfw.debug.Word;
-import org.docksidestage.bizfw.debug.WordSorter;
+import org.docksidestage.bizfw.debug.WordAssort;
+import org.docksidestage.bizfw.debug.sorter.WordSorter;
 import org.docksidestage.unit.PlainTestCase;
 import org.junit.Assert;
 
@@ -40,6 +41,22 @@ public class Step23SorterTest extends PlainTestCase {
 
         // act
         List<Word> result = new WordSorter().sort(input);
+
+        // assert
+        for (int i = 0; i < result.size(); i++) {
+            Assert.assertEquals(expected.get(i).getLanguage().name, result.get(i).getLanguage().name);
+            Assert.assertEquals(expected.get(i).getWord(), result.get(i).getWord());
+        }
+    }
+
+    public void test_wordPoolSorter() {
+        // arrange
+        Language language = new LanguagePool().getLanguage("Japanese");
+        List<Word> expected =
+                Arrays.asList(new Word(language, "昴"), new Word(language, "柿"), new Word(language, "私"), new Word(language, "荼"));
+
+        // act
+        List<Word> result = new WordAssort().sort();
 
         // assert
         for (int i = 0; i < result.size(); i++) {

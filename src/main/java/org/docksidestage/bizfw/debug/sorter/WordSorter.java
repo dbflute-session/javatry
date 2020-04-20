@@ -1,13 +1,11 @@
-package org.docksidestage.bizfw.debug;
+package org.docksidestage.bizfw.debug.sorter;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import org.docksidestage.bizfw.debug.sorter.BubbleSorter;
-import org.docksidestage.bizfw.debug.sorter.QuickSorter;
-import org.docksidestage.bizfw.debug.sorter.SelectionSorter;
-import org.docksidestage.bizfw.debug.sorter.Sorter;
+import org.docksidestage.bizfw.debug.Word;
+import org.docksidestage.bizfw.debug.WordPool;
 
 /**
  * @author zaya
@@ -21,7 +19,6 @@ public class WordSorter implements Sorter<Word> {
 
     @Override
     public List<Word> sort() {
-        // done TODO zaya Sorterのジェネリック型 (Sorter<Word>) by jflute (2020/04/20)
         List<Sorter<Word>> sorters = Arrays.asList(new BubbleSorter(), new SelectionSorter(), new QuickSorter());
         int i = new Random().nextInt(sorters.size());
         return sorters.get(i).sort();
@@ -31,6 +28,6 @@ public class WordSorter implements Sorter<Word> {
     public List<Word> sort(List<Word> list) {
         List<Sorter<Word>> sorters = Arrays.asList(new BubbleSorter(), new SelectionSorter(), new QuickSorter());
         int i = new Random().nextInt(sorters.size());
-        return sorters.get(i).sort(list);
+        return sorters.get(i).sort(words);
     }
 }

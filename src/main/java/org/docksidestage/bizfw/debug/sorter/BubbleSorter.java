@@ -3,17 +3,19 @@ package org.docksidestage.bizfw.debug.sorter;
 import java.util.List;
 
 import org.docksidestage.bizfw.debug.Word;
-import org.docksidestage.bizfw.debug.WordPool;
 
 /**
  * @author zaya
  */
 public class BubbleSorter implements Sorter<Word> {
     // done TODO zaya final付けちゃおう (他のところも) by jflute (2020/04/20)
-    public final List<Word> words;
+    private List<Word> words;
 
     public BubbleSorter() {
-        words = new WordPool().getWords();
+    }
+
+    public BubbleSorter(List<Word> words) {
+        this.words = words;
     }
 
     @Override
