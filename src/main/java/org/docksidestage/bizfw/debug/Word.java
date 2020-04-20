@@ -19,4 +19,13 @@ public class Word {
     public Language getLanguage() {
         return language;
     }
+
+    public boolean hasLanguage() {
+        getLanguage().countries = 3;
+        if (getLanguage() == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }

@@ -7,15 +7,16 @@ import java.util.stream.Collectors;
  * @author zaya
  */
 public class WordPool {
-    // TODO zaya finalを付けてしまおう by jflute (2020/04/20)
-    private Map<Long, Word> wordMap;
+    // done TODO zaya finalを付けてしまおう by jflute (2020/04/20)
+    private final Map<Long, Word> wordMap;
 
     public WordPool() {
         LanguagePool languagePool = new LanguagePool();
         wordMap = new HashMap<>();
         wordMap.put(1L, new Word(getJapanese(languagePool), "私"));
-        wordMap.put(2L, new Word(getJapanese(languagePool), "こんにちは"));
-        wordMap.put(3L, new Word(getJapanese(languagePool), "食べる"));
+        wordMap.put(2L, new Word(getJapanese(languagePool), "柿"));
+        wordMap.put(3L, new Word(getJapanese(languagePool), "荼"));
+        wordMap.put(4L, new Word(getJapanese(languagePool), "昴"));
     }
 
     public Map.Entry<Long, Word> create(Language language, String word) {
@@ -34,9 +35,9 @@ public class WordPool {
                 .filter(entry -> entry.getValue().getWord().equals(word))
                 .map(Map.Entry::getKey)
                 .findFirst()
-                // TODO zaya NoSuchElementExceptionするだけだと、get()と変わらないので、例外メッセージに word を入れたりしよう by jflute (2020/04/20)
-                // get()にしてレビューのときにorElseThrow()の使い方を説明するか、最初から優しいエラーメッセージにするか？
-                .orElseThrow(NoSuchElementException::new);
+                .get();
+        // done TODO zaya NoSuchElementExceptionするだけだと、get()と変わらないので、例外メッセージに word を入れたりしよう by jflute (2020/04/20)
+        // get()にしてレビューのときにorElseThrow()の使い方を説明するか、最初から優しいエラーメッセージにするか？
     }
 
     public Word find(Long id) {
@@ -81,7 +82,14 @@ public class WordPool {
     }
 
     public List<Language> getLanguages() {
-        return wordMap.values().stream().map(Word::getLanguage).collect(Collectors.toList());
+        List<Language> languages = new ArrayList<>();
+        wordMap.forEach((id, word) -> {
+            if (!word.hasLanguage()) {
+                throw new IllegalStateException("言語がないよ〜 word: " + word);
+            }
+            languages.add(word.getLanguage());
+        });
+        return languages;
     }
 
     private Long incrementId() {
@@ -89,7 +97,7 @@ public class WordPool {
     }
 
     private Language getJapanese(LanguagePool languagePool) {
-        wordMap.put(4L, new Word(languagePool.getLanguage("Japanese"), "君"));
+        wordMap.put(5L, new Word(languagePool.getLanguage("Japanese"), "君"));
         return languagePool.getLanguage("Japanese");
     }
 

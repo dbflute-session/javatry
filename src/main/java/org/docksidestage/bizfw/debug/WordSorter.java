@@ -21,15 +21,15 @@ public class WordSorter implements Sorter<Word> {
 
     @Override
     public List<Word> sort() {
-        // TODO zaya Sorterのジェネリック型 (Sorter<Word>) by jflute (2020/04/20)
-        List<Sorter> sorters = Arrays.asList(new BubbleSorter(), new SelectionSorter(), new QuickSorter());
+        // done TODO zaya Sorterのジェネリック型 (Sorter<Word>) by jflute (2020/04/20)
+        List<Sorter<Word>> sorters = Arrays.asList(new BubbleSorter(), new SelectionSorter(), new QuickSorter());
         int i = new Random().nextInt(sorters.size());
         return sorters.get(i).sort();
     }
 
     @Override
     public List<Word> sort(List<Word> list) {
-        List<Sorter> sorters = Arrays.asList(new BubbleSorter(), new SelectionSorter(), new QuickSorter());
+        List<Sorter<Word>> sorters = Arrays.asList(new BubbleSorter(), new SelectionSorter(), new QuickSorter());
         int i = new Random().nextInt(sorters.size());
         return sorters.get(i).sort(list);
     }
