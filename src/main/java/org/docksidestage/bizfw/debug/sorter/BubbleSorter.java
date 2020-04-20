@@ -9,6 +9,7 @@ import org.docksidestage.bizfw.debug.WordPool;
  * @author zaya
  */
 public class BubbleSorter implements Sorter<Word> {
+    // TODO zaya final付けちゃおう (他のところも) by jflute (2020/04/20)
     public List<Word> words;
 
     public BubbleSorter() {

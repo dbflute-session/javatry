@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
  * @author zaya
  */
 public class WordPool {
+    // TODO zaya finalを付けてしまおう by jflute (2020/04/20)
     private Map<Long, Word> wordMap;
 
     public WordPool() {
@@ -33,6 +34,8 @@ public class WordPool {
                 .filter(entry -> entry.getValue().getWord().equals(word))
                 .map(Map.Entry::getKey)
                 .findFirst()
+                // TODO zaya NoSuchElementExceptionするだけだと、get()と変わらないので、例外メッセージに word を入れたりしよう by jflute (2020/04/20)
+                // get()にしてレビューのときにorElseThrow()の使い方を説明するか、最初から優しいエラーメッセージにするか？
                 .orElseThrow(NoSuchElementException::new);
     }
 

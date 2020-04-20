@@ -21,6 +21,7 @@ public class WordSorter implements Sorter<Word> {
 
     @Override
     public List<Word> sort() {
+        // TODO zaya Sorterのジェネリック型 (Sorter<Word>) by jflute (2020/04/20)
         List<Sorter> sorters = Arrays.asList(new BubbleSorter(), new SelectionSorter(), new QuickSorter());
         int i = new Random().nextInt(sorters.size());
         return sorters.get(i).sort();
