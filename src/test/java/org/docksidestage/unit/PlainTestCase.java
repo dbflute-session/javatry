@@ -16,6 +16,9 @@
 package org.docksidestage.unit;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.lang.reflect.Method;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -37,6 +40,7 @@ import org.docksidestage.unit.flute.util.Srl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import ch.qos.logback.core.util.StatusPrinter;
 import junit.framework.TestCase;
 
 /**
@@ -44,6 +48,16 @@ import junit.framework.TestCase;
  * @since 1.0.0 (2019/04/14 Sunday)
  */
 public abstract class PlainTestCase extends TestCase {
+
+    // javatry does not need logback initialization logs
+    static { // should be before logback initialization
+        StatusPrinter.setPrintStream(new PrintStream(new OutputStream() {
+            @Override
+            public void write(int b) throws IOException {
+                // do nothing
+            }
+        }));
+    }
 
     // ===================================================================================
     //                                                                          Definition
