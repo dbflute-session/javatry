@@ -30,13 +30,14 @@ public class St6OperationSystem {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
+    private final String osType;
     private final String loginId;
-    private String osType;
 
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public St6OperationSystem(String loginId) {
+    public St6OperationSystem(String osType, String loginId) {
+        this.osType = osType;
         this.loginId = loginId;
     }
 
