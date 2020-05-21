@@ -97,18 +97,19 @@ public class Step41DependencyInjectionBeginnerTest extends PlainTestCase {
     //                                                           Execute like WebFramework
     //                                                           =========================
     /**
-     * Execute callFriend() of accessor action by UsingDiWebFrameworkProcess. <br>
-     * (accessor の Action の callFriend() を UsingDiWebFrameworkProcess 経由で実行してみましょう)
+     * Execute callFriend() of accessor action by UsingDiWebFrameworkProcess. (Animal as TooLazyDog) <br>
+     * (accessor の Action の callFriend() を UsingDiWebFrameworkProcess 経由で実行してみましょう (Animal は TooLazyDog として))
      */
     public void test_usingdi_UsingDiWebFrameworkProcess_callfriend_accessor() {
         // execution code here
     }
 
     /**
-     * Execute callFriend() of annotation and delegating actions by UsingDiWebFrameworkProcess.
-     * (And you can increase hit-points of sleepy cat in this method) <br>
-     * (annotation, delegating の Action の callFriend() を UsingDiWebFrameworkProcess 経由で実行してみましょう。
-     * (眠い猫のヒットポイントをこのメソッド内で増やしてもOK))
+     * Execute callFriend() of annotation and delegating actions by UsingDiWebFrameworkProcess. <br>
+     *  (Animal as TooLazyDog...so you can increase hit-points of sleepy cat in this method) <br>
+     * <br>
+     * (annotation, delegating の Action の callFriend() を UsingDiWebFrameworkProcess 経由で実行してみましょう <br>
+     *  (Animal は TooLazyDog として...ということで眠い猫のヒットポイントをこのメソッド内で増やしてもOK))
      */
     public void test_usingdi_UsingDiWebFrameworkProcess_callfriend_annotation_delegating() {
         // execution code here
