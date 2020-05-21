@@ -84,7 +84,7 @@ public abstract class AbstractColorBox implements ColorBox {
     //                                                                      ==============
     @Override
     public String toString() {
-        return "{" + color + ", " + size + ", spaces=" + spaceList.size() + "}";
+        return "box:{" + color + ", " + size + ", spaces=" + spaceList.size() + "}";
     }
 
     // ===================================================================================

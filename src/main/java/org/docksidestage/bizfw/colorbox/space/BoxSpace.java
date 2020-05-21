@@ -40,7 +40,7 @@ public class BoxSpace {
     //                                                                      ==============
     @Override
     public String toString() {
-        return content != null ? content.toString() : "*null";
+        return "space:{" + size + ", " + (content != null ? content.toString() : "*null") + "}";
     }
 
     // ===================================================================================

@@ -89,4 +89,12 @@ public class DoorBoxSpace extends BoxSpace {
     public boolean isBroken() {
         return damageCount >= BROKEN_DAMAGE;
     }
+
+    // ===================================================================================
+    //                                                                      Basic Override
+    //                                                                      ==============
+    @Override
+    public String toString() {
+        return super.toString() + "::{" + open + ", " + damageCount + "}";
+    }
 }

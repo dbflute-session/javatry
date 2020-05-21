@@ -41,7 +41,7 @@ public class BoxSize {
     //                                                                      ==============
     @Override
     public String toString() {
-        return "{" + height + ", " + width + ", " + depth + "}";
+        return "size:{" + height + ", " + width + ", " + depth + "}";
     }
 
     // ===================================================================================

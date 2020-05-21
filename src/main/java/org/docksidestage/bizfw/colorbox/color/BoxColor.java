@@ -37,7 +37,7 @@ public class BoxColor {
     //                                                                      ==============
     @Override
     public String toString() {
-        return "{" + colorName + "}";
+        return "color:{" + colorName + "}";
     }
 
     // ===================================================================================
