@@ -134,13 +134,15 @@ public class SimpleDiContainer {
             try {
                 method.invoke(baseObj, component); // e.g. action.setAnimal(component);
             } catch (IllegalAccessException | IllegalArgumentException e) {
-                String msg = "Failed to inject the component to the method: " + method + ", " + component;
-                throw new IllegalStateException(msg, e);
+                throw new IllegalStateException(buildSetterInjectionFailureMessage(method, component), e);
             } catch (InvocationTargetException e) {
-                String msg = "Failed to inject the component to the field: " + method + ", " + component;
-                throw new IllegalStateException(msg, e.getTargetException());
+                throw new IllegalStateException(buildSetterInjectionFailureMessage(method, component), e.getTargetException());
             }
         }
+    }
+
+    protected String buildSetterInjectionFailureMessage(Method method, Object component) {
+        return "Failed to inject the component to the method: " + method + ", " + component;
     }
 
     // ===================================================================================
