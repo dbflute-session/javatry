@@ -25,42 +25,71 @@ public class TicketBooth {
     //                                                                          ==========
     private static final int MAX_QUANTITY = 10;
     private static final int ONE_DAY_PRICE = 7400; // when 2019/06/15
+    private static final int TWO_DAY_PRICE = 13200;
 
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
     private int quantity = MAX_QUANTITY;
     private Integer salesProceeds;
+    private int price;
 
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
     public TicketBooth() {
     }
-
+    public void confirmPrice(int choice){
+        if (choice==1){price=ONE_DAY_PRICE;}
+        else if (choice==2){price=TWO_DAY_PRICE;}
+        else { throw new TicketBadChoiceException("Bad Choice");}
+    }
     // ===================================================================================
     //                                                                          Buy Ticket
     //                                                                          ==========
-    public void buyOneDayPassport(int handedMoney) {
+    public TicketBuyResult buyPassport(int choice, int handedMoney){
+        confirmPrice(choice);
         if (quantity <= 0) {
             throw new TicketSoldOutException("Sold out");
         }
-        --quantity;
-        if (handedMoney < ONE_DAY_PRICE) {
+        if (handedMoney < price) {
             throw new TicketShortMoneyException("Short money: " + handedMoney);
         }
+        --quantity;
         if (salesProceeds != null) {
-            salesProceeds = salesProceeds + handedMoney;
+            salesProceeds = salesProceeds + price;
         } else {
-            salesProceeds = handedMoney;
+            salesProceeds = price;
         }
+        TicketBuyResult PassportResult = new TicketBuyResult(handedMoney,price);
+        return PassportResult;
+    }
+    public Ticket buyOneDayPassport(int handedMoney) {
+        buyPassport(1,handedMoney);
+        Ticket x=new Ticket(ONE_DAY_PRICE);
+        return x;
     }
 
+
+    public TicketBuyResult buyTwoDayPassport(int handedMoney){
+        buyPassport(2,handedMoney);
+        TicketBuyResult x=new TicketBuyResult(handedMoney,TWO_DAY_PRICE);
+        return x;
+    }
     public static class TicketSoldOutException extends RuntimeException {
 
         private static final long serialVersionUID = 1L;
 
         public TicketSoldOutException(String msg) {
+            super(msg);
+        }
+    }
+
+    public static class TicketBadChoiceException extends RuntimeException {
+
+        private static final long serialVersionUID = 1L;
+
+        public TicketBadChoiceException(String msg) {
             super(msg);
         }
     }
