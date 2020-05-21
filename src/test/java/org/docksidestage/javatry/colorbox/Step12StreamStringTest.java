@@ -24,6 +24,11 @@ import org.docksidestage.unit.PlainTestCase;
 /**
  * The test of String with color-box, using Stream API you can. <br>
  * Show answer by log() for question of javadoc.
+ * <pre>
+ * addition:
+ * o e.g. "string in color-boxes" means String-type content in space of color-box
+ * o don't fix the YourPrivateRoom class and color-box classes
+ * </pre>
  * @author jflute
  * @author your_name_here
  */
