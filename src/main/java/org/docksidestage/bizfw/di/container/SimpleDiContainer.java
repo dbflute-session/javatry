@@ -72,9 +72,6 @@ public class SimpleDiContainer {
     }
 
     protected void injectDependency(Map<Class<?>, Object> componentMap, Object baseObj) { // very simple implementation
-        // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-        // annotation injection only supported for now by jflute(2019/10/16)
-        // _/_/_/_/_/_/_/_/_/_/
         doInjectByField(componentMap, baseObj);
         doInjectBySetter(componentMap, baseObj);
     }
