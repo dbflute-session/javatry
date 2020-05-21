@@ -86,14 +86,15 @@ public class UsingDiModule implements DiContainerModule {
     //                                                                              Action
     //                                                                              ======
     // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    // auto injection by accessor is unsupported in simple DI container of javatry
-    // so you need to inject them manually at your DI settings
+    // auto injection by accessor is supported in simple DI container of javatry
+    // so you don't need to inject them here
     // (generally it depends on DI container specification)
     // _/_/_/_/_/_/_/_/_/_/
     private void doBindAccessorAction(Map<Class<?>, Object> componentMap) {
         UsingDiAccessorAction action = new UsingDiAccessorAction();
-        action.setAnimal((Animal) componentMap.get(Animal.class));
-        action.setSupercarDealer((SupercarDealer) componentMap.get(SupercarDealer.class));
+        // you don't need this
+        //action.setAnimal((Animal) componentMap.get(Animal.class));
+        //action.setSupercarDealer((SupercarDealer) componentMap.get(SupercarDealer.class));
         componentMap.put(UsingDiAccessorAction.class, action);
     }
 
