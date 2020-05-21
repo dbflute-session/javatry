@@ -110,7 +110,7 @@ public class SimpleDiContainer {
         }
     }
 
-    private void doInjectBySetter(Map<Class<?>, Object> componentMap, Object baseObj) {
+    protected void doInjectBySetter(Map<Class<?>, Object> componentMap, Object baseObj) {
         Method[] declaredMethods = baseObj.getClass().getDeclaredMethods();
         for (Method method : declaredMethods) {
             if (!method.getName().startsWith("set")) {
