@@ -16,6 +16,10 @@
 package org.docksidestage.bizfw.di.container;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.lang.reflect.Parameter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -71,6 +75,11 @@ public class SimpleDiContainer {
         // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         // annotation injection only supported for now by jflute(2019/10/16)
         // _/_/_/_/_/_/_/_/_/_/
+        doInjectByField(componentMap, baseObj);
+        doInjectBySetter(componentMap, baseObj);
+    }
+
+    protected void doInjectByField(Map<Class<?>, Object> componentMap, Object baseObj) {
         Field[] declaredFields = baseObj.getClass().getDeclaredFields();
         for (Field field : declaredFields) {
             SimpleInject inject = field.getAnnotation(SimpleInject.class);
@@ -90,13 +99,46 @@ public class SimpleDiContainer {
 
             // has annotation here
             Class<?> fieldType = field.getType(); // e.g. Animal.class
-            Object component = componentMap.get(fieldType);
+            Object component = componentMap.get(fieldType); // by-type only here
             field.setAccessible(true); // ignore private scope
             try {
                 field.set(baseObj, component); // e.g. action.animal = component;
             } catch (IllegalArgumentException | IllegalAccessException e) {
                 String msg = "Failed to inject the component to the field: " + field + ", " + component;
                 throw new IllegalStateException(msg, e);
+            }
+        }
+    }
+
+    private void doInjectBySetter(Map<Class<?>, Object> componentMap, Object baseObj) {
+        Method[] declaredMethods = baseObj.getClass().getDeclaredMethods();
+        for (Method method : declaredMethods) {
+            if (!method.getName().startsWith("set")) {
+                continue; // non setter
+            }
+            Parameter[] parameters = method.getParameters();
+            if (parameters.length != 1) {
+                continue; // non one-parameter
+            }
+            int modifiers = method.getModifiers();
+            if (!Modifier.isPublic(modifiers)) {
+                continue; // non public
+            }
+            if (Modifier.isStatic(modifiers)) {
+                continue; // non instance method
+            }
+            // e.g. setAnimal(Animal animal) here
+            Parameter parameter = parameters[0];
+            Class<?> parameterType = parameter.getType(); // e.g. Animal.class
+            Object component = componentMap.get(parameterType); // by-type only here
+            try {
+                method.invoke(baseObj, component); // e.g. action.setAnimal(component);
+            } catch (IllegalAccessException | IllegalArgumentException e) {
+                String msg = "Failed to inject the component to the method: " + method + ", " + component;
+                throw new IllegalStateException(msg, e);
+            } catch (InvocationTargetException e) {
+                String msg = "Failed to inject the component to the field: " + method + ", " + component;
+                throw new IllegalStateException(msg, e.getTargetException());
             }
         }
     }
