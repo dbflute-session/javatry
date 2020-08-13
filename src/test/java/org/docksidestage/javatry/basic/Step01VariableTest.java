@@ -28,6 +28,8 @@ import org.docksidestage.unit.PlainTestCase;
  */
 public class Step01VariableTest extends PlainTestCase {
 
+// test
+
     // ===================================================================================
     //                                                                      Local Variable
     //                                                                      ==============
