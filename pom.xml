@@ -24,7 +24,7 @@
 		<tomcat.boot.version>0.7.2</tomcat.boot.version>
 
 		<!-- Testing -->
-		<junit.version>4.8.2</junit.version> <!-- is latest version without hamcrest -->
+		<junit.version>4.13.1</junit.version> <!-- is latest version without hamcrest -->
 	</properties>
 
 	<licenses>
