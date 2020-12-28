@@ -30,6 +30,15 @@ public class SupercarClient {
 
     public void buySupercar() {
         SupercarDealer dealer = createDealer();
+        while (true) {
+            doBuySupercar(dealer);
+            if (myCarList.size() >= 100) {
+                break;
+            }
+        }
+    }
+
+    protected void doBuySupercar(SupercarDealer dealer) {
         String clientRequirement = "steering wheel is like sea";
         Supercar orderedCustomCar = dealer.orderSupercar(clientRequirement);
         myCarList.add(orderedCustomCar);

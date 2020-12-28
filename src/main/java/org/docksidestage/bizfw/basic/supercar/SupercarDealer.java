@@ -15,6 +15,8 @@
  */
 package org.docksidestage.bizfw.basic.supercar;
 
+import java.util.Random;
+
 import org.docksidestage.bizfw.basic.supercar.SupercarManufacturer.Supercar;
 
 /**
@@ -26,7 +28,7 @@ public class SupercarDealer {
     public Supercar orderSupercar(String clientRequirement) {
         SupercarManufacturer manufacturer = createSupercarManufacturer();
         if (clientRequirement.contains("steering wheel is like sea")) {
-            return manufacturer.makeSupercar("piari");
+            return manufacturer.makeSupercar(dependOnMyMood());
         } else if (clientRequirement.contains("steering wheel is useful on land")) {
             return manufacturer.makeSupercar("land");
         } else if (clientRequirement.contains("steering wheel has many shop")) {
@@ -38,5 +40,18 @@ public class SupercarDealer {
 
     protected SupercarManufacturer createSupercarManufacturer() {
         return new SupercarManufacturer();
+    }
+
+    protected String dependOnMyMood() {
+        int number = new Random().nextInt(3);
+        if (number == 0) {
+            return "sea";
+        } else if (number == 1) {
+            return "land";
+        } else if (number == 2) {
+            return "piari";
+        } else {
+            throw new IllegalStateException("No way: number=" + number);
+        }
     }
 }

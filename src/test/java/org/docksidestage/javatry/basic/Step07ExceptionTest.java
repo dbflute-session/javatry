@@ -117,26 +117,28 @@ public class Step07ExceptionTest extends PlainTestCase {
     }
 
     private void throwCauseFirstLevel() {
-        int count = -1;
+        int symbol = 1;
         try {
-            throwCauseSecondLevel(count);
+            throwCauseSecondLevel(symbol);
         } catch (IllegalArgumentException e) {
-            throw new IllegalStateException("Failed to call the second help method: " + count, e);
+            throw new IllegalStateException("Failed to call the second help method: symbol=" + symbol, e);
         }
     }
 
-    private void throwCauseSecondLevel(int count) {
+    private void throwCauseSecondLevel(int symbol) {
         try {
-            if (count < 0) {
-                throwCauseThirdLevel(count);
+            --symbol;
+            symbol--;
+            if (symbol < 0) {
+                throwCauseThirdLevel(symbol);
             }
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Failed to call the third help method: " + count, e);
+            throw new IllegalArgumentException("Failed to call the third help method: symbol=" + symbol, e);
         }
     }
 
-    private void throwCauseThirdLevel(int count) {
-        if (count < 0) {
+    private void throwCauseThirdLevel(int symbol) {
+        if (symbol < 0) {
             Integer.valueOf("piari");
         }
     }

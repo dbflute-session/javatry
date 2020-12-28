@@ -241,7 +241,7 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
-    public void test_objectOriented_polymorphism_5rd_overrideWithSuper() {
+    public void test_objectOriented_polymorphism_5th_overrideWithSuper() {
         Animal animal = new Cat();
         BarkedSound sound = animal.bark();
         String sea = sound.getBarkWord();
