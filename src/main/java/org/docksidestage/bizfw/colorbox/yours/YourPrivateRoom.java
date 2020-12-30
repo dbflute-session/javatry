@@ -179,7 +179,7 @@ public class YourPrivateRoom {
         return colorBox;
     }
 
-    private StandardColorBox makeEighthColorBox() { // duplicate color here
+    protected StandardColorBox makeEighthColorBox() { // duplicate color here
         StandardColorBox colorBox = new StandardColorBox(new BoxColor("yellow"), new BoxSize(30, 50, 40));
         Set<String> set = new HashSet<String>();
         set.add("2019/04/22");

@@ -36,7 +36,7 @@ public class Step14DateTest extends PlainTestCase {
     }
 
     /**
-     * How is it going to be if the slash-separated date string in yellow color-box is converted to LocaDate and toString() is used? <br>
+     * How is it going to be if the slash-separated date string in yellow color-box is converted to LocalDate and toString() is used? <br>
      * (yellowのカラーボックスに入っているSetの中のスラッシュ区切り (e.g. 2019/04/24) の日付文字列をLocalDateに変換してtoString()したら？)
      */
     public void test_parseDate() {
