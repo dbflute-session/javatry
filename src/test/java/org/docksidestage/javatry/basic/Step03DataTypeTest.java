@@ -64,9 +64,9 @@ public class Step03DataTypeTest extends PlainTestCase {
     public void test_datatype_primitive() {
         byte sea = 127; // max
         short land = 32767; // max
-        int piari = 2147483647; // max
+        int piari = 1;
         long bonvo = 9223372036854775807L; // max
-        float dstore = 2147483647.1f;
+        float dstore = 1.1f;
         double amba = 2.3d;
         char miraco = 'a';
         boolean dohotel = miraco == 'a';
@@ -79,7 +79,7 @@ public class Step03DataTypeTest extends PlainTestCase {
                 sea = (byte) amba;
             }
         }
-        if (dstore > piari) {
+        if ((int) dstore > piari) {
             sea = 0;
         }
         log(sea); // your answer? => 
