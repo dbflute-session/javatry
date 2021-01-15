@@ -203,7 +203,10 @@ public class Step07ExceptionTest extends PlainTestCase {
         }
     }
 
-    private void helpThrowIllegalState() { // simple implementation here
-        throw new IllegalStateException("something illegal");
+    private void helpThrowIllegalState() {
+        if (true) { // simulate something illegal
+            String importantValue = "dummy"; // important to debug
+            throw new IllegalStateException("something illegal: importantValue=" + importantValue);
+        }
     }
 }
