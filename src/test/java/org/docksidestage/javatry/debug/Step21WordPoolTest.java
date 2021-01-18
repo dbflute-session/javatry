@@ -15,6 +15,7 @@ import org.docksidestage.unit.PlainTestCase;
  * Debug, fix the bug, make it green and save the world!
  * (テストの一部がバグ原因で落ちています。デバグして、バグを直して、テストを通るようにしてください。)
  * @author zaya
+ * @author jflute
  */
 public class Step21WordPoolTest extends PlainTestCase {
 
