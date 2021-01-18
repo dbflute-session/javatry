@@ -18,7 +18,7 @@ package org.docksidestage.javatry.colorbox;
 import org.docksidestage.unit.PlainTestCase;
 
 /**
- * The test of various type with color-box. <br>
+ * The test of miscellaneous type with color-box. <br>
  * Show answer by log() for question of javadoc.
  * @author jflute
  * @author your_name_here

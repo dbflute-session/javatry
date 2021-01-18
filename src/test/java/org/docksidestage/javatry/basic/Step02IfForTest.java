@@ -36,7 +36,7 @@ public class Step02IfForTest extends PlainTestCase {
      * What string is sea variable at the method end? <br>
      * (メソッド終了時の変数 sea の中身は？)
      */
-    public void test_if_basic() {
+    public void test_if_basic() { // example, so begin from the next method
         int sea = 904;
         if (sea >= 904) {
             sea = 2001;
