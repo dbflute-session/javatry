@@ -155,8 +155,8 @@ public class Step05ClassTest extends PlainTestCase {
     }
 
     /**
-     * Now you cannot judge ticket type "one-day or two-day?", so add method to judge it. <br>
-     * (チケットをもらってもOneDayなのかTwoDayなのか区別が付きません。区別を付けられるメソッドを追加しましょう)
+     * Now you cannot determine ticket type "one-day or two-day?", so add method to determine it. <br>
+     * (チケットをもらってもOneDayなのかTwoDayなのか判定できません。判定できるメソッドを追加しましょう)
      */
     public void test_class_moreFix_ticketType() {
         // your confirmation code here
