@@ -16,6 +16,7 @@
 package org.docksidestage.javatry.basic;
 
 import org.docksidestage.bizfw.basic.supercar.SupercarClient;
+import org.docksidestage.javatry.basic.st7.St7BasicExceptionThrower;
 import org.docksidestage.javatry.basic.st7.St7ConstructorChallengeException;
 import org.docksidestage.unit.PlainTestCase;
 
@@ -29,16 +30,37 @@ import org.docksidestage.unit.PlainTestCase;
 public class Step07ExceptionTest extends PlainTestCase {
 
     // ===================================================================================
-    //                                                                             Message
-    //                                                                             =======
+    //                                                                               Basic
+    //                                                                               =====
     /**
      * What string is sea variable at the method end? <br>
      * (メソッド終了時の変数 sea の中身は？)
      */
-    public void test_exception_message_basic() {
-        IllegalStateException exp = new IllegalStateException("mystic");
-        String sea = exp.getMessage();
-        log(sea); // your answer? => mystic
+    public void test_exception_basic_message() {
+        St7BasicExceptionThrower thrower = new St7BasicExceptionThrower();
+        String sea = null;
+        try {
+            thrower.land();
+            fail("no way here");
+        } catch (IllegalStateException e) {
+            sea = e.getMessage();
+        }
+        log(sea); // your answer? =>
+    }
+
+    /**
+     * What class name and method name and row number cause the exception? (you can execute and watch logs) <br>
+     * (例外が発生したクラス名とメソッド名と行番号は？(実行してログを見て良い))
+     */
+    public void test_exception_basic_stacktrace() {
+        St7BasicExceptionThrower thrower = new St7BasicExceptionThrower();
+        try {
+            thrower.land();
+            fail("no way here");
+        } catch (IllegalStateException e) {
+            log(e);
+        }
+        // your answer? => 
     }
 
     // ===================================================================================
@@ -80,6 +102,55 @@ public class Step07ExceptionTest extends PlainTestCase {
         Object exp = new Throwable("mystic");
         boolean sea = exp instanceof Exception;
         log(sea); // your answer? => 
+    }
+
+    // ===================================================================================
+    //                                                                         NullPointer
+    //                                                                         ===========
+    /**
+     * What variable (is null) causes the NullPointerException? And what row number? (you can execute and watch logs) <br>
+     * (NullPointerが発生する変数(nullだった変数)と、発生する行番号は？(実行してログを見ても良い))
+     */
+    public void test_exception_nullpointer_basic() {
+        try {
+            String sea = "mystic";
+            String land = sea.equals("mystic") ? null : "oneman";
+            String lowerCase = land.toLowerCase();
+            log(lowerCase);
+        } catch (NullPointerException e) {
+            log(e);
+        }
+        // your answer? => 
+    }
+
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
+    public void test_exception_nullpointer_headache() {
+        try {
+            String sea = "mystic";
+            String land = !!!sea.equals("mystic") ? null : "oneman";
+            String piari = !!!sea.equals("mystic") ? "plaza" : null;
+            int sum = land.length() + piari.length();
+            log(sum);
+        } catch (NullPointerException e) {
+            log(e);
+        }
+        // your answer? => 
+    }
+
+    /**
+     * Refactor to immediately understand what variable (is null) causes the NullPointerException by row number in stack trace. <br>
+     * (どの変数がNullPointerを引き起こしたのか(nullだったのか)、スタックトレースの行番号だけでわかるようにリファクタリングしましょう)
+     */
+    public void test_exception_nullpointer_refactorCode() {
+        try {
+            String sea = "mystic";
+            String land = !!!sea.equals("mystic") ? null : "oneman";
+            String piari = !!!sea.equals("mystic") ? "plaza" : null;
+            int sum = land.length() + piari.length();
+            log(sum);
+        } catch (NullPointerException e) {
+            log(e);
+        }
     }
 
     // ===================================================================================
