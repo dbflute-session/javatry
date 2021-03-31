@@ -30,10 +30,12 @@ import org.docksidestage.unit.PlainTestCase;
 public class Step22SearcherTest extends PlainTestCase {
 
     public void test_iteratorSearch_found() {
-        // act
+        // ## Arrange ##
+
+        // ## Act ##
         Word found = new IteratorSearcher().search("私");
 
-        // assert
+        // ## Assert ##
         assertEquals("日本語", found.getLanguage().name);
         assertEquals("私", found.getWord());
     }

@@ -35,10 +35,12 @@ import org.docksidestage.unit.PlainTestCase;
 public class Step23SorterTest extends PlainTestCase {
 
     public void test_languageSort() {
-        // act
+        // ## Arrange ##
+
+        // ## Act ##
         List<Language> languages = new LanguagePool().sort();
 
-        // assert
+        // ## Assert ##
         int rank = 0;
         for (Language language : languages) {
             assertTrue(rank < language.rank);
@@ -47,15 +49,15 @@ public class Step23SorterTest extends PlainTestCase {
     }
 
     public void test_wordSorter() {
-        // arrange
+        // ## Arrange ##
         Language language = new LanguagePool().getLanguage("English");
         List<Word> input = createWordList(language, "Candy", "Table", "Bee", "Zebra", "Apple");
         List<Word> expected = createWordList(language, "Apple", "Bee", "Candy", "Table", "Zebra");
 
-        // act
+        // ## Act ##
         List<Word> result = new WordSorter().sort(input);
 
-        // assert
+        // ## Assert ##
         for (int i = 0; i < result.size(); i++) {
             assertEquals(expected.get(i).getLanguage().name, result.get(i).getLanguage().name);
             assertEquals(expected.get(i).getWord(), result.get(i).getWord());
@@ -63,14 +65,14 @@ public class Step23SorterTest extends PlainTestCase {
     }
 
     public void test_wordPoolSorter() {
-        // arrange
+        // ## Arrange ##
         Language language = new LanguagePool().getLanguage("Japanese");
         List<Word> expected = createWordList(language, "昴", "柿", "私", "荼");
 
-        // act
+        // ## Act ##
         List<Word> result = new WordAssort().sort();
 
-        // assert
+        // ## Assert ##
         for (int i = 0; i < result.size(); i++) {
             assertEquals(expected.get(i).getLanguage().name, result.get(i).getLanguage().name);
             assertEquals(expected.get(i).getWord(), result.get(i).getWord());
