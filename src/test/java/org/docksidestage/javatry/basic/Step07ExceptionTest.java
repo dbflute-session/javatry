@@ -36,6 +36,21 @@ public class Step07ExceptionTest extends PlainTestCase {
      * What string is sea variable at the method end? <br>
      * (メソッド終了時の変数 sea の中身は？)
      */
+    public void test_exception_basic_catchfinally() {
+        St7BasicExceptionThrower thrower = new St7BasicExceptionThrower();
+        StringBuilder sea = new StringBuilder();
+        try {
+            thrower.land();
+            sea.append("dockside");
+        } catch (IllegalStateException e) {
+            sea.append("hangar");
+        } finally {
+            sea.append("broadway");
+        }
+        log(sea); // your answer? =>
+    }
+
+    /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_exception_basic_message() {
         St7BasicExceptionThrower thrower = new St7BasicExceptionThrower();
         String sea = null;
