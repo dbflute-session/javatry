@@ -132,7 +132,7 @@ public class Step20DebugByTestTest extends PlainTestCase {
     //                                           Let's write
     //                                           -----------
     /**
-     * Test that sales proceeeds is correct in case of buying one day ticket with 10,000 yen from TicketBooth. <br>
+     * Test that sales proceeds is correct in case of buying one day ticket with 10,000 yen from TicketBooth. <br>
      * (TicketBoothで、10,000円を渡して1Dayチケットを買うと、売上が適切な金額になることをテストしましょう)
      */
     public void test_basicTest_TicketBooth_buyOneDayPassport_salesProceeds() {
