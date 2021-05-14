@@ -182,8 +182,8 @@ public class Step05ClassTest extends PlainTestCase {
     }
 
     /**
-     * Fix it to be able to buy night-only two-day passport (price is 7400). <br>
-     * (NightOnlyTwoDayPassport (金額は7400) のチケットも買えるようにしましょう)
+     * Fix it to be able to buy night-only two-day passport (price is 7400), which can be used at only night. <br>
+     * (NightOnlyTwoDayPassport (金額は7400) のチケットも買えるようにしましょう。夜しか使えないようにしましょう)
      */
     public void test_class_moreFix_wonder_night() {
         // your confirmation code here
