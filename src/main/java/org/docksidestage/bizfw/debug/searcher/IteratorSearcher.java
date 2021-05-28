@@ -10,6 +10,7 @@ import org.docksidestage.bizfw.debug.WordPool;
  * @author zaya
  */
 public class IteratorSearcher implements Searcher {
+
     public List<Word> words;
 
     public IteratorSearcher() {

@@ -22,8 +22,8 @@ import org.docksidestage.unit.PlainTestCase;
 
 /**
  * Some of the tests are failing as a consequence of some bug.
- * Debug, fix the bug, make it green and save the world!
- * (テストの一部がバグ原因で落ちています。デバグして、バグを直して、テストを通るようにしてください。)
+ * Debug, fix the bug caused by main code, make it green and save the world!
+ * (テストの一部がメインコードのバグ原因で落ちています。デバグして、バグを直して、テストを通るようにしてください。)
  * @author zaya
  * @author jflute
  */

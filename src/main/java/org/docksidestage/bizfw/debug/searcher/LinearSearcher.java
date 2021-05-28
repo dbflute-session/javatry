@@ -9,6 +9,7 @@ import org.docksidestage.bizfw.debug.WordPool;
  * @author zaya
  */
 public class LinearSearcher implements Searcher {
+
     public List<Word> words;
 
     public LinearSearcher() {
