@@ -91,10 +91,18 @@ public class Step23SorterTest extends PlainTestCase {
     //                                                                           Challenge
     //                                                                           =========
     /**
-     * Refactor if you want to fix the main code of debug package. <br>
-     * (debugパッケージのメインコード、気になるところがあったらリファクタリングしてみましょう)
+     * Refactor if you want to fix the Word and WordPool class in debug package. <br>
+     * (debugパッケージのWordクラスとWordPoolクラス、気になるところがあったらリファクタリングしてみましょう)
      */
     public void test_refactor_debug_main_code() {
+        // your confirmation code here
+    }
+
+    /**
+     * Write intelligent comments on source code to the Word and WordPool class in debug package. <br>
+     * (debugパッケージのWordクラスとWordPoolクラスに、気の利いたコメントを追加してみましょう)
+     */
+    public void test_write_comment_to_debug_main_code() {
         // your confirmation code here
     }
 }

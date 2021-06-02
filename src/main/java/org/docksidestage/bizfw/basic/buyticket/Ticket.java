@@ -23,8 +23,8 @@ public class Ticket {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    private final int displayPrice;
-    private boolean alreadyIn;
+    private final int displayPrice; // written on ticket, park guest can watch this
+    private boolean alreadyIn; // true means this ticket is unavailable
 
     // ===================================================================================
     //                                                                         Constructor

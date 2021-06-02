@@ -47,14 +47,14 @@ public class WordPool {
     }
 
     public Word find(String word) {
-        return wordMap.values().stream().filter(v -> v.getWord().equals(word)).findFirst().orElseThrow(NoSuchElementException::new);
+        return wordMap.values().stream().filter(wd -> wd.getWord().equals(word)).findFirst().orElseThrow(NoSuchElementException::new);
     }
 
     public Long findId(String word) {
         return wordMap.entrySet()
                 .stream()
                 .filter(entry -> entry.getValue().getWord().equals(word))
-                .map(Map.Entry::getKey)
+                .map(entry -> entry.getKey())
                 .findFirst()
                 .get();
     }
@@ -77,6 +77,24 @@ public class WordPool {
         return wordMap.get(id);
     }
 
+    // you can rewrite comments for your own language by jflute
+    // e.g. Japanese
+    // /**
+    //  * 指定された既存のwordを、指定された言語で新しいwordに更新する。<br>
+    //  * そのwordが存在しなかったときの配慮は何もしてない。
+    //  * @param language 新しいwordの言語 (NotNull)
+    //  * @param word1 指定された言語の新しいword, word mapに保存される (NotNull)
+    //  * @param word2 更新対象のwordを探すために使われる既存のword (NotNull)
+    //  * @return 更新されたwordオブジェクト、更新後にword mapから引き出されたもの (NotNull)
+    //  */
+    /**
+     * Update the specified existing word to the new word as the specified language. <br>
+     * No consideration here when the word is not found.
+     * @param language The language for new word. (NotNull)
+     * @param word1 The new word for the specified language, which is saved in word map. (NotNull)
+     * @param word2 The existing word to search update target word. (NotNull)
+     * @return The updated word object which is retrieved from word map after update. (NotNull)
+     */
     public Word update(String language, String word1, String word2) {
         Long id = findId(word2);
         wordMap.remove(id);

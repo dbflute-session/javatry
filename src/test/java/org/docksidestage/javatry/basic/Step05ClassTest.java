@@ -196,4 +196,12 @@ public class Step05ClassTest extends PlainTestCase {
     public void test_class_moreFix_yourRefactoring() {
         // your confirmation code here
     }
+
+    /**
+     * Write intelligent comments on source code to the main code in buyticket package. <br>
+     * (buyticketパッケージのクラスに、気の利いたコメントを追加してみましょう)
+     */
+    public void test_class_moreFix_yourSuperComments() {
+        // your confirmation code here
+    }
 }
