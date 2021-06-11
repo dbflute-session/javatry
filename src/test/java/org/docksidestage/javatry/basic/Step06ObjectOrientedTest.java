@@ -43,13 +43,14 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
     //                                        Against Object
     //                                        --------------
     /**
-     * Fix 5 mistakes in buying one-day passport and in-park process. <br>
-     * (OneDayPassportを買って InPark する処理の中で、間違いが5つあるので修正しましょう)
+     * Fix several mistakes (except simulation) in buying one-day passport and in-park process. <br>
+     * (OneDayPassportを買って InPark する処理の中で、(simulationを除いて)間違いがいくつかあるので修正しましょう)
      */
     public void test_objectOriented_aboutObject_againstObject() {
         //
         // [ticket booth info]
         //
+        // simulation: actually these variables should be more wide scope
         int oneDayPrice = 7400;
         int quantity = 10;
         Integer salesProceeds = null;
@@ -57,19 +58,21 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
         //
         // [buy one-day passport]
         //
+        // simulation: actually this money should be from customer
         int handedMoney = 10000;
         if (quantity <= 0) {
             throw new IllegalStateException("Sold out");
         }
+        --quantity;
         if (handedMoney < oneDayPrice) {
             throw new IllegalStateException("Short money: handedMoney=" + handedMoney);
         }
-        --quantity;
         salesProceeds = handedMoney;
 
         //
         // [ticket info]
         //
+        // simulation: actually these variables should be more wide scope
         int displayPrice = quantity;
         boolean alreadyIn = false;
 
@@ -80,6 +83,7 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
         //
         // [do in park now!!!]
         //
+        // simulation: actually this process should be called by other trigger
         if (alreadyIn) {
             throw new IllegalStateException("Already in park by this ticket: displayPrice=" + quantity);
         }
@@ -93,7 +97,7 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
 
     private void saveBuyingHistory(int quantity, Integer salesProceeds, int displayPrice, boolean alreadyIn) {
         if (alreadyIn) {
-            // only logging here (normally e.g. DB insert)
+            // simulation: only logging here (normally e.g. DB insert)
             showTicketBooth(displayPrice, salesProceeds);
             showYourTicket(quantity, alreadyIn);
         }
