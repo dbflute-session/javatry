@@ -44,13 +44,13 @@ public class TicketBooth {
     // you can rewrite comments for your own language by jflute
     // e.g. Japanese
     // /**
-    // * 1Dayパスワードを買う、パークゲスト用のメソッド。
+    // * 1Dayパスポートを買う、パークゲスト用のメソッド。
     // * @param handedMoney パークゲストから手渡しされたお金(金額) (NotNull, NotMinus)
     // * @throws TicketSoldOutException ブース内のチケットが売り切れだったら
     // * @throws TicketShortMoneyException 買うのに金額が足りなかったら
     // */
     /**
-     * Buy one-day password, method for park guest.
+     * Buy one-day passport, method for park guest.
      * @param handedMoney The money (amount) handed over from park guest. (NotNull, NotMinus)
      * @throws TicketSoldOutException When ticket in booth is sold out.
      * @throws TicketShortMoneyException When the specifed money is short for purchase.
