@@ -151,7 +151,7 @@ public class Step04MethodTest extends PlainTestCase {
      * </pre>
      */
     public void test_method_making() {
-        // comment out after making these methods
+        // use after making these methods
         //String replaced = replaceCwithB(replaceAwithB("ABC"));
         //String sea = quote(replaced, "'");
         //if (isAvailableLogging()) {
