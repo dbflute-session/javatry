@@ -67,7 +67,7 @@ public class Step23SorterTest extends PlainTestCase {
     public void test_wordPoolSorter() {
         // ## Arrange ##
         Language language = new LanguagePool().getLanguage("Japanese");
-        List<Word> expected = createWordList(language, "昴", "柿", "私", "荼");
+        List<Word> expected = createWordList(language, "昂", "柿", "私", "荼");
 
         // ## Act ##
         List<Word> result = new WordAssort().sort();
