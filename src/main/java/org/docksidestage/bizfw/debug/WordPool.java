@@ -47,7 +47,11 @@ public class WordPool {
     }
 
     public Word find(String word) {
-        return wordMap.values().stream().filter(wd -> wd.getWord().equals(word)).findFirst().orElseThrow(NoSuchElementException::new);
+        return wordMap.values()
+                .stream()
+                .filter(wordObj -> wordObj.getWord().equals(word))
+                .findFirst()
+                .orElseThrow(NoSuchElementException::new);
     }
 
     public Long findId(String word) {
