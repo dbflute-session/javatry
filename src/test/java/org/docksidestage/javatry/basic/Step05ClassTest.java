@@ -148,18 +148,10 @@ public class Step05ClassTest extends PlainTestCase {
         // uncomment after modifying the method
         //TicketBooth booth = new TicketBooth();
         //int handedMoney = 20000;
-        //TicketBuyResult twoDayPassportResult = booth.buyTwoDayPassport(handedMoney);
-        //Ticket twoDayPassport = twoDayPassportResult.getTicket();
+        //TicketBuyResult buyResult = booth.buyTwoDayPassport(handedMoney);
+        //Ticket twoDayPassport = buyResult.getTicket();
         //int change = twoDayPassportResult.getChange();
         //log(twoDayPassport.getDisplayPrice() + change); // should be same as money
-    }
-
-    /**
-     * Now you cannot determine ticket type "one-day or two-day?", so add method to determine it. <br>
-     * (チケットをもらってもOneDayなのかTwoDayなのか判定できません。判定できるメソッドを追加しましょう)
-     */
-    public void test_class_moreFix_ticketType() {
-        // your confirmation code here
     }
 
     /**
@@ -169,6 +161,29 @@ public class Step05ClassTest extends PlainTestCase {
     public void test_class_moreFix_usePluralDays() {
         // your confirmation code here
     }
+
+    /**
+     * Accurately determine whether bought ticket is one-day or not by if-statemet. (fix Ticket classes if needed) <br>
+     * (買ったチケットがOneDayなのかどうかをif文で "正確に" 判定してみましょう。(必要ならTicketクラスたちを修正))
+     */
+    public void test_class_moreFix_whetherTicketType() {
+        // uncomment when you implement this exercise
+        //TicketBooth booth = new TicketBooth();
+        //Ticket oneDayPassport = booth.buyOneDayPassport(10000);
+        //showTicketIfNeeds(oneDayPassport);
+        //TicketBuyResult buyResult = booth.buyTwoDayPassport(10000);
+        //Ticket twoDayPassport = buyResult.getTicket();
+        //showTicketIfNeeds(twoDayPassport);
+    }
+
+    // uncomment when you implement this exercise
+    //private void showTicketIfNeeds(Ticket ticket) {
+    //    if (xxxxxxxxxxxxxxxxxx) { // write determination for one-day ticket
+    //        log("one one");
+    //    } else {
+    //        log("other");
+    //    }
+    //}
 
     // ===================================================================================
     //                                                                           Good Luck
