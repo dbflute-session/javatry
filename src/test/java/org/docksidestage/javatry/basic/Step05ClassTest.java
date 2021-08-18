@@ -22,7 +22,11 @@ import org.docksidestage.unit.PlainTestCase;
 /**
  * The test of class. <br>
  * Operate exercise as javadoc. If it's question style, write your answer before test execution. <br>
- * (javadocの通りにエクササイズを実施。質問形式の場合はテストを実行する前に考えて答えを書いてみましょう)
+ * (javadocの通りにエクササイズを実施。質問形式の場合はテストを実行する前に考えて答えを書いてみましょう) <br>
+ * 
+ * If ambiguous requirements exist, you can determine specifications that seems appropriate. <br>
+ * (要件が曖昧なところがあれば、適切だと思われる仕様を決めても良いです)
+ * 
  * @author jflute
  * @author your_name_here
  */
