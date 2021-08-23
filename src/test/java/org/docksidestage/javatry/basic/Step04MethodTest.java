@@ -143,8 +143,8 @@ public class Step04MethodTest extends PlainTestCase {
      * </pre>
      * (privateメソッドを以下のように定義して、テストメソッド内の呼び出しプログラムをコメントアウトしましょう):
      * <pre>
-     * o replaceAwithB(): 一つのString引数、引数を "A" を "B" に置き換えられたStringを戻す 
-     * o replaceCwithB(): 一つのString引数、引数を "C" を "B" に置き換えられたStringを戻す 
+     * o replaceAwithB(): 一つのString引数、引数の "A" を "B" に置き換えたStringを戻す 
+     * o replaceCwithB(): 一つのString引数、引数の "C" を "B" に置き換えたStringを戻す 
      * o quote(): 二つのString引数、第一引数を第二引数(引用符)で囲ったものを戻す 
      * o isAvailableLogging(): 引数なし、privateのインスタンス変数 "availableLogging" (初期値:true) を戻す (それも作る)  
      * o showSea(): 一つのString引数、戻り値なし、引数をlog()で表示する
