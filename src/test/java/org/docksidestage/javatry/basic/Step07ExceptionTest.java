@@ -173,7 +173,7 @@ public class Step07ExceptionTest extends PlainTestCase {
     //                                                                   =================
     /**
      * Show canonical path of new java.io.File(".") by log(), and if I/O error, show message and stack-trace instead <br>
-     * (new java.io.File(".") の canonical path を取得してログに表示、I/Oエラーはメッセージとスタックトレースを代わりに)
+     * (new java.io.File(".") の canonical path を取得してログに表示、I/Oエラーの時はメッセージとスタックトレースを代わりに表示)
      */
     public void test_exception_checkedException_basic() {
     }
@@ -203,7 +203,7 @@ public class Step07ExceptionTest extends PlainTestCase {
     }
 
     private void throwCauseFirstLevel() {
-        int symbol = 1;
+        int symbol = Integer.MAX_VALUE - 0x7ffffffe;
         try {
             throwCauseSecondLevel(symbol);
         } catch (IllegalArgumentException e) {
@@ -294,5 +294,22 @@ public class Step07ExceptionTest extends PlainTestCase {
             String importantValue = "dummy"; // important to debug
             throw new IllegalStateException("something illegal: importantValue=" + importantValue);
         }
+    }
+
+    // ===================================================================================
+    //                                                                           Challenge
+    //                                                                           =========
+    /**
+     * What is the concept difference between Exception and Error? Write it on comment. <br>
+     * (ExceptionとErrorのコンセプトの違いはなんでしょうか？コメント上に書きましょう)
+     */
+    public void test_exception_zone_differenceExceptionError() {
+        // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+        // Write here. (ここに書いてみましょう)
+        // - - - - - - - - - -
+        //
+        //
+        //
+        // _/_/_/_/_/_/_/_/_/_/
     }
 }
