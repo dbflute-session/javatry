@@ -15,8 +15,6 @@
  */
 package org.docksidestage.bizfw.basic.supercar;
 
-import java.util.Random;
-
 import org.docksidestage.bizfw.basic.supercar.SupercarManufacturer.Supercar;
 
 /**
@@ -26,13 +24,13 @@ import org.docksidestage.bizfw.basic.supercar.SupercarManufacturer.Supercar;
 public class SupercarDealer {
 
     public Supercar orderSupercar(String clientRequirement) {
-        SupercarManufacturer manufacturer = createSupercarManufacturer();
+        SupercarManufacturer supercarManufacturer = createSupercarManufacturer();
         if (clientRequirement.contains("steering wheel is like sea")) {
-            return manufacturer.makeSupercar(dependOnMyMood());
+            return supercarManufacturer.makeSupercar("piari");
         } else if (clientRequirement.contains("steering wheel is useful on land")) {
-            return manufacturer.makeSupercar("land");
+            return supercarManufacturer.makeSupercar("land");
         } else if (clientRequirement.contains("steering wheel has many shop")) {
-            return manufacturer.makeSupercar("piari");
+            return supercarManufacturer.makeSupercar("piari");
         } else {
             throw new IllegalStateException("Cannot understand the client requirement: " + clientRequirement);
         }
@@ -40,18 +38,5 @@ public class SupercarDealer {
 
     protected SupercarManufacturer createSupercarManufacturer() {
         return new SupercarManufacturer();
-    }
-
-    protected String dependOnMyMood() {
-        int number = new Random().nextInt(3);
-        if (number == 0) {
-            return "sea";
-        } else if (number == 1) {
-            return "land";
-        } else if (number == 2) {
-            return "piari";
-        } else {
-            throw new IllegalStateException("No way: number=" + number);
-        }
     }
 }

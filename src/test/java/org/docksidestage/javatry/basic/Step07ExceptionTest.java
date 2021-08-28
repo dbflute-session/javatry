@@ -233,8 +233,8 @@ public class Step07ExceptionTest extends PlainTestCase {
     //                                                                         Translation
     //                                                                         ===========
     /**
-     * Execute this test and read exception message and write situation and cause on comment. <br>
-     * テストを実行して、例外メッセージを読んで、状況と原因をコメント上に書きましょう。
+     * Execute this test and read exception message and write situation and cause on comment for non-programmer. <br>
+     * テストを実行して例外メッセージを読んで、プログラマーでない人にもわかるように状況と原因をコメント上に書きましょう。
      */
     public void test_exception_translation_debugChallenge() {
         try {

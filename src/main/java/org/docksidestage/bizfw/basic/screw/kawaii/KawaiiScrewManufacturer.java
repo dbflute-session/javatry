@@ -13,19 +13,21 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.bizfw.basic.screw;
+package org.docksidestage.bizfw.basic.screw.kawaii;
 
+import org.docksidestage.bizfw.basic.screw.ScrewSpec;
+import org.docksidestage.bizfw.basic.screw.SpecialScrew;
 import org.docksidestage.bizfw.basic.screw.exception.ScrewCannotMakeBySpecException;
 
 /**
- * The manufacturer(製造業者) of special screw(特別なねじ).
+ * The manufacturer(製造業者) of kawaii screw(かわいいねじ).
  * @author jflute
  */
-public class SpecialScrewManufacturer {
+public class KawaiiScrewManufacturer {
 
     public SpecialScrew makeSpecialScrew(ScrewSpec screwSpec) {
-        if (isKawaiiFaceScrewSpec(screwSpec)) {
-            String msg = "The kawaii face is already unsupported so we cannot make it.";
+        if (!isKawaiiFaceScrewSpec(screwSpec)) {
+            String msg = "The non-kawaii face is unsupported: specified-spec=" + screwSpec;
             throw new ScrewCannotMakeBySpecException(msg);
         }
         return new SpecialScrew(screwSpec.getSpecText());

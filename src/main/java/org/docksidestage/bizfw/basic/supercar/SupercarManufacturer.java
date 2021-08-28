@@ -28,8 +28,8 @@ public class SupercarManufacturer {
     public Supercar makeSupercar(String catalogKey) {
         Integer steeringWheelId = catalog.findSteeringWheelSpecId(catalogKey);
 
-        SupercarSteeringWheelManufacturer manufacturer = createSupercarSteeringWheelManufacturer();
-        SteeringWheel steeringWheel = manufacturer.makeSteeringWheel(steeringWheelId);
+        SupercarSteeringWheelManufacturer wheelManufacturer = createSupercarSteeringWheelManufacturer();
+        SteeringWheel steeringWheel = wheelManufacturer.makeSteeringWheel(steeringWheelId);
 
         return new Supercar(steeringWheel);
     }

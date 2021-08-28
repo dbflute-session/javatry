@@ -28,9 +28,9 @@ public class SupercarSteeringWheelComponentDB {
 
     public SupercarSteeringWheelComponentDB() {
         clincherSpecMap = new HashMap<>();
-        clincherSpecMap.put(1, new String(new byte[] { 0x2d, 0x5b, 0x40, 0x5f, 0x40, 0x5d, 0x2d }));
-        clincherSpecMap.put(2, new String(new byte[] { 0x2f, 0x28, 0x3e, 0x5f, 0x3c, 0x29, 0x5c }));
-        clincherSpecMap.put(3, new String(new byte[] { 0x5c, 0x28, 0x5e, 0x5f, 0x5e, 0x29, 0x2f }));
+        clincherSpecMap.put(1, "-[@_@]-");
+        clincherSpecMap.put(2, "/(>_<)\\");
+        clincherSpecMap.put(3, "\\(^_^)/");
     }
 
     public String findClincherSpecText(Integer clincherSpecId) {

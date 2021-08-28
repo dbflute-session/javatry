@@ -16,7 +16,7 @@
 package org.docksidestage.bizfw.basic.supercar;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 import org.docksidestage.bizfw.basic.supercar.SupercarManufacturer.Supercar;
 
@@ -26,22 +26,17 @@ import org.docksidestage.bizfw.basic.supercar.SupercarManufacturer.Supercar;
  */
 public class SupercarClient {
 
-    private final List<Supercar> myCarList = new ArrayList<>(4);
+    private final Collection<Supercar> orderedCustomCarCollection = new ArrayList<>();
 
     public void buySupercar() {
         SupercarDealer dealer = createDealer();
-        while (true) {
-            doBuySupercar(dealer);
-            if (myCarList.size() >= 100) {
-                break;
-            }
-        }
+        String clientRequirement = prepareClientRequirement();
+        Supercar orderedCustomCar = dealer.orderSupercar(clientRequirement);
+        orderedCustomCarCollection.add(orderedCustomCar);
     }
 
-    protected void doBuySupercar(SupercarDealer dealer) {
-        String clientRequirement = "steering wheel is like sea";
-        Supercar orderedCustomCar = dealer.orderSupercar(clientRequirement);
-        myCarList.add(orderedCustomCar);
+    private String prepareClientRequirement() {
+        return "steering wheel is like sea"; // may be changed future
     }
 
     protected SupercarDealer createDealer() {
