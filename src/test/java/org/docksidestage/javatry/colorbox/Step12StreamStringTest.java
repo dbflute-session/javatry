@@ -97,13 +97,13 @@ public class Step12StreamStringTest extends PlainTestCase {
     }
 
     // ===================================================================================
-    //                                                                    Welcome to Devil
-    //                                                                    ================
+    //                                                                 Welcome to Guardian
+    //                                                                 ===================
     /**
-     * What is total length of text of DevilBox class in color-boxes? <br>
-     * (カラーボックスの中に入っているDevilBoxクラスのtextの長さの合計は？)
+     * What is total length of text of GuardianBox class in color-boxes? <br>
+     * (カラーボックスの中に入っているGuardianBoxクラスのtextの長さの合計は？)
      */
-    public void test_welcomeToDevil() {
+    public void test_welcomeToGuardian() {
     }
 
     // ===================================================================================
