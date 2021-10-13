@@ -154,7 +154,7 @@ public class Step05ClassTest extends PlainTestCase {
         //int handedMoney = 20000;
         //TicketBuyResult buyResult = booth.buyTwoDayPassport(handedMoney);
         //Ticket twoDayPassport = buyResult.getTicket();
-        //int change = twoDayPassportResult.getChange();
+        //int change = buyResult.getChange();
         //log(twoDayPassport.getDisplayPrice() + change); // should be same as money
     }
 
