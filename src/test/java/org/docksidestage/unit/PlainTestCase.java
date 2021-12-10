@@ -64,10 +64,6 @@ public abstract class PlainTestCase extends TestCase {
     //                                                                          ==========
     /** The logger instance for sub class. (NotNull) */
     private final Logger _xlogger = LoggerFactory.getLogger(getClass());
-    // UTFlute wants to use logger for caller output
-    // but should remove the dependency to Log4j
-    // (logging through commons-logging gives us fixed caller...)
-    //protected final Logger _xlogger = Logger.getLogger(getClass());
 
     // ===================================================================================
     //                                                                           Attribute
