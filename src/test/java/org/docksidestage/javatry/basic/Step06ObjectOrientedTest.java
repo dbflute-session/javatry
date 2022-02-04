@@ -319,6 +319,18 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
         // your confirmation code here
     }
 
+    /**
+     * What is difference as concept between abstract class and interface? <br>
+     * (抽象クラスとインターフェースの概念的な違いはなんでしょう？)
+     */
+    public void test_objectOriented_polymorphism_interface_whatisdifference() {
+        // write your memo here:
+        // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+        // what is difference?
+        //
+        // _/_/_/_/_/_/_/_/_/_/
+    }
+
     // ===================================================================================
     //                                                                 Polymorphism Making
     //                                                                 ===================
