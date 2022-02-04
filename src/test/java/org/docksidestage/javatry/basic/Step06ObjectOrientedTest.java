@@ -188,6 +188,12 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
         log("Your Ticket: displayPrice={}, alreadyIn={}", ticket.getDisplayPrice(), ticket.isAlreadyIn());
     }
 
+    // write your memo here:
+    // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    // what is object?
+    //
+    // _/_/_/_/_/_/_/_/_/_/
+
     // ===================================================================================
     //                                                              Polymorphism Beginning
     //                                                              ======================
@@ -260,6 +266,18 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
         log(sea); // your answer? => 
         int land = animal.getHitPoint();
         log(land); // your answer? => 
+    }
+
+    /**
+     * What is happy if you can assign Dog or Cat instance to Animal variable? <br>
+     * (Animal型の変数に、DogやCatなどインスタンスを代入できると何が嬉しいのでしょう？)
+     */
+    public void test_objectOriented_polymorphism_7th_whatishappy() {
+        // write your memo here:
+        // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+        // what is happy?
+        //
+        // _/_/_/_/_/_/_/_/_/_/
     }
 
     // ===================================================================================
