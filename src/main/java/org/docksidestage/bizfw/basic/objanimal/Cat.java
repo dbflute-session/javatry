@@ -49,8 +49,8 @@ public class Cat extends Animal implements FastRunner {
     //                                                                              ======
     @Override
     public void run() {
-        // dummy implementation
-        logger.debug("...Running now");
+        logger.debug("...Running now"); // dummy implementation
+        downHitPoint();
     }
 
     // ===================================================================================

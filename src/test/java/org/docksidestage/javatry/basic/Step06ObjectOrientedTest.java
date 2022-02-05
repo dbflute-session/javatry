@@ -381,6 +381,27 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
     }
 
     /**
+     * Put barking-related classes, such as BarkingProcess and BarkedSound, into sub-package. <br>
+     * (BarkingProcessやBarkedSoundなど、barking関連のクラスをサブパッケージにまとめましょう) <br>
+     * <pre>
+     * e.g.
+     *  objanimal
+     *   |-barking
+     *   |  |-BarkedSound.java
+     *   |  |-BarkingProcess.java
+     *   |-loud
+     *   |-runner
+     *   |-Animal.java
+     *   |-Cat.java
+     *   |-Dog.java
+     *   |-...
+     * </pre>
+     */
+    public void test_objectOriented_writing_withPackageRefactoring() {
+        // your confirmation code here
+    }
+
+    /**
      * Is Zombie correct as sub-class of Animal? Analyze it in thirty seconds. (thinking only) <br>
      * (ゾンビは動物クラスのサブクラスとして適切でしょうか？30秒だけ考えてみましょう (考えるだけでOK))
      */

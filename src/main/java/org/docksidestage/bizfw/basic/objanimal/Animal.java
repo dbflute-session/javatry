@@ -33,7 +33,7 @@ public abstract class Animal implements Loudable {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected int hitPoint;
+    protected int hitPoint; // is HP
 
     // ===================================================================================
     //                                                                         Constructor
@@ -57,13 +57,13 @@ public abstract class Animal implements Loudable {
         return barkedSound;
     }
 
-    protected void prepareAbdominalMuscle() {
-        logger.debug("...Using my abdominal muscle"); // dummy implementation
+    protected void breatheIn() { // actually depends on barking
+        logger.debug("...Breathing in for barking"); // dummy implementation
         downHitPoint();
     }
 
-    protected void breatheIn() {
-        logger.debug("...Breathing in"); // dummy implementation
+    protected void prepareAbdominalMuscle() { // also actually depends on barking
+        logger.debug("...Using my abdominal muscle for barking"); // dummy implementation
         downHitPoint();
     }
 
