@@ -382,7 +382,7 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
 
     /**
      * Put barking-related classes, such as BarkingProcess and BarkedSound, into sub-package. <br>
-     * (BarkingProcessやBarkedSoundなど、barking関連のクラスをサブパッケージにまとめましょう) <br>
+     * (BarkingProcessやBarkedSoundなど、barking関連のクラスをサブパッケージにまとめましょう)
      * <pre>
      * e.g.
      *  objanimal
