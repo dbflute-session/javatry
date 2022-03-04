@@ -138,7 +138,7 @@ public class Step04MethodTest extends PlainTestCase {
      * o replaceAwithB(): has one argument as String, returns argument replaced "A" with "B" as String 
      * o replaceCwithB(): has one argument as String, returns argument replaced "C" with "B" as String 
      * o quote(): has two arguments as String, returns first argument quoted by second argument (quotation) 
-     * o isAvailableLogging(): no argument, returns private instance variable "availableLogging" initialized as true (also make it)  
+     * o isAvailableLogging(): no argument, returns private instance variable "availableLogging" initialized as true (also make it separately)  
      * o showSea(): has one argument as String argument, no return, show argument by log()
      * </pre>
      * (privateメソッドを以下のように定義して、テストメソッド内の呼び出しプログラムをコメントアウトしましょう):
@@ -146,7 +146,7 @@ public class Step04MethodTest extends PlainTestCase {
      * o replaceAwithB(): 一つのString引数、引数の "A" を "B" に置き換えたStringを戻す 
      * o replaceCwithB(): 一つのString引数、引数の "C" を "B" に置き換えたStringを戻す 
      * o quote(): 二つのString引数、第一引数を第二引数(引用符)で囲ったものを戻す 
-     * o isAvailableLogging(): 引数なし、privateのインスタンス変数 "availableLogging" (初期値:true) を戻す (それも作る)  
+     * o isAvailableLogging(): 引数なし、privateのインスタンス変数 "availableLogging" (初期値:true) を戻す (それも別途作る)  
      * o showSea(): 一つのString引数、戻り値なし、引数をlog()で表示する
      * </pre>
      */
