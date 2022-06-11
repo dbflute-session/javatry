@@ -14,14 +14,14 @@
 
 	<properties>
 		<!-- Main Framework -->
-		<h2.jdbc.version>2.0.206</h2.jdbc.version>
 
 		<!-- Partner Library -->
+		<h2.jdbc.version>2.1.212</h2.jdbc.version>
 		<slf4j.version>1.7.12</slf4j.version>
 		<logback.version>1.2.3</logback.version>
 		<servlet.version>4.0.1</servlet.version>
 		<jsp.version>2.3.1</jsp.version>
-		<tomcat.boot.version>0.8.0</tomcat.boot.version>
+		<tomcat.boot.version>0.8.2</tomcat.boot.version>
 
 		<!-- Testing -->
 		<junit.version>4.8.2</junit.version> <!-- is latest version without hamcrest -->
@@ -222,6 +222,11 @@
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 		<!--                                                                Main Framework -->
 		<!--                                                                 = = = = = = = -->
+
+		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+		<!--                                                               Partner Library -->
+		<!--                                                               = = = = = = = = -->
+		<!-- JDBC driver -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -229,9 +234,6 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-		<!--                                                               Partner Library -->
-		<!--                                                               = = = = = = = = -->
 		<!-- transaction -->
 		<dependency>
 			<groupId>javax.transaction</groupId>
@@ -272,7 +274,7 @@
 		 <dependency> <!-- for jsp -->
 		    <groupId>org.apache.tomcat</groupId>
 		    <artifactId>tomcat-jasper</artifactId>
-		    <version>9.0.19</version> <!-- should be same as Tomcat dependency of TomcatBoot -->
+		    <version>9.0.64</version> <!-- should be same as Tomcat dependency of TomcatBoot -->
 		</dependency>
  
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
