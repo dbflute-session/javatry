@@ -270,7 +270,7 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
 
     /**
      * What is happy if you can assign Dog or Cat instance to Animal variable? <br>
-     * (Animal型の変数に、DogやCatなどインスタンスを代入できると何が嬉しいのでしょう？)
+     * (Animal型の変数に、DogやCatなどのインスタンスを代入できると何が嬉しいのでしょう？)
      */
     public void test_objectOriented_polymorphism_7th_whatishappy() {
         // write your memo here:
