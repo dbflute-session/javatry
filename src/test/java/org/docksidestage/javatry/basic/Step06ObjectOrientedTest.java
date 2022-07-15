@@ -406,6 +406,10 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
      * (ゾンビは動物クラスのサブクラスとして適切でしょうか？30秒だけ考えてみましょう (考えるだけでOK))
      */
     public void test_objectOriented_zoo() {
-        // do nothing here
+        // write your memo here:
+        // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+        // is it corrent?
+        //
+        // _/_/_/_/_/_/_/_/_/_/
     }
 }
