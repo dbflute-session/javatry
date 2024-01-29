@@ -84,7 +84,7 @@ public class Step11ClassicStringTest extends PlainTestCase {
     }
 
     // ===================================================================================
-    //                                                                      Pikcup Methods
+    //                                                                      Pickup Methods
     //                                                                      ==============
     /**
      * What is color in the color-box that has string starting with "Water"? <br>

@@ -80,7 +80,7 @@ public class Step12StreamStringTest extends PlainTestCase {
     }
 
     // ===================================================================================
-    //                                                                      Pikcup Methods
+    //                                                                      Pickup Methods
     //                                                                      ==============
     /**
      * What is color in the color-box that has string starting with "Water"? <br>
