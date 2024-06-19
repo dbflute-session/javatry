@@ -18,7 +18,7 @@
 		<!-- Partner Library -->
 		<h2.jdbc.version>2.1.212</h2.jdbc.version>
 		<slf4j.version>1.7.12</slf4j.version>
-		<logback.version>1.2.3</logback.version>
+		<logback.version>1.2.13</logback.version>
 		<servlet.version>4.0.1</servlet.version>
 		<jsp.version>2.3.1</jsp.version>
 		<tomcat.boot.version>0.8.2</tomcat.boot.version>
