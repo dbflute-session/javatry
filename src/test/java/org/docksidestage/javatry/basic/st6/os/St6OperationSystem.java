@@ -69,7 +69,7 @@ public class St6OperationSystem {
         } else if (OS_TYPE_WINDOWS.equalsIgnoreCase(osType)) {
             return "/Users/" + loginId;
         } else if (OS_TYPE_OLD_WINDOWS.equalsIgnoreCase(osType)) {
-            return "/Documents and Settigs/" + loginId;
+            return "/Documents and Settings/" + loginId;
         } else {
             throw new IllegalStateException("Unknown osType: " + osType);
         }
