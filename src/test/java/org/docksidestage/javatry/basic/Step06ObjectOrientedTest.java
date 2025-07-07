@@ -408,7 +408,7 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
     public void test_objectOriented_zoo() {
         // write your memo here:
         // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-        // is it corrent?
+        // is it correct?
         //
         // _/_/_/_/_/_/_/_/_/_/
     }
