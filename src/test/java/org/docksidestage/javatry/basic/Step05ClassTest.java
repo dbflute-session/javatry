@@ -217,10 +217,10 @@ public class Step05ClassTest extends PlainTestCase {
     }
 
     /**
-     * Write intelligent comments on source code to the main code in buyticket package. <br>
-     * (buyticketパッケージのクラスに、気の利いたコメントを追加してみましょう)
+     * Write intelligent JavaDoc comments seriously on the public classes/constructors/methods of the Ticket class. <br>
+     * (Ticketクラスのpublicなクラス/コンストラクター/メソッドに、気の利いたJavaDocコメントを本気で書いてみましょう)
      */
-    public void test_class_moreFix_yourSuperComments() {
+    public void test_class_moreFix_yourSuperJavaDoc() {
         // your confirmation code here
     }
 }
