@@ -24,7 +24,7 @@ import org.docksidestage.unit.PlainTestCase;
  * Operate exercise as javadoc. If it's question style, write your answer before test execution. <br>
  * (javadocの通りにエクササイズを実施。質問形式の場合はテストを実行する前に考えて答えを書いてみましょう)
  * @author jflute
- * @author your_name_here
+ * @author sota_noniwa
  */
 public class Step01VariableTest extends PlainTestCase {
 
@@ -37,7 +37,7 @@ public class Step01VariableTest extends PlainTestCase {
      */
     public void test_variable_basic() { // example, so begin from the next method
         String sea = "mystic";
-        log(sea); // your answer? => mystic
+        log(sea); // your answer? => mystic(o)
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -47,7 +47,11 @@ public class Step01VariableTest extends PlainTestCase {
         String piari = null;
         String dstore = "mai";
         sea = sea + land + piari + ":" + dstore;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => NullPointerException(x) => mystic8null:mai(o)
+        // nullを連結するとNullPointerExceptionが発生すると予想したが、Javaではnullを文字列に連結すると"null"という文字列が生成されるようだ。
+        // 裏でStringBuilderが呼び出されている。
+        // このようなデザインになっている理由はデバッグやログ出力がしやすくなるためらしい。
+        // https://stackoverflow.com/questions/4260723/concatenating-null-strings-in-java
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -56,7 +60,11 @@ public class Step01VariableTest extends PlainTestCase {
         String land = "oneman";
         sea = land;
         land = land + "'s dreams";
-        log(sea); // your answer? => 
+        log(sea); // your answer? => oneman(o)
+        // String class は定数。つまり、初期化の後変更できない。
+        // String classのobjectを保持する変数はobjectが格納されているメモリ領域を参照している。
+        // そのため、sea変数はland変数が参照しているメモリ領域に格納されている"oneman"を参照する。
+        // https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -65,7 +73,9 @@ public class Step01VariableTest extends PlainTestCase {
         int land = 415;
         sea = land;
         land++;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => 415(o)
+        // Objectを代入した変数はその参照を保持し、primitive型の変数は値を直接持つ。
+        // https://zenn.dev/yo__shi/articles/10a6562668d85e
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -75,7 +85,9 @@ public class Step01VariableTest extends PlainTestCase {
         sea = land;
         sea = land.add(new BigDecimal(1));
         sea.add(new BigDecimal(1));
-        log(sea); // your answer? => 
+        log(sea); // your answer? => 417(x) => 416(o)
+        // BigDecimalはimmutableなクラスであるため、addメソッドをは新しいオブジェクトを返す。
+        // seaにaddメソッドの戻り値を代入しないと、seaの値は変わらない。
     }
 
     // ===================================================================================
@@ -89,19 +101,23 @@ public class Step01VariableTest extends PlainTestCase {
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_variable_instance_variable_default_String() {
         String sea = instanceBroadway;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => "null"(o)
+        // nullはlogする時に文字列の"null"として出力される。
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_variable_instance_variable_default_int() {
         int sea = instanceDockside;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => 0(o)
+        // String型の変数はnull->"null"として出力されるので、int型の変数はnull->0ではないかと予想した。
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_variable_instance_variable_default_Integer() {
         Integer sea = instanceHangar;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => 0(x) => "null"(o)
+        // int型の変数はnull->0として出力されるので、Integer型の変数はnull->0ではないかと予想した。
+        // referenceタイプ(String, Integer, etc)はnull->"null"として出力される。
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -110,7 +126,8 @@ public class Step01VariableTest extends PlainTestCase {
         instanceMagiclamp = "magician";
         helpInstanceVariableViaMethod(instanceMagiclamp);
         String sea = instanceBroadway + "|" + instanceDockside + "|" + instanceHangar + "|" + instanceMagiclamp;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => bigbang|1|null|magician(o)
+        // helpInstanceVariableViaMethodで引数として渡されるinstanceHangarはローカル変数なので変更されない。
     }
 
     private void helpInstanceVariableViaMethod(String instanceMagiclamp) {

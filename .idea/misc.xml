@@ -8,6 +8,7 @@
       <writeAnnotation name="org.springframework.beans.factory.annotation.Autowired" />
     </writeAnnotations>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>

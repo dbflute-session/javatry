@@ -23,3 +23,6 @@
 # DBFlute
 /dbflute-intro.*
 /mydbflute/intro_resources
+
+# Note for sota_noniwa
+/src/test/java/org.docksidestage/javatry/basic/PlayRoom.java
