@@ -209,8 +209,8 @@ public class Step05ClassTest extends PlainTestCase {
     }
 
     /**
-     * Refactor if you want to fix (e.g. is it well-balanced name of method and variable?). <br>
-     * (その他、気になるところがあったらリファクタリングしてみましょう (例えば、バランスの良いメソッド名や変数名になっていますか？))
+     * Refactor the code to the best readable code you can think of. <br>
+     * (自分の中で思う最高に可読性の高いコードにリファクタリングしてみましょう)
      */
     public void test_class_moreFix_yourRefactoring() {
         // your confirmation code here
