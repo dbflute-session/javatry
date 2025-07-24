@@ -24,10 +24,10 @@ import org.docksidestage.unit.PlainTestCase;
  * Operate exercise as javadoc. If it's question style, write your answer before test execution. <br>
  * (javadocの通りにエクササイズを実施。質問形式の場合はテストを実行する前に考えて答えを書いてみましょう)
  * @author jflute
- * @author your_name_here
+ * @author Ichy14 (n.ichikawa@bizreach.co.jp)
  */
 public class Step01VariableTest extends PlainTestCase {
-
+// `exrends`キーワードを使うによりStep01VariableTestはPlainTestCaseを継承している
     // ===================================================================================
     //                                                                      Local Variable
     //                                                                      ==============
@@ -38,6 +38,7 @@ public class Step01VariableTest extends PlainTestCase {
     public void test_variable_basic() { // example, so begin from the next method
         String sea = "mystic";
         log(sea); // your answer? => mystic
+        // TODO: `log()`メソッドの実装を読解したい
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -47,7 +48,11 @@ public class Step01VariableTest extends PlainTestCase {
         String piari = null;
         String dstore = "mai";
         sea = sea + land + piari + ":" + dstore;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => 型が違うものどうしの足し算なのでエラーになるのでは？
+        // 正常に？出力されてしまった。
+        // intの8がstringにキャストされた？stringで宣言したnullが"null"という文字列として変換されているのはなぜ?
+        // `+`演算子を実行するときは左側の型に合わせて演算される＆String型が左右どちらかに来たらString型として処理する、みたいなことになってそう？
+        // TODO: 変数の型を確認する方法は？
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -56,7 +61,8 @@ public class Step01VariableTest extends PlainTestCase {
         String land = "oneman";
         sea = land;
         land = land + "'s dreams";
-        log(sea); // your answer? => 
+        log(sea); // your answer? => oneman
+        // log(land);
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -65,7 +71,8 @@ public class Step01VariableTest extends PlainTestCase {
         int land = 415;
         sea = land;
         land++;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => 415
+        log(land);
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -74,8 +81,11 @@ public class Step01VariableTest extends PlainTestCase {
         BigDecimal land = new BigDecimal(415);
         sea = land;
         sea = land.add(new BigDecimal(1));
+        // log(sea);
         sea.add(new BigDecimal(1));
-        log(sea); // your answer? => 
+        log(sea); // your answer? => 417
+        // BigDecimalはimmutable → seaの値は変わらない。Python書いてたときにもこんなのがあった気がする
+        // Javaのsyntax sugarのこともうちょい知りたい
     }
 
     // ===================================================================================
@@ -89,28 +99,35 @@ public class Step01VariableTest extends PlainTestCase {
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_variable_instance_variable_default_String() {
         String sea = instanceBroadway;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => よくわからん、、、
+        // クラス内で宣言されたフィールドを取得しようとする関数？
+        // instanceBroadwayという変数を宣言したものの、初期化していないので、型に合わせて自動的に初期値がセットされる
+        // その初期値はString型ならnullになるので、nullが出力されるっぽい
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_variable_instance_variable_default_int() {
         int sea = instanceDockside;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => 0
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_variable_instance_variable_default_Integer() {
         Integer sea = instanceHangar;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => nul
+        // 基本型のintと違って、Integerはnullが許容されるっぽい？
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_variable_instance_variable_via_method() {
-        instanceBroadway = "bbb";
+        instanceBroadway = "bbb";  // BigBandBeat無くなるの悲しいです
         instanceMagiclamp = "magician";
         helpInstanceVariableViaMethod(instanceMagiclamp);
         String sea = instanceBroadway + "|" + instanceDockside + "|" + instanceHangar + "|" + instanceMagiclamp;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => bbb|1|null|magician
+        // ミュータブルな変数instanceDockside以外は、helpInstanceVariableViaMethodメソッドを呼び出して代入しても値は変わらないはず?
+        // → 違った。なぜ？たぶん何かを勘違いしている。
+        //
     }
 
     private void helpInstanceVariableViaMethod(String instanceMagiclamp) {
