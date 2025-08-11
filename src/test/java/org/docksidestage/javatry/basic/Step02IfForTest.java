@@ -76,14 +76,21 @@ public class Step02IfForTest extends PlainTestCase {
         int sea = 904;
         if (sea > 904) {
             sea = 2001;
+            sea = sea++ * 2;
         } else if (land && sea >= 904) {
             sea = 7;
+            sea = ++sea * 2;
         } else if (sea >= 903 || land) {
-            sea = 8;
+            if (sea % 2 == 0) {
+                sea = sea++ * 2;
+            }
             if (!land) {
                 land = true;
             } else if (sea <= 903) {
                 sea++;
+            }
+            if (sea < 1810) {
+                sea = 8;
             }
         } else if (sea == 8) {
             sea++;
@@ -93,6 +100,9 @@ public class Step02IfForTest extends PlainTestCase {
         }
         if (sea >= 9 || (sea > 7 && sea < 9)) {
             sea--;
+            if (sea % 2 == 1) {
+                sea++;
+            }
         }
         if (land) {
             sea = 10;
