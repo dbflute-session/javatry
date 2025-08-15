@@ -208,6 +208,9 @@ public class Step05ClassTest extends PlainTestCase {
         // your confirmation code here
     }
 
+    // ===================================================================================
+    //                                                                         Bonus Stage
+    //                                                                         ===========
     /**
      * Refactor the code to the best readable code you can think of. <br>
      * (自分の中で思う最高に可読性の高いコードにリファクタリングしてみましょう)
@@ -221,6 +224,19 @@ public class Step05ClassTest extends PlainTestCase {
      * (Ticketクラスのpublicなクラス/コンストラクター/メソッドに、気の利いたJavaDocコメントを本気で書いてみましょう)
      */
     public void test_class_moreFix_yourSuperJavaDoc() {
+        // your confirmation code here
+    }
+
+    // ===================================================================================
+    //                                                                         Devil Stage
+    //                                                                         ===========
+    /**
+     * If the specification is to share inventory (quantity) between OneDay/TwoDay/...,
+     * change the specification to separate inventory for each OneDay/TwoDay/.... <br>
+     * (もし、OneDay/TwoDay/...で在庫(quantity)を共有する仕様になってたら、
+     * OneDay/TwoDay/...ごとに在庫を分ける仕様に変えてみましょう)
+     */
+    public void test_class_moreFix_zonedQuantity() {
         // your confirmation code here
     }
 }
