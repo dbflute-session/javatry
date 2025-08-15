@@ -231,7 +231,7 @@ public class Step05ClassTest extends PlainTestCase {
     //                                                                         Devil Stage
     //                                                                         ===========
     /**
-     * If the specification is to share inventory (quantity) between OneDay/TwoDay/...,
+     * If your specification is to share inventory (quantity) between OneDay/TwoDay/...,
      * change the specification to separate inventory for each OneDay/TwoDay/.... <br>
      * (もし、OneDay/TwoDay/...で在庫(quantity)を共有する仕様になってたら、
      * OneDay/TwoDay/...ごとに在庫を分ける仕様に変えてみましょう)
