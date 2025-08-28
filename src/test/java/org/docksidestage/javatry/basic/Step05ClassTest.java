@@ -221,7 +221,10 @@ public class Step05ClassTest extends PlainTestCase {
 
     /**
      * Write intelligent JavaDoc comments seriously on the public classes/constructors/methods of the Ticket class. <br>
-     * (Ticketクラスのpublicなクラス/コンストラクター/メソッドに、気の利いたJavaDocコメントを本気で書いてみましょう)
+     * (Ticketクラスのpublicなクラス/コンストラクター/メソッドに、気の利いたJavaDocコメントを本気で書いてみましょう) <br>
+     * <br>
+     * Seriously → With the intention that the Ticket class (for example) becomes open source and is used by hundreds of people. <br>
+     * (本気で → Ticketクラスが(例えば)オープンソースになって何百人の人から利用される想定のつもりで。)
      */
     public void test_class_moreFix_yourSuperJavaDoc() {
         // your confirmation code here
