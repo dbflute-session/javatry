@@ -16,7 +16,7 @@
 		<!-- Main Framework -->
 
 		<!-- Partner Library -->
-		<h2.jdbc.version>2.1.212</h2.jdbc.version>
+		<h2.jdbc.version>2.2.220</h2.jdbc.version>
 		<slf4j.version>1.7.12</slf4j.version>
 		<logback.version>1.2.13</logback.version>
 		<servlet.version>4.0.1</servlet.version>
