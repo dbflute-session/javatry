@@ -104,7 +104,7 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
     }
 
     private void showTicketBooth(int quantity, Integer salesProceeds) {
-        log("Ticket Booth: quantity={}, salesProceeds={}", quantity, salesProceeds);
+        log("Ticket Booth: totalQuantity={}, salesProceeds={}", quantity, salesProceeds);
     }
 
     private void showYourTicket(int displayPrice, boolean alreadyIn) {
