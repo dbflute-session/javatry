@@ -63,11 +63,6 @@ public class Step05ClassTest extends PlainTestCase {
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_class_howToUse_wrongQuantity() {
-        Integer sea = doTest_class_ticket_wrongQuantity();
-        log(sea); // your answer? => 
-    }
-
-    private Integer doTest_class_ticket_wrongQuantity() {
         TicketBooth booth = new TicketBooth();
         int handedMoney = 7399;
         try {
@@ -76,7 +71,8 @@ public class Step05ClassTest extends PlainTestCase {
         } catch (TicketShortMoneyException continued) {
             log("Failed to buy one-day passport: money=" + handedMoney, continued);
         }
-        return booth.getQuantity();
+        Integer sea = booth.getQuantity(); // as one day quantity
+        log(sea); // your answer? => 
     }
 
     // ===================================================================================
@@ -87,8 +83,16 @@ public class Step05ClassTest extends PlainTestCase {
      * (お金不足でもチケットが減る問題をクラスを修正して解決しましょう (以前のエクササイズのanswerの修正を忘れずに))
      */
     public void test_class_letsFix_ticketQuantityReduction() {
-        Integer sea = doTest_class_ticket_wrongQuantity();
-        log(sea); // should be max quantity, visual check here
+        TicketBooth booth = new TicketBooth();
+        int handedMoney = 7399;
+        try {
+            booth.buyOneDayPassport(handedMoney);
+            fail("always exception but none");
+        } catch (TicketShortMoneyException continued) {
+            log("Failed to buy one-day passport: money=" + handedMoney, continued);
+        }
+        Integer oneDayQuantity = booth.getQuantity();
+        log(oneDayQuantity); // should be max quantity, visual check here 
     }
 
     /**
@@ -124,7 +128,9 @@ public class Step05ClassTest extends PlainTestCase {
     public void test_class_letsFix_refactor_recycle() {
         TicketBooth booth = new TicketBooth();
         booth.buyOneDayPassport(10000);
-        log(booth.getQuantity(), booth.getSalesProceeds()); // should be same as before-fix
+
+        // should be same as before-fix
+        log("oneDay={}, {}", booth.getQuantity(), booth.getSalesProceeds());
     }
 
     // ===================================================================================
