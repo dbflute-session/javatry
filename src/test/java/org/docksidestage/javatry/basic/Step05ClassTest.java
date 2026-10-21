@@ -173,25 +173,27 @@ public class Step05ClassTest extends PlainTestCase {
     }
 
     /**
-     * Accurately determine whether type of bought ticket is two-day passport or not by if-statement. (fix Ticket classes if needed) <br>
-     * (買ったチケットの種別がTwoDayPassportなのかどうかをif文で正確に判定してみましょう。(必要ならTicketクラスたちを修正))
+     * Accurately determine whether type of bought ticket is one-day/two-day passport or not by if-statement. (fix Ticket classes if needed) <br>
+     * (買ったチケットの種別がOneDayPassport/TwoDayPassportなのかどうかをif文で判定してみましょう。(必要ならTicketクラスたちを修正))
      */
     public void test_class_moreFix_whetherTicketType() {
         // uncomment when you implement this exercise
         //TicketBooth booth = new TicketBooth();
         //Ticket oneDayPassport = booth.buyOneDayPassport(10000);
         //showTicketIfNeeds(oneDayPassport);
-        //TicketBuyResult buyResult = booth.buyTwoDayPassport(10000);
+        //TicketBuyResult buyResult = booth.buyTwoDayPassport(20000);
         //Ticket twoDayPassport = buyResult.getTicket();
         //showTicketIfNeeds(twoDayPassport);
     }
 
     // uncomment when you implement this exercise
     //private void showTicketIfNeeds(Ticket ticket) {
-    //    if (xxxxxxxxxxxxxxxxxx) { // write determination for two-day passport
+    //    if (xxxxxxxxxxxxxxxxxx) { // write determination for one-day passport
+    //        log("one-day passport");
+    //    } else if (yyyyyyyyyyyyyyyyyy) { // write determination for two-day passport
     //        log("two-day passport");
     //    } else {
-    //        log("other");
+    //        log("other passport");
     //    }
     //}
 
